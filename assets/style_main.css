@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300;600&display=swap');
+
+
+:root{
+    --maincolor: #c96333;
+    --border: .1rem solid rgba(56, 55, 54, 0.1);
+    --box-shadow: 0 .5rem 1rem #c96333;
+    --shadow: .3rem .2rem .5rem #d7cdbc;
+    --radius: .5rem;
+    --text: #292929;
+    --bg: #f4f7da;
+    --hover: rgba(239, 157, 120, 0.447);
+}
+*{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    transition: all 1s ease-out;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: var(--bg);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3%;
+    height: 6.2rem;
+    transition: top 0.3s;
+    overflow: hidden;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header .current {
+    font-weight: bold;
+    background: var(--maincolor);
+    color: #eee;
+}
+
+nav a {
+    font-size: 1.3rem;
+    color: var(--text);
+    padding: 2.2rem 1rem;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: var(--hover);
+    font-weight: bold;
+}
+
+header img {
+    width: 8.3rem;
+    height: 8.3rem;
+    object-fit: cover;
+}
+
+.navigacija {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+header .button {
+    display: flex;
+    justify-content: flex-end;
+}
