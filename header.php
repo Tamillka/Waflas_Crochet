@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style_main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="assets/script.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Wafla's crochet</title>
@@ -19,8 +19,8 @@
             <a href="atsauksmes.php" class="<?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>       
             <a href="kontakti.php" class="<?php echo ($page == 'kontakti' ? 'current' : ''); ?>">Kontakti</a> 
             </div>
-            <a href="login.php" class="btn log"><i class="fas fa-user"></i></a>
-            <a href="login.php" class="btn log"><i class="fa-regular fa-cart-shopping"></i></a>
+            <a href="login.php"><i class="fas fa-user"></i></a>
+            <a href="login.php"><i class="fas fa-shopping-cart"></i></a>
 
         </nav>
         

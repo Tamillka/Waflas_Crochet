@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300;600&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root{
     --maincolor: #c96333;
     --border: .1rem solid rgba(56, 55, 54, 0.1);
@@ -8,11 +6,13 @@
     --shadow: .3rem .2rem .5rem #d7cdbc;
     --radius: .5rem;
     --text: #292929;
-    --bg: #f4f7da;
+    --lightText: rgb(252, 237, 206);
+    --bg: #f4f7dad1;
     --hover: rgba(239, 157, 120, 0.447);
 }
 *{
-    font-family: 'Nunito', sans-serif;
+    font-family: "Noto Serif", serif;
+    font-weight: 400;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -25,6 +25,11 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url(/images/body-bg.jpg);
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.308);
+    background-size: cover;
+    position: inherit;
 }
 
 html{
@@ -43,13 +48,46 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3%;
+    padding: 0 2%;
     height: 6.2rem;
     transition: top 0.3s;
     overflow: hidden;
 }
 
+.btn {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: bolder;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    margin: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+}
 
+.btn::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Līnija pozīcija uz apakšas */
+    left: 50%; /* Sākumā līnija ir centrā */
+    width: 0; /* Sākumā līnija ir neredzama */
+    height: 2px; /* Līnijas augstums */
+    background-color: var(--lightText); /* Līnijas krāsa */
+    transition: width 0.6s ease, left 0.6s ease; /* Pārejas efekti */
+}
+
+.btn:hover::after {
+    width: 100%; /* Līnija paplašinās līdz 100% */
+    left: 0; /* Līnija pārvietojas uz kreiso malu */
+}
+
+.btn:hover{
+    background-color: var(--hover);
+    color: var(--lightText);
+}
 .navbar{
     display: flex;
     justify-content: center;
@@ -68,16 +106,18 @@ nav a {
     color: var(--text);
     padding: 2.2rem 1rem;
     text-align: center;
+    margin: 0;
 }
 
 nav a:hover {
     background-color: var(--hover);
     font-weight: bold;
+    color: var(--text);
 }
 
 header img {
-    width: 8.3rem;
-    height: 8.3rem;
+    width: 8.5rem;
+    height: 8.5rem;
     object-fit: cover;
 }
 
@@ -91,4 +131,114 @@ header img {
 header .button {
     display: flex;
     justify-content: flex-end;
+}
+
+section{
+    padding: 1.5rem 0;
+
+}
+
+.main-container{
+    margin: 0 9%;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+ }
+
+ #hero {
+    margin-top: 6.15rem;
+    padding: 0;
+    background-image: url('/images/bg-image-hero.jpg');
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;
+    background-size: cover;
+}
+ #hero h1{
+    font-size: 4.5rem;
+    width: 65%;
+    color: var(--lightText);
+    padding: 4rem 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+#hero h2{
+    font-size: 3rem;
+    color: var(--lightText);
+    padding: 1.5rem 2rem 0 2rem;
+    font-weight: 500;
+    text-shadow: 
+    1px 3px 6px var(--maincolor), /* Pirmais slānis */
+    0 0 25px var(--hover), /* Otrais slānis, mīkstāka gaisma */
+    0 0 5px rgba(248, 241, 233, 0.521); /* Trešais slānis, gaišāka gaisma */
+    transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+#hero p{
+    font-size: 1.5rem;
+    color: var(--lightText);
+    padding: 0 0 0 2rem;
+    font-weight: bolder;
+}
+#hero .btn{
+    margin: 2rem 0 3rem 2rem;
+}
+
+#hero p i {
+    transition: transform 0.6s ease, color 0.5s ease;
+}
+
+#hero p i:hover {
+    transform: scale(1.2); /* Zvaigzne palielinās */
+    color: #ffd900; /* Maina krāsu uz zelta */
+}
+
+/* Sākuma stāvoklis visiem tekstiem - neredzami */
+#hero h2, #hero p, #hero h1, #hero button{
+    opacity: 0;
+    transform: translateY(40px); /* Nolaiž uz leju, lai radītu parādīšanās efektu */
+    transition: opacity 1s ease, transform 1s ease, all 1s ease-out;
+}
+
+/* Parādīšanās animācijas atsevišķiem elementiem */
+#hero.in-view h2 {
+    animation: fadeInUp 1s ease forwards;
+}
+
+#hero.in-view p:nth-of-type(1) {
+    animation: fadeInUp 1.7s ease forwards;
+}
+
+#hero.in-view h1 {
+    animation: fadeInUp 2.4s ease forwards;
+}
+
+#hero.in-view p:nth-of-type(2) {
+    animation: fadeInUp 3.1s ease forwards;
+}
+
+#hero.in-view .btn {
+    animation: fadeInUp 3.8s ease forwards;
+}
+
+/* Keyframes animācija */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMĀCIJA */
+ .animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate.visible {
+    animation: slideInUp 0.6s forwards;
 }
