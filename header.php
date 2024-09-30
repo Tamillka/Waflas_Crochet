@@ -19,8 +19,9 @@
             <a href="atsauksmes.php" class="<?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>       
             <a href="kontakti.php" class="<?php echo ($page == 'kontakti' ? 'current' : ''); ?>">Kontakti</a> 
             </div>
-            <a href="login.php"><i class="fas fa-user"></i></a>
             <a href="login.php"><i class="fas fa-shopping-cart"></i></a>
+            <a href="login.php"><i class="fas fa-user"></i></a>
+            
 
         </nav>
         

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 :root{
     --maincolor: #c96333;
     --border: .1rem solid rgba(56, 55, 54, 0.1);
@@ -11,7 +12,7 @@
     --hover: rgba(239, 157, 120, 0.447);
 }
 *{
-    font-family: "Noto Serif", serif;
+    font-family: "Nunito Sans", sans-serif;
     font-weight: 400;
     box-sizing: border-box;
     margin: 0;
@@ -30,6 +31,8 @@ body{
     background-color: rgba(0, 0, 0, 0.308);
     background-size: cover;
     position: inherit;
+    height: 100vh;
+    background-attachment: fixed;
 }
 
 html{
@@ -88,6 +91,35 @@ header {
     background-color: var(--hover);
     color: var(--lightText);
 }
+
+h1{
+    font-size: 4.5rem;
+    color: var(--lightText);
+    padding: 1rem 0;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--text);
+    padding: 1rem 0;
+    font-weight: bold;
+}
+h3{
+    font-size: 2rem;
+    color: var(--text);
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.3rem;
+    color: var(--text);
+    padding: 1rem 0;
+    line-height: 1.2;
+}
+
 .navbar{
     display: flex;
     justify-content: center;
@@ -116,8 +148,8 @@ nav a:hover {
 }
 
 header img {
-    width: 8.5rem;
-    height: 8.5rem;
+    width: 9rem;
+    height: 9rem;
     object-fit: cover;
 }
 
@@ -137,10 +169,12 @@ section{
     padding: 1.5rem 0;
 
 }
-
 .main-container{
     margin: 0 9%;
     padding: 0;
+}
+
+#hero .main-container{
     background-color: rgba(0, 0, 0, 0.5);
  }
 
@@ -148,36 +182,30 @@ section{
     margin-top: 6.15rem;
     padding: 0;
     background-image: url('/images/bg-image-hero.jpg');
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
 }
  #hero h1{
-    font-size: 4.5rem;
     width: 65%;
     color: var(--lightText);
     padding: 4rem 2rem;
-    font-weight: 500;
     line-height: 1.5;
+    font-weight: 600;
 }
-#hero h2{
-    font-size: 3rem;
+#hero h2 {
     color: var(--lightText);
     padding: 1.5rem 2rem 0 2rem;
     font-weight: 500;
     text-shadow: 
-    1px 3px 6px var(--maincolor), /* Pirmais slānis */
-    0 0 25px var(--hover), /* Otrais slānis, mīkstāka gaisma */
-    0 0 5px rgba(248, 241, 233, 0.521); /* Trešais slānis, gaišāka gaisma */
-    transform: scale(1);
-	animation: pulse 2s infinite;
+        1px 3px 10px #c96333, 
+        0 0 30px rgba(239, 157, 120, 0.6);
 }
 
 #hero p{
     font-size: 1.5rem;
     color: var(--lightText);
     padding: 0 0 0 2rem;
-    font-weight: bolder;
 }
 #hero .btn{
     margin: 2rem 0 3rem 2rem;
@@ -220,7 +248,57 @@ section{
     animation: fadeInUp 3.8s ease forwards;
 }
 
-/* Keyframes animācija */
+
+#kvalitate .main-container{
+    position: relative; 
+    overflow: hidden; 
+    height: 200px /* Adjust height to fit content */
+}
+
+#kvalitate .kval-boxes{
+    display: flex;
+    justify-content: space-around;
+    white-space: nowrap; 
+    position: absolute;
+    animation: scroll 20s linear infinite;
+    width: 100%;
+}
+
+#kvalitate .kval-box{
+    text-align: center;
+    display: inline-block;
+}
+
+#kvalitate h2{
+    padding-bottom: 0;
+    font-weight: 800;
+}
+#kvalitate p{
+    padding-top: 0;
+    font-weight:bolder;
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.divider{
+    height: 3px;
+    background-image: radial-gradient(rgba(14, 23, 51, 0.45), #fff);
+}
+
+#jaunakie-pied .headings{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* Keyframes animācijām */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -231,6 +309,7 @@ section{
         transform: translateY(0);
     }
 }
+
 
 /* ANIMĀCIJA */
  .animate {
