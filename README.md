@@ -20,6 +20,7 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Reģistrācija un login
 - [ ] - Lietotāja profila apskate (pāsūtījumu vēsture, grozs, lietotājvārds)
 # Funkcionālitātes pievienošana
+- [ ] - Hero sadaļā atsauksmju skaits izvadās no datubāzes
 - [ ] - Iespēja reģistrēties mājaslapā (klients pats sevi)
 - [ ] - Ja lietotājvards eksistē, vajag autorizēties
 - [ ] - Admins var pievienot citus adminus un moderatorus
