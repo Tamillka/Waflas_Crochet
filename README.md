@@ -36,4 +36,5 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Kad pasūtījuma statuss tiek mainīts - klients saņem uz e-pastu attiecīgo paziņojumu
 - [ ] - Visiem lietotājiem iespēja samainīt savu paroli
 - [ ] - Admins var dzēst adminus un moderatorus
+- [ ] - Var pienot bildes uz datubāzi kā failu no datora
 - [ ] – Programmatūras testēšana
