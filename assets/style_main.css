@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root{
-    --maincolor: #c96333;
+    --maincolor: rgb(201, 99, 51);
     --border: .1rem solid rgba(56, 55, 54, 0.1);
     --box-shadow: 0 .5rem 1rem #c96333;
-    --shadow: .3rem .2rem .5rem #d7cdbc;
+    --shadow: .3rem .3rem .6rem #c2ac9e;
     --radius: .5rem;
     --text: #292929;
-    --lightText: rgb(252, 237, 206);
-    --bg: #f4f7dad1;
-    --hover: rgba(239, 157, 120, 0.447);
+    --lightText: rgb(255, 241, 213);
+    --bg: #f4f7daeb;
+    --hover: rgba(239, 158, 120, 0.443);
+    --section-bg: rgb(134, 79, 53);
 }
 *{
     font-family: "Nunito Sans", sans-serif;
@@ -26,9 +27,8 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(/images/body-bg.jpg);
+    background-image: url(/images/bg-image.jpg);
     background-repeat: repeat;
-    background-color: rgba(0, 0, 0, 0.308);
     background-size: cover;
     position: inherit;
     height: 100vh;
@@ -66,7 +66,6 @@ header {
     border-radius: 1rem;
     font-size: 1.3rem;
     font-weight: bolder;
-    margin: 2rem;
     cursor: pointer;
     overflow: hidden;
 }
@@ -89,7 +88,7 @@ header {
 
 .btn:hover{
     background-color: var(--hover);
-    color: var(--lightText);
+   
 }
 
 h1{
@@ -103,7 +102,7 @@ h1{
 h2 {
     font-size: 3rem;
     color: var(--text);
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     font-weight: bold;
 }
 h3{
@@ -118,6 +117,22 @@ p{
     color: var(--text);
     padding: 1rem 0;
     line-height: 1.2;
+}
+img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+
+.box{
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
 }
 
 .navbar{
@@ -166,7 +181,7 @@ header .button {
 }
 
 section{
-    padding: 1.5rem 0;
+    padding: 5rem 0;
 
 }
 .main-container{
@@ -174,14 +189,14 @@ section{
     padding: 0;
 }
 
-#hero .main-container{
+/* #hero .main-container{
     background-color: rgba(0, 0, 0, 0.5);
- }
+ } */
 
- #hero {
+ #hero, #hero-kontakti {
     margin-top: 6.15rem;
     padding: 0;
-    background-image: url('/images/bg-image-hero.jpg');
+    background-image: url('/images/bg-image-hero.png');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -189,9 +204,12 @@ section{
  #hero h1{
     width: 65%;
     color: var(--lightText);
-    padding: 4rem 2rem;
-    line-height: 1.5;
+    padding-left: 4rem;
+    border-left: .7rem solid var(--maincolor);
+    line-height: 1.3;
     font-weight: 600;
+    text-transform: uppercase;
+    margin: 4rem 0;
 }
 #hero h2 {
     color: var(--lightText);
@@ -202,13 +220,18 @@ section{
         0 0 30px rgba(239, 157, 120, 0.6);
 }
 
-#hero p{
+#hero p, #hero-kontakti p{
     font-size: 1.5rem;
     color: var(--lightText);
     padding: 0 0 0 2rem;
 }
-#hero .btn{
+#hero .btn, #hero-kontakti .btn{
     margin: 2rem 0 3rem 2rem;
+    font-size: 1.6rem;
+    position: relative;
+}
+#hero .btn:hover, #hero-kontakti .btn:hover{
+    color: var(--lightText);
 }
 
 #hero p i {
@@ -248,57 +271,564 @@ section{
     animation: fadeInUp 3.8s ease forwards;
 }
 
-
-#kvalitate .main-container{
-    position: relative; 
-    overflow: hidden; 
-    height: 200px /* Adjust height to fit content */
+#kvalitate{
+    padding: 2rem;
 }
-
-#kvalitate .kval-boxes{
+#kvalitate .main-container {
+    overflow: hidden;
+    --gap: 20px;
+    user-select: none;
     display: flex;
-    justify-content: space-around;
-    white-space: nowrap; 
-    position: absolute;
-    animation: scroll 20s linear infinite;
-    width: 100%;
+    gap: var(--gap);
+    position: relative;
 }
 
-#kvalitate .kval-box{
+#kvalitate ul {
+    list-style: none;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+    white-space: nowrap;
+    align-items: center;
+    min-width: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+#kvalitate ul::after {
+    content: "";
+    flex-shrink: 0;
+    width: var(--gap);
+}
+
+#kvalitate .kval-box {
     text-align: center;
     display: inline-block;
 }
 
-#kvalitate h2{
+#kvalitate h2 {
     padding-bottom: 0;
     font-weight: 800;
+    color: var(--maincolor);
 }
-#kvalitate p{
+
+#kvalitate p {
     padding-top: 0;
-    font-weight:bolder;
+    font-weight: bolder;
 }
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+
+#kvalitate .main-container:hover ul {
+    animation-play-state: paused;
 }
 
 .divider{
     height: 3px;
-    background-image: radial-gradient(rgba(14, 23, 51, 0.45), #fff);
+    background-image: radial-gradient(rgba(14, 23, 51, 0.45), #ffffff00);
 }
 
-#jaunakie-pied .headings{
+
+#jaunakie-pied{
+    margin-top: 2rem;
+}
+#jaunakie-pied h2, #produkcija h2{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+#produkcija a i{
+    color: var(--text);
+}
+
+#produkcija a i:hover{
+    color: var(--maincolor);
+    font-size: 2.1rem;
+}
+#produkcija .headings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#jaunakie-pied img, #produkcija img{
+   border-top-left-radius: .5rem;
+   border-top-right-radius: .5rem;
+}
+#jaunakie-pied img:hover, #produkcija img:hover{
+    scale: 1.05;
+ }
+#jaunakie-pied p, #produkcija p{
+    padding: 0 0 1rem 1rem;
+    font-weight: 600;
+}
+#jaunakie-pied h3, #produkcija h3{
+    padding: .5rem 0 0 1rem;
+}
+#jaunakie-pied .box, #produkcija .box{
+    padding-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    background: #f09d760e;
+}
+#jaunakie-pied .btn, #produkcija .btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 40px;
+    padding: .7rem 1.2rem;
+    margin: 1rem;
+}
+
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it's on top */
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Adjust for responsiveness */
+    max-width: 600px; /* Maximum width */
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better aesthetics */
+}
+
+/* Close button */
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    background-color: var(--hover);
+    padding: 0 .4rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+.closeBtn:hover {
+    background-color: var(--bg);
+}
+
+/* Image gallery */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.large-image {
+    width: 300px; /* Set a good width for the large image */
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: row; /* Display thumbnails vertically */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Add some spacing between thumbnails */
+}
+
+.thumbnail {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+.thumbnail:hover {
+    transform: scale(1.05); /* Add a slight zoom effect on hover */
+    border: 2px solid var(--maincolor); /* Highlight the thumbnail on hover */
+}
+
+/* Add styling for the active thumbnail */
+.thumbnail.active {
+    border: 2px solid var(--maincolor); /* Highlight the active thumbnail */
+    opacity: 0.7; /* Slightly dim the active thumbnail */
+}
+
+/* Button inside the popup */
+.popup .btn {
+    position: relative;
+}
+.popup h3{
+    padding: .5rem 0 .5rem 0;
+}
+.popup p{
+    padding: 0;
+}
+
+
+
+#par-mums{
+    background: var(--bg);
+    padding-top: 0;
+    margin-top: 3rem;
+    padding-bottom: 0;
+}
+/* Container for the image */
+#par-mums .image-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: auto;
+    overflow: visible; 
+    position: relative; 
+    padding-top: 4%; 
+}
+
+/* Style for the image */
+#par-mums .image-container img {
+    max-width: 80%;
+    height: auto; 
+    object-fit: cover; 
+    display: block;
+    position: relative;
+    aspect-ratio: 1/0.5;
+    z-index: 1; 
+    margin-bottom: -20%; /* Negative margin to overlap the .about section */
+}
+
+/* About section */
+.about {
+    background: var(--section-bg);
+    padding-top: 16%;
+    margin-top: 0; /* Remove margin to let the image overlap */
+    text-align: center;
+    position: relative;
+    z-index: 0; /* Position behind the image */
+    padding-bottom: 3rem;
+}
+
+#par-mums h2{
+    color: var(--lightText);
+}
+
+#par-mums .flex-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+#par-mums .about-points{
+    width: 100%;
+}
+
+#par-mums .about-summary{
+    width: 100%;
+    text-align: start;
+}
+
+#par-mums .about-info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+#par-mums .about-info i{
+    font-size: 3rem;
+    color: var(--lightText);
+    margin-right: 2rem;
+}
+
+#par-mums .about-info p{
+    color: var(--lightText);
+    text-align: left;
+}
+#par-mums .about-summary p{
+    color: var(--lightText);
+    text-align: justify;
+    margin-bottom: .5rem;
+}
+#par-mums .btn{
+    position: relative;
+}
+
+
+
+#jautajumi{
+    background: var(--bg);
+    margin-top: 9rem;
+    padding-top: 1rem;
+}
+
+#jautajumi .jautajums-bez-atb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+}
+#jautajumi .jautajums{
+    border-bottom: 2px solid #777;
+    padding-bottom: 1rem;
+}
+#jautajumi i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease; /* Pievieno pāreju rotācijai */
+    cursor: pointer;
+}
+
+#jautajumi .rotate {
+    transform: rotate(180deg); /* Rotē ikonu par 180 grādiem */
+}
+#jautajumi h3{
+    padding-bottom: 0;
+}
+#jautajumi .atbilde {
+    display: none; /* Slēpj atbildi pēc noklusējuma */
+    margin-top: 0.5rem;
+}
+
+#jautajumi .atbilde.visible {
+    display: block; /* Parāda atbildi, kad tiek pievienota 'visible' klase */
+}
+
+
+
+#atsauksmes {
+    background-color: var(--section-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; 
+    padding-top: 6rem;
+    position: relative;
+}
+
+#atsauksmes h2 {
+    padding: 0;
+    color: var(--lightText);
+}
+
+#atsauksmes p {
+    font-size: 1.5rem;
+    color: var(--lightText);
+    width: 50%;
+    text-align: center;
+    margin: auto; /* Pievieno automātisku margin, lai centrētu tekstu */
+    padding-top: .5rem;
+}
+#atsauksmes .atsauksmes {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    justify-content: flex-start;
+    overflow: hidden; /* Hide the testimonials that are not in view */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+#atsauksmes .atsauksme {
+    position: relative;
+    border: 2px solid var(--bg);
+    padding: 5rem 1rem 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2.5rem;
+        min-width: 30%; /* Ensure each testimonial takes one-third of the container */
+        max-width: 30%; /* Control testimonial width */
+        transition: transform 0.3s ease-in-out; /* Animation for smooth sliding */
+}
+#atsauksmes .atsauksme p{
+    width: 100%;
+    font-size: 1.3rem;
+    padding-top: .5rem;
+}
+#atsauksmes #country{
+    padding: 0;
+    
+}
+#atsauksmes h3{
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    padding: 2rem 0 0;
+    color: var(--lightText);
+}
+#atsauksmes .divider{
+    width: 50%;
+    background-image: radial-gradient(var(--bg), #ffffff00);
+}
+#atsauksmes i{
+    color: rgb(253, 253, 118);
+}
+#atsauksmes .atsauksme img {
+    width: 6rem; /* Noteikts attēla platums */
+    height: 6rem; /* Noteikts attēla augstums */
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: -12%;
+    transform: translateX(-50%); /* Centrē attēlu horizontāli */
+}
+
+#atsauksmes .arrow {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-40%);
+    background-color: var(--hover);
+    color: var(--lightText);
+    border: none;
+    padding: .3rem .5rem;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: var(--radius);
+}
+
+#atsauksmes .arrow:hover {
+    font-size: 1.6rem;
+    background-color: #fdb78be7;
+}
+
+#atsauksmes .arrow.left {
+    left: 3%;
+}
+
+#atsauksmes .arrow.right {
+    right: 3%;
+}
+
+#atsauksmes .arrow i{
+    color: var(--lightText);
+}
+#atsauksmes .arrow.disabled {
+    cursor: not-allowed; /* Show disabled cursor */
+    background: #d9b299c9;
+}
+
+
+#hero-kontakti{
+    padding: 11% 0 9% 9%;
     display: flex;
     justify-content: space-between;
 }
+#hero-kontakti h1{
+    padding-left: 4rem;
+    border-left: .7rem solid var(--maincolor);
+    text-transform: uppercase;
+}
+#hero-kontakti p{
+    margin: 3rem 0;
+}
+
+#hero-kontakti #right-kontakti{
+    background: var(--maincolor);
+    height: 100%;
+}
+#right-kontakti h2{
+    color: var(--lightText);
+}
 
 
+
+
+
+footer{
+    padding: 1rem 0 2rem 0;
+    background: var(--bg);
+
+  }
+  footer .blocks{
+    margin: 1rem 9% 2rem 9%;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 8px 6px -6px #c96333;
+    align-items: center;
+    gap: 2rem;
+  }
+  footer iframe{
+    height: 14rem;
+    width: 25%;
+  }
+footer p{
+    text-align: center;
+    color: var(--text);
+    font-size: 1.3rem;
+}
+footer .sadalas a {
+    color: var(--text);
+    position: relative; 
+}
+
+footer .sadalas a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    width: 0;
+    height: 2px; 
+    background-color: var(--maincolor); 
+    transition: all 0.3s ease; 
+    transform: translateX(-50%); 
+}
+
+footer .sadalas a:hover::after {
+    width: 100%; 
+}
+  footer .blocks p{
+    line-height: 1;
+    text-align: left;
+  }
+  footer img{
+    max-width: 10rem;
+    border: 2px solid var(--maincolor);
+    border-radius: 50%;
+  }
+  footer .waflas-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer i{
+    color: var(--maincolor);
+  }
+
+
+/* Klase animācijai */
+.animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate.visible {
+    animation: slideInUp 0.6s forwards;
+}
 
 /* Keyframes animācijām */
+@keyframes slideInUp {
+    from {
+        transform: translateY(17%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -310,14 +840,9 @@ section{
     }
 }
 
-
-/* ANIMĀCIJA */
- .animate {
-    opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    will-change: opacity, transform;
+@keyframes scroll {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
 }
 
-.animate.visible {
-    animation: slideInUp 0.6s forwards;
-}

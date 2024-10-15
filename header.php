@@ -16,6 +16,7 @@
             <div class="navigacija">
             <a href="index.php" class="<?php echo ($page == 'galvena' ? 'current' : ''); ?>">Sākumlapa</a>
             <a href="produkcija.php" class="<?php echo ($page == 'produkcija' ? 'current' : ''); ?>">Produkcija</a>
+            <a href="parmums.php" class="<?php echo ($page == 'parmums' ? 'current' : ''); ?>">Par mums</a>
             <a href="atsauksmes.php" class="<?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>       
             <a href="kontakti.php" class="<?php echo ($page == 'kontakti' ? 'current' : ''); ?>">Kontakti</a> 
             </div>
