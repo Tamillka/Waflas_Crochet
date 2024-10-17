@@ -131,7 +131,7 @@ require "header.php";
                     <div class="about-info"><i class="fa-solid fa-heart-circle-bolt"></i> <p>Mēs vēlamies klientiem atklāt, cik maigi un vienlaikus spēcīgi var būt adītie izstrādājumi, piešķirot tiem īpašu siltumu un mīļumu.</p></div>
                 </div>
                
-                <div class="about-summary"><p> Wafla's crochet piedāvā unikālu, kvalitatīvu produkciju, kur katrs tamborēts izstrādājums ir rūpīgi veidots pēc sava dizaina. Mēs uzņemamies atbildību par produktu kvalitāti un ilgmūžību, radot īpašas lietas, kas priecē un kalpo ilgtermiņā.</p> <a href="#"><button class="btn">Lasīt vairāk</button></a></div>
+                <div class="about-summary"><p> Wafla's crochet piedāvā unikālu, kvalitatīvu produkciju, kur katrs tamborēts izstrādājums ir rūpīgi veidots pēc sava dizaina. Mēs uzņemamies atbildību par produktu kvalitāti un ilgmūžību, radot īpašas lietas, kas priecē un kalpo ilgtermiņā.</p> <a href="parmums.php"><button class="btn">Lasīt vairāk</button></a></div>
             </div>
         </div>
     </div>

@@ -1,3 +1,5 @@
+
+
 let lastScrollTop = 7;
     const header = document.querySelector('header');
 
@@ -119,50 +121,60 @@ let lastScrollTop = 7;
 
 
 
-// Get all buttons that should open popups
-const openBtns = document.querySelectorAll(".openPopupBtn");
-
-// Attach click event to each button
-openBtns.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-        const popupId = btn.getAttribute("data-popup"); // Get the corresponding popup ID from the data attribute
-        const popup = document.getElementById(popupId); // Get the popup element by its ID
-        popup.style.display = "flex"; // Display the popup
-
-        // Handle the image gallery for this specific popup
-        const thumbnails = popup.querySelectorAll(".thumbnail"); // Get all thumbnails in this popup
-        const mainImage = popup.querySelector(".large-image"); // Get the main image in this popup
-
-        // Add click event to each thumbnail
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener("click", function() {
-                // Change main image source
-                const largeImageSrc = thumbnail.getAttribute("data-large"); // Get the large image source from the data attribute
-                mainImage.src = largeImageSrc; // Change the main image's source to the clicked thumbnail's large image
-                
-                // Remove 'active' class from all thumbnails in this popup
-                thumbnails.forEach(thumb => thumb.classList.remove("active"));
-                
-                // Add 'active' class to the clicked thumbnail
-                thumbnail.classList.add("active");
+    document.addEventListener("DOMContentLoaded", function() {
+        // Atrodam visas pogas, kuras atver popupus
+        const openBtns = document.querySelectorAll(".openPopupBtn");
+    
+        // Pievienojam klikšķa notikumu katrai pogai
+        openBtns.forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                const popupId = btn.getAttribute("data-popup"); // Saņemam popup ID no 'data-popup'
+                const popup = document.getElementById(popupId); // Atrodam popup elementu pēc tā ID
+                if (popup) {
+                    popup.style.display = "flex"; // Parādam popup
+    
+                    // Apstrādājam attēlu galeriju, ja tā eksistē popup
+                    const thumbnails = popup.querySelectorAll(".thumbnail"); // Atrodam visas sīktēlus popup
+                    const mainImage = popup.querySelector(".large-image"); // Atrodam galveno attēlu popup
+    
+                    if (thumbnails.length > 0 && mainImage) {
+                        // Pievienojam klikšķa notikumu katram sīktēlam
+                        thumbnails.forEach(thumbnail => {
+                            thumbnail.addEventListener("click", function() {
+                                // Nomainām galvenā attēla avotu
+                                const largeImageSrc = thumbnail.getAttribute("data-large"); // Saņemam lielā attēla avotu no 'data-large'
+                                mainImage.src = largeImageSrc; // Nomainām galvenā attēla avotu
+    
+                                // Noņemam 'active' klasi visiem sīktēliem
+                                thumbnails.forEach(thumb => thumb.classList.remove("active"));
+    
+                                // Pievienojam 'active' klasi noklikšķinātajam sīktēlam
+                                thumbnail.classList.add("active");
+                            });
+                        });
+                    }
+                }
             });
         });
+    
+        // Atrodam visas 'aizvērt' pogas
+        const closeBtns = document.querySelectorAll(".closeBtn");
+    
+        // Pievienojam klikšķa notikumu katrai 'aizvērt' pogai
+        closeBtns.forEach(function(closeBtn) {
+            closeBtn.addEventListener("click", function() {
+                const popup = closeBtn.closest(".popup"); // Atrodam popup elementu
+                if (popup) {
+                    popup.style.display = "none"; // Slēpjam popup
+                }
+            });
+        });
+    
+        // Slēpjam popup, ja lietotājs klikšķina ārpus popup satura
+        window.addEventListener("click", function(event) {
+            if (event.target.classList.contains("popup")) {
+                event.target.style.display = "none"; // Slēpjam popup
+            }
+        });
     });
-});
 
-// Get all close buttons and attach event listeners
-const closeBtns = document.querySelectorAll(".closeBtn");
-
-closeBtns.forEach(function(closeBtn) {
-    closeBtn.addEventListener("click", function() {
-        const popup = closeBtn.closest(".popup"); // Find the closest parent popup element
-        popup.style.display = "none"; // Hide the popup
-    });
-});
-
-// Close the popup if the user clicks outside of it
-window.onclick = function(event) {
-    if (event.target.classList.contains("popup")) {
-        event.target.style.display = "none";
-    }
-};
