@@ -2,22 +2,22 @@
 Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma ir tamburēšanas mājaslapa-veikals. Darba galvenais mērķis ir saplānot un izstrādāt strādājošo mājaslapu, pilnveidoto ar dažādām funkcionālitātēm, kā ari veikt programmatūras testēšanu un dokumentāciju.
 
 # veicamie uzdevumi:
-- [ ] – Izvēlēties tēmu
+- [x] – Izvēlēties tēmu
 - [ ] – Sagatavot funkcionālās un nefunkcionālās prasības(PPS dokuments)
-- [ ] – Izveidot projektu uz localhost un sakārtot nepieciešamās mapes (assets, images) darba uzsākšanai
+- [x] – Izveidot projektu uz localhost un sakārtot nepieciešamās mapes (assets, images) darba uzsākšanai
 # Mājaslapas vizuālā izskata veidošana
-- [ ] - Izveidot navigāciju, lai tika atzīmēts, uz kuras lapas atradās lietotājs
-- [ ] - Hero sadaļa ar slideshow
-- [ ] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu(Par mums)
-- [ ] - Sākumlapā prezentēt nelielu produkcijas daļu ar linku uz pašu veikalu
-- [ ] - Footer ar karti (veikala fiziskā atrašanas vieta)
+- [x] - Izveidot navigāciju, lai tika atzīmēts, uz kuras lapas atradās lietotājs
+- [x] - Hero sadaļa
+- [x] - Sākumlapā prezentēt nelielu produkcijas daļu ar linku uz pašu veikalu
+- [x] - Footer ar karti (veikala fiziskā atrašanas vieta)
 - [ ] - Veikala sadaļa (Visu preču prezentācija, paslēptais popup apraksts, cena, bildes)
 - [ ] - Filtru pievienošana
-- [ ] - Kontaktu sadaļa, forma lai sazināties ar pārdevēju
+- [x] - Kontaktu sadaļa, forma lai sazināties ar pārdevēju
+- [x] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu (Par mums) atsevišķajā lapā
 - [ ] - Atsauksmju lapas sakārtošana
+- [ ] - Reģistrācija un login
 - [ ] - Admin puse
 - [ ] - Moderatoram mazāk iespējas nekā adminam, dažas sadaļas paslēptas
-- [ ] - Reģistrācija un login
 - [ ] - Lietotāja profila apskate (pāsūtījumu vēsture, grozs, lietotājvārds)
 # Funkcionālitātes pievienošana
 - [ ] - Hero sadaļā atsauksmju skaits izvadās no datubāzes
