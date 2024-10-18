@@ -13,7 +13,7 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Veikala sadaļa (Visu preču prezentācija, paslēptais popup apraksts, cena, bildes)
 - [ ] - Filtru pievienošana
 - [x] - Kontaktu sadaļa, forma lai sazināties ar pārdevēju
-- [ ] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu (Par mums) atsevišķajā lapā
+- [x] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu (Par mums) atsevišķajā lapā
 - [ ] - Atsauksmju lapas sakārtošana
 - [ ] - Reģistrācija un login
 - [ ] - Admin puse
