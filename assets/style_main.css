@@ -10,8 +10,8 @@
     --text: #292929;
     --lightText: rgb(255, 241, 213);
     --bg: #f4f7daeb;
-    --hover: rgba(239, 158, 120, 0.443);
-    --section-bg: rgb(134, 79, 53);
+    --hover: #ef9e7871;
+    --section-bg: #864f35;
 }
 *{
     font-family: "Nunito Sans", sans-serif;
@@ -131,6 +131,18 @@ img{
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
 }
+/* .box-container1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 2rem;
+} */
+.box-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrē kastu blokus, ja ir mazāk nekā divi */
+}
+
+
 
 .box{
     box-shadow: var(--shadow);
@@ -334,7 +346,16 @@ section{
 }
 #jaunakie-pied h2, #produkcija h2{
     text-align: center;
-    padding-bottom: 2rem;
+}
+#jaunakie-pied h2{
+    color:  var(--lightText);
+    padding: .75rem 9%;
+    margin-bottom: 3rem;
+    background: linear-gradient(90deg, rgba(134,79,53,1) 6%, rgba(239,158,120,1) 32%, rgba(244,247,218,1) 100%);
+}
+#produkcija h2{
+    padding: .75rem 0;
+    color: var(--bg);
 }
 #produkcija a i{
     color: var(--text);
@@ -348,6 +369,9 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 9%;
+    margin-bottom: 3rem;
+    background: linear-gradient(90deg, rgba(134,79,53,1) 6%, rgba(239,158,120,1) 32%, rgba(244,247,218,1) 100%);
 }
 #jaunakie-pied img, #produkcija img{
    border-top-left-radius: .5rem;
@@ -874,7 +898,7 @@ section{
     padding-bottom: 0;
 }
 #popupKontakti p{
-    padding-bottom: 2rem;
+    padding-bottom: 2.6rem;
     font-size: 1.5rem;
 }
 #popupKontakti .btn{
@@ -886,6 +910,87 @@ section{
 #popupKontakti input:hover, #popupKontakti textarea:hover{
     scale: 1.02;
 }
+
+#atsauksmes-nosaukums{
+    margin-top: 6rem;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(134,79,53,1) 6%, rgba(239,158,120,1) 32%, rgba(244,247,218,1) 100%);
+}
+#atsauksmes-nosaukums p{
+    padding-top: .3rem;
+}
+#atsauksmes-nosaukums a{
+    position: relative;
+    color: var(--text);
+}
+ #atsauksmes-nosaukums a::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    width: 0;
+    height: 2px; 
+    background-color: var(--maincolor); 
+    transition: all 0.3s ease; 
+    transform: translateX(-50%); 
+}
+#atsauksmes-nosaukums a:hover::after {
+    width: 100%; 
+}
+#atsauksmes-nosaukums #now{
+    font-weight: bold;
+}
+#atsauksmes-nosaukums span{
+    font-weight: bold;
+    color: #666;
+}
+#nosaukums-ats{
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#visas-atsauksmes .mini-box{
+    display: flex;
+    gap: 2rem;
+}
+#visas-atsauksmes .atsauksme{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#visas-atsauksmes .box{
+    padding: 2rem;
+}
+#visas-atsauksmes img{
+    width: 6rem; 
+    height: 6rem; 
+    border-radius: 50%;
+    border: 2px solid var(--maincolor);
+}
+#visas-atsauksmes .mini-box p{
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+#visas-atsauksmes .mini-box p span{
+    color: var(--maincolor);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+#visas-atsauksmes i{
+    color: var(--maincolor);
+}
+
+#visas-atsauksmes .box {
+    flex: 1 1 calc(50% - 20px); /* 50% platums, atņemot margin/padding vietu */
+    max-width: calc(50% - 20px); /* Maksimālais platums 50% */
+    margin: 10px;
+}
+#visas-atsauksmes{
+    padding-top: 2rem;
+}
+
 
 
 
@@ -992,3 +1097,9 @@ footer .sadalas a:hover::after {
     }
 }
 
+@media (max-width: 768px) {
+   #visas-atsauksmes .box {
+        flex: 1 1 100%; /* Uz mazākiem ekrāniem bloki aizņem pilnu platumu */
+        max-width: 100%;
+    }
+}

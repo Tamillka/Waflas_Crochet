@@ -20,11 +20,11 @@ require "header.php";
 
 
 <section id="jaunakie-pied" class="animate">
-  <div class="main-container">
+ 
    
       <h2>Jaunākie piedāvājumi</h2>
       <!-- <h3>Skatīt visus <a href="#"><i class='fas fa-arrow-right'></i></a></h3> -->
-    
+      <div class="main-container">
     <div class="box-container">
       <div class="box animate">
         <img src="/images/rabbit.jpg">
@@ -180,11 +180,12 @@ require "header.php";
 <div class="divider"></div>
 
 <section id="produkcija" class="animate">
-  <div class="main-container">
+ 
     <div class="headings">
       <h2>Produkcija</h2>
       <h3>Skatīt vairāk <a href="#"><i class='fas fa-arrow-right'></i></a></h3>
       </div>
+      <div class="main-container">
     <div class="box-container">
       <div class="box animate">
         <img src="/images/rabbit.jpg">
