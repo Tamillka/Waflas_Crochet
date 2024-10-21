@@ -232,6 +232,7 @@ section{
     text-shadow: 
         1px 3px 10px #c96333, 
         0 0 30px rgba(239, 157, 120, 0.6);
+        text-transform: none;
 }
 
 #hero p, #hero-kontakti p{

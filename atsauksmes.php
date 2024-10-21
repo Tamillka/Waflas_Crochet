@@ -58,7 +58,7 @@ require "header.php";
             <div class="atsauksme">
             <div class="mini-box">
                 <img src="images/peson-atsauksme.jpg">
-                <p>Jone Doenae <br> <em><span>10 minutes ago</span></em><br><div class="divider"></div></p>
+                <p>Jone Doenae <br> <em><span>10 minutes ago</span></em><br></p>
             </div>
              <p><i class="fa-solid fa-star"></i>
              <i class="fa-solid fa-star"></i>
@@ -72,7 +72,7 @@ require "header.php";
             <div class="atsauksme">
             <div class="mini-box">
                 <img src="images/peson-atsauksme.jpg">
-                <p>Jone Doenae <br> <em><span>10 minutes ago</span></em><br><div class="divider"></div></p>
+                <p>Jone Doenae <br> <em><span>10 minutes ago</span></em><br></p>
             </div>
              <p><i class="fa-solid fa-star"></i>
              <i class="fa-solid fa-star"></i>
