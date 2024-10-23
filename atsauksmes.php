@@ -85,3 +85,6 @@ require "header.php";
         </div>
     </div>
 </section>
+<?php 
+require "footer.php";
+?>

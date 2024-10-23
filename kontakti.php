@@ -59,7 +59,9 @@ require "header.php";
     </form>
     </div>
 </div>
-
+<?php
+        require 'assets/mail.php';
+        ?>
 <script> document.addEventListener("DOMContentLoaded", function() {
         // Atrodam visas pogas, kuras atver popupus
         const openBtns = document.querySelectorAll(".openPopupBtn");
@@ -70,28 +72,7 @@ require "header.php";
                 const popupId = btn.getAttribute("data-popup"); // Saņemam popup ID no 'data-popup'
                 const popup = document.getElementById(popupId); // Atrodam popup elementu pēc tā ID
                 if (popup) {
-                    popup.style.display = "flex"; // Parādam popup
-    
-                    // Apstrādājam attēlu galeriju, ja tā eksistē popup
-                    const thumbnails = popup.querySelectorAll(".thumbnail"); // Atrodam visas sīktēlus popup
-                    const mainImage = popup.querySelector(".large-image"); // Atrodam galveno attēlu popup
-    
-                    if (thumbnails.length > 0 && mainImage) {
-                        // Pievienojam klikšķa notikumu katram sīktēlam
-                        thumbnails.forEach(thumbnail => {
-                            thumbnail.addEventListener("click", function() {
-                                // Nomainām galvenā attēla avotu
-                                const largeImageSrc = thumbnail.getAttribute("data-large"); // Saņemam lielā attēla avotu no 'data-large'
-                                mainImage.src = largeImageSrc; // Nomainām galvenā attēla avotu
-    
-                                // Noņemam 'active' klasi visiem sīktēliem
-                                thumbnails.forEach(thumb => thumb.classList.remove("active"));
-    
-                                // Pievienojam 'active' klasi noklikšķinātajam sīktēlam
-                                thumbnail.classList.add("active");
-                            });
-                        });
-                    }
+                    popup.style.display = "flex"; // Parādam popup           
                 }
             });
         });

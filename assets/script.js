@@ -178,3 +178,15 @@ let lastScrollTop = 7;
         });
     });
 
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const mesage = document.getElementById("pazinojums");
+
+        // Pārbaudām, vai paziņojuma elements eksistē
+        if (mesage) {
+            // Ja paziņojums eksistē, gaidām 3 sekundes un tad sākam lēnu animāciju
+            setTimeout(function() {
+                mesage.classList.add("hidden"); // Pievienojam "hidden" klasi, kas samazina opacity
+            }, 3000);
+        }
+    });

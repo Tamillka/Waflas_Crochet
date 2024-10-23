@@ -6,7 +6,7 @@
         <h3><em>Wafla's crochet</em></h3>
 </div>
     <div class="kontaktu-sad">
-    <p><i class="fa-solid fa-phone"></i> apskatiLatviju@gmail.com</p>
+    <p><i class="fa-solid fa-phone"></i> waflascrochet@gmail.com</p>
     <p><i class="fa-solid fa-envelope"></i> +371 67 777 111</p>
     <p><i class="fa-solid fa-location-dot"></i> Rīga, Brīvības bulvāris 36, LV-3709</p>
     </div>

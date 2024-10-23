@@ -89,7 +89,6 @@ header {
 
 .btn:hover{
     background-color: var(--hover);
-   
 }
 
 h1{
@@ -142,13 +141,34 @@ img{
     justify-content: center; /* Centrē kastu blokus, ja ir mazāk nekā divi */
 }
 
-
-
 .box{
     box-shadow: var(--shadow);
     border-radius: var(--radius);
 }
 
+#pazinojums{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 6.2rem 3rem;
+    background: var(--section-bg);
+    padding: .5rem 2.5rem;
+    z-index: 3;
+    border-radius: var(--radius);
+    border: var(--border);
+    box-shadow: var(--shadow1);
+    text-align: center;
+    transition: opacity 2s ease; /* Definējam lēnu pāreju (2 sekundes) */
+}
+#pazinojums.hidden {
+    opacity: 0; /* Neredzams */
+}
+#pazinojums p{
+    animation: blinker 2s linear infinite;
+    color: var(--lightText);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
 .navbar{
     display: flex;
     justify-content: center;
