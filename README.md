@@ -3,7 +3,7 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 
 # veicamie uzdevumi:
 - [x] – Izvēlēties tēmu
-- [50/50] – Sagatavot funkcionālās un nefunkcionālās prasības(PPS dokuments)
+- [ ] – Sagatavot funkcionālās un nefunkcionālās prasības(PPS dokuments) 50/50
 - [x] – Izveidot projektu uz localhost un sakārtot nepieciešamās mapes (assets, images) darba uzsākšanai
 # Mājaslapas vizuālā izskata veidošana
 - [x] - Izveidot navigāciju, lai tika atzīmēts, uz kuras lapas atradās lietotājs
