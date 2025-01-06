@@ -36,14 +36,16 @@ let lastScrollTop = 7;
 
     document.addEventListener('DOMContentLoaded', function() {
         const heroSection = document.querySelector('#hero');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroSection.classList.add('in-view');
-                }
+        if (heroSection) { // Pārbaudām, vai #hero eksistē
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        heroSection.classList.add('in-view');
+                    }
+                });
             });
-        });
-        observer.observe(heroSection);
+            observer.observe(heroSection);
+        }
     });
 
     document.querySelectorAll('.jautajums-bez-atb').forEach(item => {
@@ -70,80 +72,78 @@ let lastScrollTop = 7;
     });
 
     const slider = document.querySelector('.atsauksmes');
-    const leftArrow = document.querySelector('.arrow.left');
-    const rightArrow = document.querySelector('.arrow.right');
-    let scrollAmount = 0;
-    const scrollStep = slider.offsetWidth / 3; // Scroll by the width of three testimonials at a time
-
-    // Function to update arrow states (disable/enable based on scroll position)
-    function updateArrows() {
-        if (scrollAmount <= 0) {
-            leftArrow.classList.add('disabled'); // Disable left arrow
-        } else {
-            leftArrow.classList.remove('disabled'); // Enable left arrow
-        }
-
-        if (scrollAmount >= slider.scrollWidth - slider.offsetWidth) {
-            rightArrow.classList.add('disabled'); // Disable right arrow
-        } else {
-            rightArrow.classList.remove('disabled'); // Enable right arrow
-        }
-    }
-
-    // Scroll right
-    rightArrow.addEventListener('click', () => {
-        if (scrollAmount < slider.scrollWidth - slider.offsetWidth) {
-            scrollAmount += scrollStep;
-            slider.scrollTo({
-                top: 0,
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-            updateArrows(); // Update arrow states after scrolling
-        }
-    });
-
-    // Scroll left
-    leftArrow.addEventListener('click', () => {
-        if (scrollAmount > 0) {
-            scrollAmount -= scrollStep;
-            slider.scrollTo({
-                top: 0,
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-            updateArrows(); // Update arrow states after scrolling
-        }
-    });
-
-    // Initial arrow state update
-    updateArrows();
-
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Atrodam visas pogas, kuras atver popupus
-        const openBtns = document.querySelectorAll(".openPopupBtn");
+    if (slider) { // Pārbaudām, vai slider eksistē
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+        let scrollAmount = 0;
+        const scrollStep = slider.offsetWidth / 3;
     
+        function updateArrows() {
+            if (scrollAmount <= 0) {
+                leftArrow.classList.add('disabled');
+            } else {
+                leftArrow.classList.remove('disabled');
+            }
+    
+            if (scrollAmount >= slider.scrollWidth - slider.offsetWidth) {
+                rightArrow.classList.add('disabled');
+            } else {
+                rightArrow.classList.remove('disabled');
+            }
+        }
+    
+        rightArrow.addEventListener('click', () => {
+            if (scrollAmount < slider.scrollWidth - slider.offsetWidth) {
+                scrollAmount += scrollStep;
+                slider.scrollTo({
+                    top: 0,
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                updateArrows();
+            }
+        });
+    
+        leftArrow.addEventListener('click', () => {
+            if (scrollAmount > 0) {
+                scrollAmount -= scrollStep;
+                slider.scrollTo({
+                    top: 0,
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                updateArrows();
+            }
+        });
+    
+        updateArrows(); // Sākotnējā bultiņu pārbaude
+    }
+  
+
+   
+        // Atrodam visas pogas, kuras atver popupus
+        const openBtns = document.querySelectorAll('[data-target]');
+        const closeBtns = document.querySelectorAll('.closeBtn');
+        console.log("123")
         // Pievienojam klikšķa notikumu katrai pogai
         openBtns.forEach(function(btn) {
             btn.addEventListener("click", function() {
-                const popupId = btn.getAttribute("data-popup"); // Saņemam popup ID no 'data-popup'
-                const popup = document.getElementById(popupId); // Atrodam popup elementu pēc tā ID
+                const popup = document.querySelector(btn.dataset.target);
+                console.log("123")
                 if (popup) {
-                    popup.style.display = "flex"; // Parādam popup
+                    popup.classList.add('popup-active');
+                    console.log("13")
+                    console.log(document.querySelector('#popupKontakti'));
     
                     // Apstrādājam attēlu galeriju, ja tā eksistē popup
-                    const thumbnails = popup.querySelectorAll(".thumbnail"); // Atrodam visas sīktēlus popup
-                    const mainImage = popup.querySelector(".large-image"); // Atrodam galveno attēlu popup
+                    const thumbnails = popup.querySelectorAll(".thumbnail");
+                    const mainImage = popup.querySelector(".large-image");
     
                     if (thumbnails.length > 0 && mainImage) {
-                        // Pievienojam klikšķa notikumu katram sīktēlam
                         thumbnails.forEach(thumbnail => {
                             thumbnail.addEventListener("click", function() {
-                                // Nomainām galvenā attēla avotu
-                                const largeImageSrc = thumbnail.getAttribute("data-large"); // Saņemam lielā attēla avotu no 'data-large'
-                                mainImage.src = largeImageSrc; // Nomainām galvenā attēla avotu
+                                const largeImageSrc = thumbnail.getAttribute("data-large");
+                                mainImage.src = largeImageSrc;
     
                                 // Noņemam 'active' klasi visiem sīktēliem
                                 thumbnails.forEach(thumb => thumb.classList.remove("active"));
@@ -155,38 +155,34 @@ let lastScrollTop = 7;
                     }
                 }
             });
-        });
+       
     
-        // Atrodam visas 'aizvērt' pogas
-        const closeBtns = document.querySelectorAll(".closeBtn");
-    
-        // Pievienojam klikšķa notikumu katrai 'aizvērt' pogai
-        closeBtns.forEach(function(closeBtn) {
-            closeBtn.addEventListener("click", function() {
-                const popup = closeBtn.closest(".popup"); // Atrodam popup elementu
+        // Aizveram popup, kad klikšķinām uz aizvēršanas pogas
+        closeBtns.forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                const popup = document.querySelector(btn.dataset.target);
                 if (popup) {
-                    popup.style.display = "none"; // Slēpjam popup
+                    popup.classList.remove('popup-active');
                 }
             });
         });
     
-        // Slēpjam popup, ja lietotājs klikšķina ārpus popup satura
-        window.addEventListener("click", function(event) {
-            if (event.target.classList.contains("popup")) {
-                event.target.style.display = "none"; // Slēpjam popup
+        // Aizveram popup, ja klikšķinam ārpus tā
+        document.addEventListener("click", function(event) {
+            const activePopup = document.querySelector('.popup-active');
+            if (activePopup && !activePopup.contains(event.target) && !event.target.closest('[data-target]')) {
+                activePopup.classList.remove('popup-active');
             }
         });
     });
 
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const mesage = document.getElementById("pazinojums");
 
-        // Pārbaudām, vai paziņojuma elements eksistē
-        if (mesage) {
-            // Ja paziņojums eksistē, gaidām 3 sekundes un tad sākam lēnu animāciju
-            setTimeout(function() {
-                mesage.classList.add("hidden"); // Pievienojam "hidden" klasi, kas samazina opacity
-            }, 3000);
-        }
-    });
+
+
+    
+
+    
+
+
+ 

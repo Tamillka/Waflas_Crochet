@@ -453,6 +453,10 @@ section{
     box-shadow: var(--shadow1);
 }
 
+.popup-active {
+    display: flex;
+}
+
 /* Close button */
 .closeBtn {
     position: absolute;

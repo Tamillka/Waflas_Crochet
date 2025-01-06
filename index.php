@@ -28,28 +28,28 @@ require "header.php";
     <div class="box-container">
       <div class="box animate">
         <img src="/images/rabbit.jpg">
-        <button class="openPopupBtn btn" data-popup="popupRabbit">Atvērt</button>
+        <button class="btn active" data-target="#modalTicket1">Atvērt</button>
         <h3>Pretty rabbit</h3>
         <p>Natural wool</p>
         <h3>35€</h3>
       </div>
       <div class="box animate">
         <img src="/images/dino.jpg">
-        <button class="openPopupBtn btn" data-popup="popupDino">Atvērt</button>
+        <button class="btn active" data-target="#modalTicket2">Atvērt</button>
         <h3>Pretty dino</h3>
         <p>Soft threads</p>
         <h3>25€</h3>
       </div>
       <div class="box animate">
         <img src="/images/minion.jpg">
-        <button class="openPopupBtn btn" data-popup="popupMinion">Atvērt</button>
+        <button class="btn active" data-target="#modalTicket3">Atvērt</button>
         <h3>Happy minion</h3>
         <p>Soft threads</p>
         <h3>50€</h3>
       </div>
       <div class="box animate">
         <img src="/images/snake.jpg">
-        <button class="openPopupBtn btn" data-popup="popupSnake">Atvērt</button>
+        <button class="btn active" data-target="#modalTicket4">Atvērt</button>
         <h3>Long snake</h3>
         <p>Soft threads</p>
         <h3>15€</h3>
@@ -59,9 +59,9 @@ require "header.php";
 </section>
 
 <!-- Popup Rabbit -->
-<div id="popupRabbit" class="popup">
+<div id="modalTicket1" class="popup">
   <div class="popup-content">
-    <span class="closeBtn">&times;</span>
+    <span class="closeBtn" data-target="#modalTicket1">&times;</span>
     <div class="image-gallery">
       <img id="mainImage" src="/images/rabbit.jpg" class="large-image">
       <div class="thumbnails">
@@ -79,9 +79,9 @@ require "header.php";
 </div>
 
 <!-- Popup Dino -->
-<div id="popupDino" class="popup">
-<div class="popup-content">
-    <span class="closeBtn">&times;</span>
+<div id="modalTicket2" class="popup">
+  <div class="popup-content">
+    <span class="closeBtn" data-target="#modalTicket2">&times;</span>
     <div class="image-gallery">
       <img id="mainImage" src="/images/dino.jpg" class="large-image">
       <div class="thumbnails">
