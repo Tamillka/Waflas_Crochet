@@ -3,7 +3,7 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 
 # veicamie uzdevumi:
 - [x] – Izvēlēties tēmu
-- [ ] – Sagatavot funkcionālās un nefunkcionālās prasības(PPS dokuments)
+- [ ] – Sagatavot funkcionālās un nefunkcionālās prasības(PPS dokuments) 50/50
 - [x] – Izveidot projektu uz localhost un sakārtot nepieciešamās mapes (assets, images) darba uzsākšanai
 # Mājaslapas vizuālā izskata veidošana
 - [x] - Izveidot navigāciju, lai tika atzīmēts, uz kuras lapas atradās lietotājs
@@ -14,12 +14,13 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Filtru pievienošana
 - [x] - Kontaktu sadaļa, forma lai sazināties ar pārdevēju
 - [x] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu (Par mums) atsevišķajā lapā
-- [ ] - Atsauksmju lapas sakārtošana
-- [ ] - Reģistrācija un login
+- [X] - Atsauksmju lapas sakārtošana
+- [X] - Reģistrācija un login
 - [ ] - Admin puse
 - [ ] - Moderatoram mazāk iespējas nekā adminam, dažas sadaļas paslēptas
 - [ ] - Lietotāja profila apskate (pāsūtījumu vēsture, grozs, lietotājvārds)
 # Funkcionālitātes pievienošana
+- [x] - Klients var sazināties ar veikalu, sūtot e-pastu
 - [ ] - Hero sadaļā atsauksmju skaits izvadās no datubāzes
 - [ ] - Iespēja reģistrēties mājaslapā (klients pats sevi)
 - [ ] - Ja lietotājvards eksistē, vajag autorizēties
