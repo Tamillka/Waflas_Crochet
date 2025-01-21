@@ -6,7 +6,7 @@ require "header.php";
 <section id="par-mums">
     <div class="main-container">
         <div class="image-container">
-            <img src="/images/about-img.jpg" class="animate">
+            <img src="./images/about-img.jpg" class="animate">
         </div>
     </div>
     <div class="about">

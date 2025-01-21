@@ -26,49 +26,26 @@ require "header.php";
       <!-- <h3>Skatīt visus <a href="#"><i class='fas fa-arrow-right'></i></a></h3> -->
       <div class="main-container">
     <div class="box-container">
-      <div class="box animate">
-        <img src="/images/rabbit.jpg">
-        <button class="btn active" data-target="#modalTicket1">Atvērt</button>
-        <h3>Pretty rabbit</h3>
-        <p>Natural wool</p>
-        <h3>35€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/dino.jpg">
-        <button class="btn active" data-target="#modalTicket2">Atvērt</button>
-        <h3>Pretty dino</h3>
-        <p>Soft threads</p>
-        <h3>25€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/minion.jpg">
-        <button class="btn active" data-target="#modalTicket3">Atvērt</button>
-        <h3>Happy minion</h3>
-        <p>Soft threads</p>
-        <h3>50€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/snake.jpg">
-        <button class="btn active" data-target="#modalTicket4">Atvērt</button>
-        <h3>Long snake</h3>
-        <p>Soft threads</p>
-        <h3>15€</h3>
-      </div>
-    </div>
-  </div>
+
+<?php require "produkcija_izvade.php" ?>
+
+</div>
+</div>
 </section>
+      
+<?php require "prece_izvade.php" ?>
+ 
 
 <!-- Popup Rabbit -->
-<div id="modalTicket1" class="popup">
+<!-- <div id="modalTicket10" class="popup">
   <div class="popup-content">
-    <span class="closeBtn" data-target="#modalTicket1">&times;</span>
+    <span class="closeBtn" data-target="#modalTicket10">&times;</span>
     <div class="image-gallery">
-      <img id="mainImage" src="/images/rabbit.jpg" class="large-image">
+      <img id="mainImage" src="./images/rabbit.jpg" class="large-image">
       <div class="thumbnails">
-      <img src="/images/rabbit.jpg" class="thumbnail active" data-large="/images/rabbit.jpg">
-        <img src="/images/rabbit1.jpg" class="thumbnail" data-large="/images/rabbit1.jpg">
-        <img src="/images/rabbit2.webp" class="thumbnail" data-large="/images/rabbit2.webp">
-        <img src="/images/rabbit3_thumb.jpg" class="thumbnail" data-large="/images/rabbit3_large.jpg">
+      <img src="./images/rabbit.jpg" class="thumbnail active" data-large="./images/rabbit.jpg">
+        <img src="./images/rabbit1.jpg" class="thumbnail" data-large="./images/rabbit1.jpg">
+        <img src="./images/rabbit2.webp" class="thumbnail" data-large="./images/rabbit2.webp">
       </div>
     </div>
     <h3>Pretty Rabbit</h3>
@@ -76,50 +53,14 @@ require "header.php";
     <h3>35€</h3>
     <button class="btn">Pievienot grozam</button>
   </div>
-</div>
+</div> -->
 
-<!-- Popup Dino -->
-<div id="modalTicket2" class="popup">
-  <div class="popup-content">
-    <span class="closeBtn" data-target="#modalTicket2">&times;</span>
-    <div class="image-gallery">
-      <img id="mainImage" src="/images/dino.jpg" class="large-image">
-      <div class="thumbnails">
-      <img src="/images/dino.jpg" class="thumbnail active" data-large="/images/dino.jpg">
-        <img src="/images/dino1.jpg" class="thumbnail" data-large="/images/dino1.jpg">
-        <img src="/images/dino2.jpg" class="thumbnail" data-large="/images/dino2.jpg">
-        <img src="/images/dino3.webp" class="thumbnail" data-large="/images/dino3.webp">
-      </div>
-    </div>
-    <h3>Pretty Dino</h3>
-    <p>Dino ir izgatavots no plīša dzijas. Materiāls ir pats ļoti mīksts un jebkuram var palikt par mīļāko mantu.</p>
-    <h3>35€</h3>
-    <button class="btn">Pievienot grozam</button>
-  </div>
-</div>
 
-<!-- Popup Minion -->
-<div id="popupMinion" class="popup">
-  <div class="popup-content">
-    <span class="closeBtn">&times;</span>
-    <h2>Happy Minion</h2>
-    <p>This is a happy minion.</p>
-  </div>
-</div>
-
-<!-- Popup Snake -->
-<div id="popupSnake" class="popup">
-  <div class="popup-content">
-    <span class="closeBtn">&times;</span>
-    <h2>Long Snake</h2>
-    <p>This is a long snake.</p>
-  </div>
-</div>
 
 <section id="par-mums">
     <div class="main-container">
         <div class="image-container">
-            <img src="/images/about-img.jpg" class="animate">
+            <img src="./images/about-img.jpg" class="animate">
         </div>
     </div>
     <div class="about">
@@ -186,63 +127,30 @@ require "header.php";
       <h3>Skatīt vairāk <a href="#"><i class='fas fa-arrow-right'></i></a></h3>
       </div>
       <div class="main-container">
-    <div class="box-container">
-      <div class="box animate">
-        <img src="/images/rabbit.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Pretty rabbit</h3>
-        <p>Natural wool</p>
-        <h3>35€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/dino.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Pretty dino</h3>
-        <p>Soft threads</p>
-        <h3>25€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/minion.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Happy minion</h3>
-        <p>Soft threads</p>
-        <h3>50€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/snake.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Long snake</h3>
-        <p>Soft threads</p>
-        <h3>15€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/rabbit.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Pretty rabbit</h3>
-        <p>Natural wool</p>
-        <h3>35€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/dino.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Pretty dino</h3>
-        <p>Soft threads</p>
-        <h3>25€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/minion.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Happy minion</h3>
-        <p>Soft threads</p>
-        <h3>50€</h3>
-      </div>
-      <div class="box animate">
-        <img src="/images/snake.jpg">
-        <button class="btn">Atvērt</button>
-        <h3>Long snake</h3>
-        <p>Soft threads</p>
-        <h3>15€</h3>
-      </div>
+    <div class="box-container3">
+    <?php
+       require "assets/con_db.php";
+
+       $kategorijasSQL = "SELECT * FROM Waflas_kategorija ORDER BY Piev_datums DESC";
+       $atlasaKategorijas = mysqli_query($savienojums, $kategorijasSQL);
+       
+       if(mysqli_num_rows($atlasaKategorijas) > 0){
+           while($kategorija = mysqli_fetch_assoc($atlasaKategorijas)){
+               // Base64 kodēšana no BLOB datiem
+               $imageData = base64_encode($kategorija['Bilde']);
+               $imageSrc = "data:image/jpeg;base64,{$imageData}";
+       
+               echo "
+               <div class='box animate' id='pirmais'>
+                   <img src='{$imageSrc}' alt='Kategorijas attēls'>
+                   <h3 id='KatNos'>{$kategorija['Nosaukums']}<a href='produkcija.php'></a></h3>
+               </div>
+               ";
+           }
+       } else {
+           echo "Nav nevienu piedāvājumu";
+       }
+       ?>
     </div>
   </div>
 </section>
@@ -295,7 +203,7 @@ require "header.php";
             <button class="arrow left"><i class="fa-solid fa-arrow-left"></i></button>
             <div class="atsauksmes animate">
                 <div class="atsauksme">
-        <img src="/images/peson-atsauksme.jpg">
+        <img src="./images/peson-atsauksme.jpg">
         <p><i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -307,7 +215,7 @@ require "header.php";
         <p id="country"><em>Latvija</em></p>
                 </div>
                 <div class="atsauksme">
-        <img src="/images/peson-atsauksme.jpg">
+        <img src="./images/peson-atsauksme.jpg">
         <p><i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -319,7 +227,7 @@ require "header.php";
         <p id="country"><em>Latvija</em></p>
                 </div>
                 <div class="atsauksme">
-        <img src="/images/peson-atsauksme.jpg">
+        <img src="./images/peson-atsauksme.jpg">
         <p><i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -331,7 +239,7 @@ require "header.php";
         <p id="country"><em>Latvija</em></p>
                 </div>
                 <div class="atsauksme">
-        <img src="/images/peson-atsauksme.jpg">
+        <img src="./images/peson-atsauksme.jpg">
         <p><i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
@@ -343,7 +251,7 @@ require "header.php";
         <p id="country"><em>Latvija</em></p>
                 </div>
                 <div class="atsauksme">
-        <img src="/images/peson-atsauksme.jpg">
+        <img src="./images/peson-atsauksme.jpg">
         <p><i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>
         <i class="fa-solid fa-star"></i>

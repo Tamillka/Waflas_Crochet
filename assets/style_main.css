@@ -28,7 +28,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(/images/bg-image.jpg);
+    background-image: url(../images/bg-image.jpg);
     background-repeat: repeat;
     background-size: cover;
     position: inherit;
@@ -130,11 +130,11 @@ img{
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
 }
-/* .box-container1{
+   .box-container3{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 2rem;
-} */
+} 
 .box-container1 {
     display: flex;
     flex-wrap: wrap;
@@ -230,7 +230,7 @@ section{
  #hero, #hero-kontakti {
     margin-top: 6.15rem;
     padding: 0;
-    background-image: url('/images/bg-image-hero.png');
+    background-image: url('../images/bg-image-hero.png');
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -394,33 +394,48 @@ section{
     margin-bottom: 3rem;
     background: linear-gradient(90deg, rgba(134,79,53,1) 6%, rgba(239,158,120,1) 32%, rgba(244,247,218,1) 100%);
 }
-#jaunakie-pied img, #produkcija img{
+#jaunakie-pied img, #visaProdukcija img{
    border-top-left-radius: .5rem;
    border-top-right-radius: .5rem;
+   aspect-ratio: 1/1;
 }
-#jaunakie-pied img:hover, #produkcija img:hover{
+#jaunakie-pied img:hover, #produkcija img:hover, #visaProdukcija img:hover{
     scale: 1.05;
  }
-#jaunakie-pied p, #produkcija p{
+#jaunakie-pied p, #visaProdukcija p{
     padding: 0 0 1rem 1rem;
     font-weight: 600;
 }
-#jaunakie-pied h3, #produkcija h3{
+#jaunakie-pied h3, #visaProdukcija h3{
     padding: .5rem 0 0 1rem;
 }
-#jaunakie-pied .box, #produkcija .box{
+#jaunakie-pied .box, #produkcija .box, #visaProdukcija .box{
     padding-bottom: 1rem;
     position: relative;
     overflow: hidden;
     background: #f09d760e;
 }
-#jaunakie-pied .btn, #produkcija .btn{
+#jaunakie-pied .btn, #visaProdukcija .btn{
     position: absolute;
     top: 0;
     right: 0;
     border-radius: 40px;
     padding: .7rem 1.2rem;
     margin: 1rem;
+}
+
+#produkcija .box{
+    padding: 0;
+}
+#produkcija img{
+    aspect-ratio: 16/9;
+}
+#produkcija #KatNos{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    text-align: center;
 }
 
 
@@ -1020,13 +1035,12 @@ section{
 
 
 footer{
-    padding: 1rem 0 2rem 0;
+    padding:.5rem 0;
     background: var(--bg);
 
   }
   footer .blocks{
-    margin: 1rem 9% 2rem 9%;
-    padding-bottom: 2rem;
+    margin: .5rem 9% 1rem 9%;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 8px 6px -6px #c96333;
@@ -1034,7 +1048,7 @@ footer{
     gap: 2rem;
   }
   footer iframe{
-    height: 14rem;
+    height: 13rem;
     width: 25%;
   }
 footer p{
@@ -1067,7 +1081,7 @@ footer .sadalas a:hover::after {
     text-align: left;
   }
   footer img{
-    max-width: 10rem;
+    max-width: 9rem;
     border: 2px solid var(--maincolor);
     border-radius: 50%;
   }

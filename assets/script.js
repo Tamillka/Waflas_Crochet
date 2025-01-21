@@ -124,16 +124,12 @@ let lastScrollTop = 7;
         // Atrodam visas pogas, kuras atver popupus
         const openBtns = document.querySelectorAll('[data-target]');
         const closeBtns = document.querySelectorAll('.closeBtn');
-        console.log("123")
         // Pievienojam klikšķa notikumu katrai pogai
         openBtns.forEach(function(btn) {
             btn.addEventListener("click", function() {
                 const popup = document.querySelector(btn.dataset.target);
-                console.log("123")
                 if (popup) {
                     popup.classList.add('popup-active');
-                    console.log("13")
-                    console.log(document.querySelector('#popupKontakti'));
     
                     // Apstrādājam attēlu galeriju, ja tā eksistē popup
                     const thumbnails = popup.querySelectorAll(".thumbnail");
@@ -165,14 +161,6 @@ let lastScrollTop = 7;
                     popup.classList.remove('popup-active');
                 }
             });
-        });
-    
-        // Aizveram popup, ja klikšķinam ārpus tā
-        document.addEventListener("click", function(event) {
-            const activePopup = document.querySelector('.popup-active');
-            if (activePopup && !activePopup.contains(event.target) && !event.target.closest('[data-target]')) {
-                activePopup.classList.remove('popup-active');
-            }
         });
     });
 
