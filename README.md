@@ -1,5 +1,6 @@
 # Wafla's crochet – tamborēšanas internetveikals
-![image](https://github.com/user-attachments/assets/3263e125-26d0-4894-a873-80d96ea1f0e1)
+![image](https://github.com/user-attachments/assets/f6c36a77-bee3-4d7c-89bd-9fc702c5c2da)
+
 
 Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma ir tamburēšanas mājaslapa-veikals. Darba galvenais mērķis ir saplānot un izstrādāt strādājošo mājaslapu, pilnveidoto ar dažādām funkcionālitātēm, kā ari veikt programmatūras testēšanu un dokumentāciju.
 
