@@ -1,16 +1,19 @@
 # Wafla's crochet – tamborēšanas internetveikals
+![image](https://github.com/user-attachments/assets/f6c36a77-bee3-4d7c-89bd-9fc702c5c2da)
+
+
 Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma ir tamburēšanas mājaslapa-veikals. Darba galvenais mērķis ir saplānot un izstrādāt strādājošo mājaslapu, pilnveidoto ar dažādām funkcionālitātēm, kā ari veikt programmatūras testēšanu un dokumentāciju.
 
 # veicamie uzdevumi:
 - [x] – Izvēlēties tēmu
-- [ ] – Sagatavot funkcionālās un nefunkcionālās prasības(PPS dokuments) 50/50
+- [x] – Sagatavot funkcionālās un nefunkcionālās prasības
 - [x] – Izveidot projektu uz localhost un sakārtot nepieciešamās mapes (assets, images) darba uzsākšanai
 # Mājaslapas vizuālā izskata veidošana
 - [x] - Izveidot navigāciju, lai tika atzīmēts, uz kuras lapas atradās lietotājs
 - [x] - Hero sadaļa
 - [x] - Sākumlapā prezentēt nelielu produkcijas daļu ar linku uz pašu veikalu
 - [x] - Footer ar karti (veikala fiziskā atrašanas vieta)
-- [ ] - Veikala sadaļa (Visu preču prezentācija, paslēptais popup apraksts, cena, bildes)
+- [x] - Veikala sadaļa (Visu preču prezentācija, paslēptais popup apraksts, cena, bildes)
 - [ ] - Filtru pievienošana
 - [x] - Kontaktu sadaļa, forma lai sazināties ar pārdevēju
 - [x] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu (Par mums) atsevišķajā lapā
@@ -26,9 +29,9 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Ja lietotājvards eksistē, vajag autorizēties
 - [ ] - Admins var pievienot citus adminus un moderatorus
 - [ ] - Profila apskate (dati no datubāzes)
-- [ ] - Iespēja klientam sazināties ar pārdevēju (mail.php)
+- [x] - Iespēja klientam sazināties ar pārdevēju (mail.php)
 - [ ] - Klients var apskatīt preces, atlasot un sakārtojot tās ar filtru palīdzību
-- [ ] - Visas preces izvadās no datubāzes
+- [x] - Visas preces izvadās no datubāzes
 - [ ] - Klients var pievienot preci grozam
 - [ ] - Klients var izveidot pasūtījumu no vairākām precēm, pāsūtījums saglabāsies datubāzē un būs pieejams apskatei
 - [ ] - Pēc kāda pasūtījuma noformēšanas klientam ir iespēja atstāt atsauksmi veikalam
