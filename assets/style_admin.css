@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root{
+    --maincolor: rgb(201, 99, 51);
+    --border: .1rem solid rgba(56, 55, 54, 0.1);
+    --box-shadow: 0 .5rem 1rem #c96333;
+    --shadow: .3rem .3rem .6rem #c2ac9e;
+    --shadow1: 0 .2rem .4rem #c2ac9e;
+    --radius: .5rem;
+    --text: #292929;
+    --lightText: rgb(255, 241, 213);
+    --bg: #f4f7daeb;
+    --hover: #ef9e7871;
+    --section-bg: #864f35;
+}
+*{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+    transition: all 1s ease-out;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    padding-top: 5rem;
+}
+html{
+    scroll-behavior: smooth;
+}
+.btn {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: var(--bg);
+    color: var(--text);
+    font-weight: bolder;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Līnija pozīcija uz apakšas */
+    left: 50%; /* Sākumā līnija ir centrā */
+    width: 0; /* Sākumā līnija ir neredzama */
+    height: 2px; /* Līnijas augstums */
+    background-color: var(--lightText); /* Līnijas krāsa */
+    transition: width 0.6s ease, left 0.6s ease; /* Pārejas efekti */
+}
+
+.btn:hover::after {
+    width: 100%; /* Līnija paplašinās līdz 100% */
+    left: 0; /* Līnija pārvietojas uz kreiso malu */
+}
+
+.btn:hover{
+    background-color: var(--hover);
+}
+
+aside .user{
+    padding: 1.5rem 1rem;
+    text-align: center;
+
+}
+.logout{
+    padding: .5rem 0;
+    font-size: 1.3rem;
+}
+.logout a{
+    display: inline-block;
+    background: none;
+    padding: 0;
+}
+
+.logout i{
+    padding: 0 .5rem;
+    color: var(--text);
+    font-size: 1.2rem;
+    background: var(--bg);
+    padding: .5rem;
+    border-radius: var(--radius);
+}
+
+.logout i:hover{
+    background-color: var(--hover);
+}
+
+aside .current {
+    background-color: var(--hover);
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+.user .fa-user{
+    font-size: 3rem;
+    padding: 1rem 1.2rem;
+    border-radius: 100%;
+    border: 2px solid var(--maincolor);
+}
+.user .btn{
+    font-size: 1rem;
+    padding: .3rem .5rem;
+}
+.user .btn:hover{
+    font-weight: bold;
+    background-color: var(--bg);
+}
+
+.user .btn::after{
+    background-color: var(--maincolor); /* Līnijas krāsa */
+}
+.user form{
+    padding: .6rem 0;
+}
+.user input{
+    border: 2px solid var(--bg);
+    background: var(--lightText);
+    padding: .4rem;
+    margin: .2rem 0;
+    font-size: 1rem;
+    color: var(--text);
+    border-radius: var(--radius);
+}
+.user form input:focus{
+    background: var(--bg);
+}
+.user .hidden{
+    display: none;
+}
+.logout{
+    padding: 0;
+}
+.infoo{
+    color: #ff0000;
+    font-size: 1.3rem;
+    text-align: center;
+    padding-top: .5rem;
+    }
+    .green{
+        color: #087e14;
+    }
+
+.aside{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    background-color: #fff;
+    height: 100%; 
+    box-shadow: var(--box-shadow);
+}
+.aside h1{
+    font-size: 1.7rem;
+    color: var(--text);
+    padding: 1rem;
+    background: var(--bg);
+    text-align: center;
+}
+aside{
+    padding: 0 2rem;
+} 
+
+nav a{
+display: block;
+border-radius: var(--radius);
+font-size: 1.2rem;
+margin: 1rem 0;
+padding: 1rem;
+text-decoration: none;
+}
+
+nav a:hover{
+    letter-spacing: .05rem;
+}

@@ -10,10 +10,8 @@ require "header.php";
 </section>
 <section id="visaProdukcija">
     <div class="main-container">
-        <div class="box-container">
-        <?php require "produkcija_izvade.php" ?>
+        <div class="box-container animate" id="preces-container">
         </div>
     </div>
 </section>
 
-<?php require "prece_izvade.php" ?>

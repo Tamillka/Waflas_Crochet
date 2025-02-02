@@ -1,5 +1,3 @@
-
-
 let lastScrollTop = 7;
     const header = document.querySelector('header');
 
@@ -164,6 +162,39 @@ let lastScrollTop = 7;
         });
     });
 
+
+  
+    $(document).ready(function(){
+        console.log("jQuery darbojas!");
+        fetchPreces();
+    
+        function fetchPreces() {
+            $.ajax({
+                url: 'produkti.php',
+                type: 'GET',
+                success: function (response) {
+                    const preces = JSON.parse(response);
+                    let template = "";
+                    preces.forEach(prece => {
+                        template += `
+                         <div class='box'>
+            <img src="${prece.bilde1}">
+            <button class='btn active' data-target='#${prece.id}'>Atvērt</button>
+            <h3>${prece.nosaukums}</h3>
+            <p>${prece.materials}</p>
+            <h3>${prece.cena}€</h3>
+            </div>
+                        `;
+                    })
+                    $('#preces-container').html(template);
+                },
+                error: function () {
+                    alert("Neizdevās ielādēt datus!");
+                }
+            })
+        }
+    })
+    
 
 
 

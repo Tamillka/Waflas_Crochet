@@ -3,7 +3,6 @@
 :root{
     --maincolor: rgb(201, 99, 51);
     --border: .1rem solid rgba(56, 55, 54, 0.1);
-    --box-shadow: 0 .5rem 1rem #c96333;
     --shadow: 60px -16px #d07b538c;
     --shadow1: 0 .2rem .4rem #c2ac9e;
     --radius: .5rem;
@@ -11,7 +10,6 @@
     --lightText: rgb(255, 241, 213);
     --bg: #f4f7da;
     --hover: #ef9e7871;
-    --section-bg: #864f35;
 }
 *{
     font-family: "Nunito Sans", sans-serif;
@@ -28,9 +26,9 @@ body {
     /* background-image: url("../images/login-bg.jpg"); */
     background:rgb(226,118,68);
     background: radial-gradient(circle, rgba(226,118,68,0.6166987913329394) 0%, rgba(239,158,120,0.818379463601847) 8%, rgba(244,247,218,1) 82%);
-    background-repeat: no-repeat;
-    background-attachment: cover;
-    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
   }
 
@@ -78,20 +76,13 @@ body {
     border: 1px solid #ccc;  
     border: none;
   }
-  .box-container {
-    position: fixed;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
+  .box-container{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-   height: auto;
-
   }
-  
+
   .box{
     background-color: rgba(255, 255, 255, 0.304);
     padding: 2rem;
@@ -99,6 +90,10 @@ body {
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
     box-shadow: var(--shadow);
+  
+  }
+  .register{
+    max-width: 30rem;
   }
   
   .box h2 {
@@ -106,12 +101,17 @@ body {
     font-size: 2.7rem;
     text-align: center;
     font-weight: bolder;
+    font-style: italic;
+  }
+  .register h2{
+    margin: .7rem 0;
+    font-size: 2.5rem;
   }
 
   a{
     position: relative;
   }
-  .logo, .logo1{
+  .logo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,14 +126,17 @@ body {
     max-width: 26rem;
     margin: 1rem;
   }
+  .register img {
+      max-width: 20.35rem;
+    }
   .logo p{
     margin-top: .3rem;
   }
-  .logo1 p{
-    margin-top: .95rem;
+  .logo h3{
+    font-size: 1.4rem;
   }
-  .logo1 img{
-    margin: 3rem 1rem;
+  .box #noItalic{
+    font-style: normal;
   }
   
 
@@ -171,10 +174,30 @@ p{
     padding-top: .5rem;
     }
     
-    
+    .register .boxes{
+      display: flex;
+      gap: 1.5rem;
+    }
   
+    .login-notif{
+      background: #990000;
+      color: var(--lightText);
+      border-radius: .5rem;
+      text-align: center;
+      margin: 1rem 0;
+  }
+
   @media (max-width: 829px){
     .box-container{
       flex-wrap: wrap;
+      margin: 4rem 2rem;
+      box-shadow: var(--shadow1)
+    }
+    .box{
+      box-shadow: none;
+      border-radius: var(--radius);
+    }
+    .box h2{
+      font-size: 2.4rem;
     }
   }  
