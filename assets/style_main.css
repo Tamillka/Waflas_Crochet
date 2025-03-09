@@ -9,8 +9,8 @@
     --radius: .5rem;
     --text: #292929;
     --lightText: rgb(255, 241, 213);
-    --bg: #f4f7daeb;
-    --hover: #ef9e7871;
+    --bg: rgb(244, 247, 218, 0.95);
+    --hover: #ef9e7889;
     --section-bg: #864f35;
 }
 *{
@@ -28,7 +28,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url(../images/bg-image.jpg);
+    background-image: url(../images/bg-image.avif);
     background-repeat: repeat;
     background-size: cover;
     position: inherit;
@@ -39,6 +39,21 @@ body{
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+}
+
+*::selection{
+    background: var(--maincolor);
+    color: var(--lightText);
+}
+html::-webkit-scrollbar{
+    width: 1.2rem;
+}
+html::-webkit-scrollbar-track{
+    background: black;
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--maincolor);
+    border-radius: .7rem;
 }
 
 header {
@@ -131,9 +146,12 @@ img{
     gap: 2rem;
 }
    .box-container3{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); */
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
 } 
 .box-container1 {
     display: flex;
@@ -149,7 +167,7 @@ img{
 #pazinojums{
     position: fixed;
     top: 0;
-    right: 0;
+    right: 35%;
     margin: 6.2rem 3rem;
     background: var(--section-bg);
     padding: .5rem 2.5rem;
@@ -197,8 +215,8 @@ nav a:hover {
 }
 
 header img {
-    width: 9rem;
-    height: 9rem;
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
 }
 
@@ -213,6 +231,39 @@ header .button {
     display: flex;
     justify-content: flex-end;
 }
+
+.profileBox{
+    display: none;
+    background: var(--bg);
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 7rem 0;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    z-index: 3;
+}
+
+.profileBox .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+.profileBox a {
+        font-size: 1.3rem;
+        color: var(--text);
+        padding: 1rem 2rem;
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+.profileBox a:hover{
+    background-color: var(--hover);
+    font-weight: bold;
+    color: var(--text);
+}
+
 
 section{
     padding: 5rem 0;
@@ -250,9 +301,9 @@ section{
     padding: 1.5rem 2rem 0 0;
     font-weight: 500;
     text-shadow: 
-        1px 3px 10px #c96333, 
-        0 0 30px rgba(239, 157, 120, 0.6);
-        text-transform: none;
+        1px 3px 10px rgb(201, 99, 51), 
+        0 0 30px rgba(202, 71, 11, 0.879);
+    text-transform: none;
 }
 
 #hero p, #hero-kontakti p{
@@ -426,6 +477,8 @@ section{
 
 #produkcija .box{
     padding: 0;
+    flex: 1 1 25rem;
+    /* max-width: 32%; */
 }
 #produkcija img{
     aspect-ratio: 16/9;
@@ -436,6 +489,18 @@ section{
     top: 50%;
     left: 50%;
     text-align: center;
+    /* background: rgba(134, 132, 132, 0.285); */
+    padding: .3rem 1rem;
+    border-radius: var(--radius);
+    text-shadow: 
+        1px 3px 10px rgb(172, 66, 13), 
+        0 0 30px rgba(127, 48, 11, 0.6);
+        color: var(--lightText);
+}
+
+#produkcija #KatNos:hover{
+    scale: 1.05;
+    background: rgba(32, 32, 32, 0.274);
 }
 
 

@@ -17,13 +17,19 @@ if(isset($_POST['ielogoties'])){
         $_SESSION['lietotajvardsTam'] = $lietotajs['Lietotajvards'];
         $_SESSION['lietotajaLoma'] = $lietotajs['Loma'];
 
-        echo "Veiksmīga autorizācija";
+        if($lietotajs['Loma'] == 'Klients'){
+        header("Location: ../../index.php");
+        }elseif (in_array($lietotajs['Loma'], ['Administrators', 'Moderators'])) {
+            header("Location: ../");
+        }
+        exit();
+
     }else{
         $_SESSION['pazinojums'] = "Nepareizs lietotājvārds vai parole";
     }
-
     header("Location: ../");
     $vaicajums->close();
     $savienojums->close();
+    exit();
 }
 ?>

@@ -34,28 +34,6 @@ require "header.php";
 </section>
       
 <?php require "prece_izvade.php" ?>
- 
-
-<!-- Popup Rabbit -->
-<!-- <div id="modalTicket10" class="popup">
-  <div class="popup-content">
-    <span class="closeBtn" data-target="#modalTicket10">&times;</span>
-    <div class="image-gallery">
-      <img id="mainImage" src="./images/rabbit.jpg" class="large-image">
-      <div class="thumbnails">
-      <img src="./images/rabbit.jpg" class="thumbnail active" data-large="./images/rabbit.jpg">
-        <img src="./images/rabbit1.jpg" class="thumbnail" data-large="./images/rabbit1.jpg">
-        <img src="./images/rabbit2.webp" class="thumbnail" data-large="./images/rabbit2.webp">
-      </div>
-    </div>
-    <h3>Pretty Rabbit</h3>
-    <p>Šis zaķis ir izgatavots no dabīgas vilnas dzijas. Neskatoties uz tā materiālu, tas ir mīksts un patīkams pieskārienam.</p>
-    <h3>35€</h3>
-    <button class="btn">Pievienot grozam</button>
-  </div>
-</div> -->
-
-
 
 <section id="par-mums">
     <div class="main-container">
@@ -124,7 +102,7 @@ require "header.php";
  
     <div class="headings">
       <h2>Produkcija</h2>
-      <h3>Skatīt vairāk <a href="#"><i class='fas fa-arrow-right'></i></a></h3>
+      <h3>Skatīt vairāk <a href="produkcija.php"><i class='fas fa-arrow-right'></i></a></h3>
       </div>
       <div class="main-container">
     <div class="box-container3">
@@ -143,7 +121,7 @@ require "header.php";
                echo "
                <div class='box animate' id='pirmais'>
                    <img src='{$imageSrc}' alt='Kategorijas attēls'>
-                   <h3 id='KatNos'>{$kategorija['Nosaukums']}<a href='produkcija.php'></a></h3>
+                   <a href='produkcija.php?kategorija_id={$kategorija['Kategorijas_ID']}'><h3 id='KatNos'>{$kategorija['Nosaukums']}</h3></a>
                </div>
                ";
            }
@@ -167,10 +145,10 @@ require "header.php";
         </div>
         <div class="jautajums animate">
             <div class="jautajums-bez-atb">
-                <h3>Kā es varu iegādāties jūsu tamborētos produktus?</h3>
+                <h3>Cik ātri es saņemšu savu pasūtījumu?</h3>
                 <i class="fa-solid fa-plus"></i>
             </div>
-            <p class="atbilde">Mūsu produktus varat viegli iegādāties mūsu tiešsaistes veikalā. Vienkārši pārlūkojiet mūsu katalogu, pievienojiet vēlamās preces grozā un dodieties pie kases.</p>         
+            <p class="atbilde">Mēs centamies noformēt pasūtījumus pēc iespējas ātrāk, piegāde aizņems no 2 līdz 5 darba dienām.</p>         
         </div>
         <div class="jautajums animate">
             <div class="jautajums-bez-atb">
@@ -181,17 +159,17 @@ require "header.php";
         </div>
         <div class="jautajums animate">
             <div class="jautajums-bez-atb">
-                <h3>Kā es varu iegādāties jūsu tamborētos produktus?</h3>
+                <h3>Kurās valstīs Jūs piegādājat savu produkciju?</h3>
                 <i class="fa-solid fa-plus"></i>
             </div>
-            <p class="atbilde">Mūsu produktus varat viegli iegādāties mūsu tiešsaistes veikalā. Vienkārši pārlūkojiet mūsu katalogu, pievienojiet vēlamās preces grozā un dodieties pie kases.</p>      
+            <p class="atbilde">Mēs piegādājam savu produkciju ES robežās.</p>      
         </div>
         <div class="jautajums animate">
             <div class="jautajums-bez-atb">
-                <h3>Kā es varu iegādāties jūsu tamborētos produktus?</h3>
+                <h3>Vai ir iespēja veikt priekšpasūtījumu un izdomāt savu produktu?</h3>
                 <i class="fa-solid fa-plus"></i>
             </div>
-            <p class="atbilde">Mūsu produktus varat viegli iegādāties mūsu tiešsaistes veikalā. Vienkārši pārlūkojiet mūsu katalogu, pievienojiet vēlamās preces grozā un dodieties pie kases.</p>
+            <p class="atbilde">Tuvākajā nākotnē šī opcija būs pieejama.</p>
         </div>
     </div>
 </section>

@@ -2,8 +2,9 @@
 require "../assets/con_db.php";
 session_start();
 
-if (!isset($_SESSION['lietotajvardsTam'])) {
-    header("Location: login.php");
+// Pārbauda vai lietotājs ir Administrators vai Moderators
+if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'], ['Administrators', 'Moderators'])) {
+    header("Location: login.php"); // Pāradresē uz login lapu, ja nav Administrators/Moderators
     exit();
 }
 ?>
@@ -31,22 +32,23 @@ if (!isset($_SESSION['lietotajvardsTam'])) {
                         <?php echo $_SESSION['lietotajvardsTam']; ?>
                         <a href="logout.php"><i class="fas fa-power-off"></i></a>
                     </p>
-                    <button type="button" name="change" class="btn" onclick="toggleForm()">Mainīt paroli <i class="fas fa-caret-down"></i></button>
-                   <!-- <div class="infoo">
+                    <!-- <button type="button" name="change" class="btn" onclick="toggleForm()">Mainīt paroli <i class="fas fa-caret-down"></i></button>
+                   <div class="infoo">
                         <?php #require "login_operations.php"; ?>
                     </div>-->
-                    <form method="POST" class="hidden" id="passwordForm">
+                    <!-- <form method="POST" class="hidden" id="passwordForm">
                         <input type="password" name="currentpassword" placeholder="Pašreizējā parole" required>
                         <input type="password" name="jauna" placeholder="Jauna parole" required>
                         <input type="password" name="jaunaatkartoti" placeholder="Atkārtoti" required><br>
                         <button type="submit" name="change_password" class="btn">Saglabāt</button>
-                    </form>
+                    </form> --> 
                 </div>
                 <a href="./" class="btn <?php echo ($page == 'sakums' ? 'current' : ''); ?>">Sākumlapa</a>
                 <a href="pasutijumi.php" class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pāsūtījumi</a>
                 <a href="produkti.php" class="btn <?php echo ($page == 'produkti' ? 'current' : ''); ?>">Produkti</a>
                 <a href="atsauksmes.php" class="btn <?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>
                 <a href="lietotaji.php" class="btn <?php echo ($page == 'lietotaji' ? 'current' : ''); ?>">Lietotāji</a>
+                <a href="iestatijumi.php" class="btn <?php echo ($page == 'iestatijumi' ? 'current' : ''); ?>"><i class="fa-solid fa-gear"></i> Iestatījumi</a>
                 <a href="../index.php" class="btn log"><i class="fas fa-sign-out-alt"></i> Uz galveno lapu</a>
             </nav>
         </aside>
