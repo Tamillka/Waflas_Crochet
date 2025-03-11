@@ -207,8 +207,20 @@ $(document).ready(function () {
       this.classList.toggle("fa-eye-slash");
     });
   });
-
   fetchPreces();
+
+  $("#searchInput").on("keyup", function () {
+    let searchText = $(this).val().toLowerCase();
+    $(".box").each(function () {
+      let productName = $(this).find("h3").text().toLowerCase();
+
+      if (productName.includes(searchText)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
 
   function fetchPreces() {
     const kategorijaId = getParameterByName("kategorija_id"); // Nolasām kategorijas ID no URL

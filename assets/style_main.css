@@ -1016,19 +1016,20 @@ section{
     scale: 1.02;
 }
 
-#atsauksmes-nosaukums{
+#atsauksmes-nosaukums, #produkti-nosaukums{
     margin-top: 6rem;
+    padding: 4rem 0;
     text-align: center;
     background: linear-gradient(90deg, rgba(134,79,53,1) 6%, rgba(239,158,120,1) 32%, rgba(244,247,218,1) 100%);
 }
-#atsauksmes-nosaukums p{
+#atsauksmes-nosaukums p, #produkti-nosaukums p{
     padding-top: .3rem;
 }
-#atsauksmes-nosaukums a{
+#atsauksmes-nosaukums a, #produkti-nosaukums a{
     position: relative;
     color: var(--text);
 }
- #atsauksmes-nosaukums a::after {
+ #atsauksmes-nosaukums a::after , #produkti-nosaukums a::after{
     content: "";
     position: absolute;
     bottom: 0; 
@@ -1039,13 +1040,13 @@ section{
     transition: all 0.3s ease; 
     transform: translateX(-50%); 
 }
-#atsauksmes-nosaukums a:hover::after {
+#atsauksmes-nosaukums a:hover::after, #produkti-nosaukums a:hover::after{
     width: 100%; 
 }
-#atsauksmes-nosaukums #now{
+#atsauksmes-nosaukums #now, #produkti-nosaukums #now{
     font-weight: bold;
 }
-#atsauksmes-nosaukums span{
+#atsauksmes-nosaukums span, #produkti-nosaukums span{
     font-weight: bold;
     color: #666;
 }
@@ -1096,6 +1097,59 @@ section{
     padding-top: 2rem;
 }
 
+
+.btn-sm{
+    display: inline-block;
+    font-size: 1.3rem;
+    border-radius: var(--radius);
+    background: var(--hover);
+    padding: .5rem;
+    font-weight: bolder;
+}
+
+.btn-sm:hover{
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text);
+}
+#produkti-nosaukums{
+    padding-top: 1.5rem;
+}
+#produkti-nosaukums .filtrudala{
+    padding: 0 3rem;
+    /* padding: 0 9%; */
+    display: flex;
+    justify-content: space-between;
+}
+#produkti-nosaukums #searchField input{
+    font-size: 1.3rem;
+    color: var(--text);
+    padding: .6rem 1.2rem;
+    text-align: left;
+    border-radius: var(--radius);
+    background-color: rgba(255, 244, 236, 0.4); 
+}
+#produkti-nosaukums #searchField input:focus{
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text);
+}
+
+#produkti-nosaukums #searchField {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#produkti-nosaukums #searchField i {
+    position: absolute;
+    right: 1.5rem;
+    color: var(--maincolor);
+    font-size: 1.2rem;
+}
+/* #produkti-nosaukums #searchField #searchBtn{
+    font-size: 1.5rem;
+    padding: .3rem .55rem;
+} */
 
 
 
