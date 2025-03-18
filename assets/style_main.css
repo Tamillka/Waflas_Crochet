@@ -504,6 +504,142 @@ section{
 }
 
 
+.filterBox{
+    display: none;
+    background: var(--bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 7.5rem 9rem;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    z-index: 3;
+}
+
+.filterBox .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    font-size: 1.3rem;
+}
+.filterBox .content .btn{
+    position: relative;
+    border-radius: 40px;
+    padding: .7rem 1.2rem;
+    border: .15rem solid var(--hover);
+}
+.filterBox .content form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    gap: 1.5rem;
+}
+.filterBox .content form .box{
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+}
+.filterBox .content form .box select{
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+    border-radius: var(--radius);
+}
+.filterBox .content form .box select option:checked{
+    background-color: var(--hover);
+}
+.filterBox .content form .box label{
+    font-weight: bolder;
+    margin-bottom: .7rem;
+}
+.filterBox .content form input[type="checkbox"] {
+    appearance: none; 
+    width: 1rem;
+    height: 1rem;
+    border-radius: .1rem;
+    background-color: var(--hover); 
+    cursor: pointer;
+}
+
+.filterBox .content form input[type="checkbox"]:checked {
+    background-color: var(--maincolor); 
+    position: relative;
+}
+.filterBox .content form .materials .checkfield{  
+    margin: 0 1rem .5rem 1rem;
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+    
+}
+.filterBox .content form .materials .checkfield p{  
+   padding: 0;
+}
+.filterBox .content form .materials{
+    display: flex;
+}
+.filterBox .content a{
+    margin-top: .5rem;
+}
+.filterBox .content a:hover{
+    cursor: pointer;
+}
+.price-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 10px; */
+}
+.price-content label{
+    font-weight: bolder;
+    padding: .3rem;
+}
+.price-content p{
+    padding: .3rem;
+}
+.range-slider {
+    width: 20rem;
+    position: relative;
+    margin: 1rem 0 2rem 0;
+}
+
+.range-fill {
+    height: 0.37rem;
+    background: var(--maincolor);
+    position: absolute;
+    z-index: 1;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background: var(--maincolor);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    margin-top: -5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: #e8e8e8;
+    border-radius: 0.15rem;
+    border: none;
+}
+
+
 .popup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -1025,11 +1161,11 @@ section{
 #atsauksmes-nosaukums p, #produkti-nosaukums p{
     padding-top: .3rem;
 }
-#atsauksmes-nosaukums a, #produkti-nosaukums a{
+#atsauksmes-nosaukums a, #produkti-nosaukums a, .filterBox .content a{
     position: relative;
     color: var(--text);
 }
- #atsauksmes-nosaukums a::after , #produkti-nosaukums a::after{
+ #atsauksmes-nosaukums a::after , #produkti-nosaukums a::after, .filterBox .content a::after{
     content: "";
     position: absolute;
     bottom: 0; 
@@ -1040,7 +1176,7 @@ section{
     transition: all 0.3s ease; 
     transform: translateX(-50%); 
 }
-#atsauksmes-nosaukums a:hover::after, #produkti-nosaukums a:hover::after{
+#atsauksmes-nosaukums a:hover::after, #produkti-nosaukums a:hover::after, .filterBox .content a:hover::after{
     width: 100%; 
 }
 #atsauksmes-nosaukums #now, #produkti-nosaukums #now{
@@ -1127,7 +1263,8 @@ section{
     padding: .6rem 1.2rem;
     text-align: left;
     border-radius: var(--radius);
-    background-color: rgba(255, 244, 236, 0.4); 
+    background-color: rgba(255, 238, 227, 0.683); 
+    width: 20rem;
 }
 #produkti-nosaukums #searchField input:focus{
     background: rgba(255, 255, 255, 0.6);
@@ -1138,6 +1275,7 @@ section{
     position: relative;
     display: flex;
     align-items: center;
+  
 }
 
 #produkti-nosaukums #searchField i {

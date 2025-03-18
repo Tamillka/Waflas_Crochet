@@ -181,17 +181,63 @@ function getParameterByName(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+let minValue = document.getElementById("min-value");
+let maxValue = document.getElementById("max-value");
+const rangeFill = document.querySelector(".range-fill");
+
+// validate range and update the fill color on slider
+function validateRange() {
+  let minPrice = parseInt(inputElements[0].value);
+  let maxPrice = parseInt(inputElements[1].value);
+
+  //swap the price if minPrice is greater than maxPrice
+  if (minPrice > maxPrice) {
+    let tempValue = maxPrice;
+    maxPrice = minPrice;
+    minPrice = tempValue;
+  }
+  //Calculate percentage position for min and max
+  const minPercentage = ((minPrice - 2) / 95) * 100;
+  const maxPercentage = ((maxPrice - 2) / 95) * 100;
+
+  //set fill color
+  rangeFill.style.left = minPercentage + "%";
+  rangeFill.style.width = maxPercentage - minPercentage + "%";
+
+  minValue.innerHTML = "$" + minPrice;
+  maxValue.innerHTML = "$" + maxPrice;
+}
+
+const inputElements = document.querySelectorAll(
+  ".range-slider input[type='range']"
+);
+
+inputElements.forEach((element) => {
+  element.addEventListener("input", validateRange);
+});
+validateRange();
+
 $(document).ready(function () {
   console.log("jQuery darbojas!");
 
   $("#settingButton").on("click", function () {
-    $(".profileBox").toggle(); // Parāda vai paslēpj profileBox
+    $(".profileBox").toggle();
   });
 
-  // Paslēpj profileBox, ja klikšķis ir ārpus lodziņa vai pogas
   $(document).on("click", function (event) {
     if (!$(event.target).closest("#settingButton, .profileBox").length) {
       $(".profileBox").hide();
+    }
+  });
+
+  $("#filterBtn").on("click", function () {
+    $(".filterBox").toggle(); // Parāda vai paslēpj
+  });
+
+  // Paslēpj, ja klikšķis ir ārpus lodziņa vai pogas
+  $(document).on("click", function (event) {
+    if (!$(event.target).closest("#filterBtn, .filterBox").length) {
+      $(".filterBox").hide();
     }
   });
 
