@@ -231,10 +231,9 @@ $(document).ready(function () {
   });
 
   $("#filterBtn").on("click", function () {
-    $(".filterBox").toggle(); // Parāda vai paslēpj
+    $(".filterBox").toggle();
   });
 
-  // Paslēpj, ja klikšķis ir ārpus lodziņa vai pogas
   $(document).on("click", function (event) {
     if (!$(event.target).closest("#filterBtn, .filterBox").length) {
       $(".filterBox").hide();
@@ -243,12 +242,11 @@ $(document).ready(function () {
 
   document.querySelectorAll(".togglePassword").forEach((toggle) => {
     toggle.addEventListener("click", function () {
-      const passwordField = this.previousElementSibling; // Находим соответствующее поле пароля
+      const passwordField = this.previousElementSibling;
       const type =
         passwordField.getAttribute("type") === "password" ? "text" : "password";
       passwordField.setAttribute("type", type);
 
-      // Toggle icon classes properly
       this.classList.toggle("fa-eye");
       this.classList.toggle("fa-eye-slash");
     });
@@ -268,12 +266,79 @@ $(document).ready(function () {
     });
   });
 
-  function fetchPreces() {
-    const kategorijaId = getParameterByName("kategorija_id"); // Nolasām kategorijas ID no URL
+  //filtru pievienošana
+  $(".btn").on("click", function (e) {
+    e.preventDefault();
+
+    let kartosana = $("#kartosana").val();
+    let kategorija = $("select[name='kategorija']").val();
+    let materiali = [];
+    $("input[name='materiali[]']:checked").each(function () {
+      materiali.push($(this).val());
+    });
+    let minPrice = $(".min-price").val();
+    let maxPrice = $(".max-price").val();
+
+    fetchPreces(kartosana, kategorija, materiali, minPrice, maxPrice); // Передаем диапазон цен
+  });
+
+  // filtru atiestatīšana
+  $("a:contains('Atiestatīt filtrus')").on("click", function (e) {
+    e.preventDefault();
+
+    $("select[name='kategorija']").val("");
+    $("#kartosana").val("");
+
+    $("input[name='materiali[]']").prop("checked", false);
+
+    $(".min-price").val(0);
+    $(".max-price").val(100);
+    $("#min-value").text("0$");
+    $("#max-value").text("100$");
+
+    fetchPreces("", "", [], 0, 100);
+  });
+
+  $(".min-price, .max-price").on("input", function () {
+    $("#min-value").text($(".min-price").val() + "$");
+    $("#max-value").text($(".max-price").val() + "$");
+  });
+
+  function fetchPreces(
+    kartosana = "",
+    kategorija = "",
+    materiali = [],
+    minPrice = 0,
+    maxPrice = 100
+  ) {
+    const urlParams = new URLSearchParams(window.location.search);
+    let kategorijaFromURL = urlParams.get("kategorija_id");
+
+    if (!kategorija && kategorijaFromURL) {
+      kategorija = kategorijaFromURL;
+    }
 
     let url = "produkti.php";
-    if (kategorijaId) {
-      url += `?kategorija_id=${kategorijaId}`;
+    let params = [];
+
+    if (kategorija) {
+      params.push(`kategorija_id=${encodeURIComponent(kategorija)}`);
+    }
+    if (kartosana) {
+      params.push(`kartosana=${kartosana}`);
+    }
+    if (materiali.length > 0) {
+      params.push(`materiali=${encodeURIComponent(materiali.join(","))}`);
+    }
+    if (minPrice) {
+      params.push(`minPrice=${minPrice}`);
+    }
+    if (maxPrice) {
+      params.push(`maxPrice=${maxPrice}`);
+    }
+
+    if (params.length > 0) {
+      url += "?" + params.join("&");
     }
 
     $.ajax({
@@ -292,7 +357,6 @@ $(document).ready(function () {
         }
 
         preces.forEach((prece) => {
-          // Produkta kastīte
           template += `
                             <div class='box'>
                                 <img src="${prece.bilde1}">
@@ -303,7 +367,6 @@ $(document).ready(function () {
                             </div>
                         `;
 
-          // Modālais logs
           modali += `
                             <div id='modal-${prece.id}' class='popup'>
                                 <div class='popup-content'>
@@ -326,7 +389,7 @@ $(document).ready(function () {
         });
 
         $("#preces-container").html(template);
-        $("body").append(modali); // Pievieno modālos logus
+        $("body").append(modali);
 
         $(document).on("click", ".open-modal", function () {
           const target = $(this).data("target");

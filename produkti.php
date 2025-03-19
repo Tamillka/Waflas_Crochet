@@ -1,20 +1,63 @@
 <?php
 require "assets/con_db.php";
 
-// Pārbauda, vai ir nodots kategorijas ID
-$kategorija_id = isset($_GET['kategorija_id']) ? intval($_GET['kategorija_id']) : 0;
 
-if ($kategorija_id > 0) {
-    $vaicajums = "SELECT * FROM Waflas_preces WHERE Kategorija = $kategorija_id ORDER BY Piev_datums DESC";
-} else {
-    $vaicajums = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC";
+$kategorija = isset($_GET['kategorija']) ? mysqli_real_escape_string($savienojums, $_GET['kategorija']) : "";
+$kategorija_id = isset($_GET['kategorija_id']) ? intval($_GET['kategorija_id']) : 0;
+$kartosana = isset($_GET['kartosana']) ? $_GET['kartosana'] : '';
+$materiali = isset($_GET['materiali']) ? explode(",", $_GET['materiali']) : [];
+$minPrice = isset($_GET['minPrice']) ? floatval($_GET['minPrice']) : 0;
+$maxPrice = isset($_GET['maxPrice']) ? floatval($_GET['maxPrice']) : 100;
+
+
+if (empty($kategorija) && $kategorija_id > 0) {
+    $kategorija = $kategorija_id;
 }
 
+$sortSql = " ORDER BY Piev_datums DESC";
+
+switch ($kartosana) {
+    case 'cenaaug':
+        $sortSql = " ORDER BY Cena ASC";
+        break;
+    case 'cenadilst':
+        $sortSql = " ORDER BY Cena DESC";
+        break;
+    case 'alfabetaug':
+        $sortSql = " ORDER BY Nosaukums ASC";
+        break;
+    case 'alfabetdilst':
+        $sortSql = " ORDER BY Nosaukums DESC";
+        break;
+    case 'pievdat':
+        $sortSql = " ORDER BY Piev_datums DESC";
+        break;
+    case 'pievdataug':
+        $sortSql = " ORDER BY Piev_datums ASC";
+        break;
+}
+
+$whereClauses = [];
+
+if (!empty($kategorija)) {
+    $whereClauses[] = "Kategorija = '$kategorija'";
+}
+
+if (!empty($materiali)) {
+    $escapedMateriali = array_map(fn($mat) => "Materials LIKE '%" . mysqli_real_escape_string($savienojums, $mat) . "%'", $materiali);
+    $whereClauses[] = "(" . implode(" OR ", $escapedMateriali) . ")";
+}
+
+$whereClauses[] = "Cena BETWEEN $minPrice AND $maxPrice";
+
+$whereSql = !empty($whereClauses) ? " WHERE " . implode(" AND ", $whereClauses) : "";
+
+$vaicajums = "SELECT * FROM Waflas_preces $whereSql $sortSql";
+
 $rezultats = mysqli_query($savienojums, $vaicajums);
+$json = [];
 
-$json = []; // Iniciē json masīvu
-
-while($ieraksts = $rezultats->fetch_assoc()){
+while ($ieraksts = $rezultats->fetch_assoc()) {
     $json[] = array(
         'id' => htmlspecialchars($ieraksts['Preces_ID']),
         'nosaukums' => htmlspecialchars($ieraksts['Nosaukums']),

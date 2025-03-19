@@ -43,22 +43,22 @@ require "header.php";
                 <div class="materials">
                     <div class="box1">
                         <div class="checkfield">
-                            <input type="checkbox" name="materiali[]" value="viskoze">
-                            <p>Viskoze</p>
+                            <input type="checkbox" name="materiali[]" value="Plīša dzija">
+                            <p>Plīša dzija</p>
                         </div>
                         <div class="checkfield">
-                            <input type="checkbox" name="materiali[]" value="plisa">
-                            <p>Plīša dzija</p>
+                            <input type="checkbox" name="materiali[]" value="Džutas dzija">
+                            <p>Džutas dzija</p>
                         </div>
                     </div>
                     <div class="box2">
                         <div class="checkfield">
-                            <input type="checkbox" name="materiali[]" value="kokvilna">
+                            <input type="checkbox" name="materiali[]" value="Kokvilna">
                             <p>Kokvilna</p>
                         </div>
                         <div class="checkfield">
-                            <input type="checkbox" name="materiali[]" value="dzuta">
-                            <p>Džutas dzija</p>
+                            <input type="checkbox" name="materiali[]" value="Viskoze">
+                            <p>Viskoze</p>
                         </div>
                     </div>
                 </div>
@@ -67,19 +67,14 @@ require "header.php";
                 <label>Izvēlies kategoriju:</label>
                 <?php
                 require("assets/con_db.php");
-                $kategorijas_SQL = "
-            SELECT Nosaukums
-            FROM Waflas_kategorija
-        ";
+                $kategorijas_SQL = "SELECT * FROM Waflas_kategorija";
                 $kategorijas_rezultats = mysqli_query($savienojums, $kategorijas_SQL);
                 ?>
-
-
                 <select name="kategorija">
-                    <option value="">Kategorija</option>
+                    <option value="">Skatīt visus</option>
                     <?php
                     while ($kategorija = mysqli_fetch_assoc($kategorijas_rezultats)) {
-                        echo "<option value=\"{$kategorija['Nosaukums']}\">{$kategorija['Nosaukums']}</option>";
+                        echo "<option value=\"{$kategorija['Kategorijas_ID']}\">{$kategorija['Nosaukums']}</option>";
                     }
                     ?>
                 </select>
