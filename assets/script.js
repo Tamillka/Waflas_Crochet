@@ -382,7 +382,7 @@ $(document).ready(function () {
                                     <h3>${prece.nosaukums}</h3>
                                     <p>${prece.apraksts}</p>
                                     <h3>${prece.cena}€</h3>
-                                    <button class='btn'>Pievienot grozam</button>
+                                    <button class='btn pievienotGrozam'>Pievienot grozam</button>
                                 </div>
                             </div>
                         `;
@@ -412,4 +412,25 @@ $(document).ready(function () {
       },
     });
   }
+
+  $(document).on("click", ".pievienotGrozam", function () {
+    const id = $(this)
+      .closest(".popup-content")
+      .find(".closeBtn")
+      .data("target")
+      .replace("#modal-", "");
+
+    $.ajax({
+      url: "../cart/addToCart.php",
+      type: "POST",
+      data: { id_prece: id },
+      success: function (response) {
+        const result = JSON.parse(response);
+        alert(result.message);
+      },
+      error: function () {
+        alert("Neizdevās pievienot preci grozam.");
+      },
+    });
+  });
 });

@@ -1290,6 +1290,26 @@ input[type="range"]::-webkit-slider-runnable-track {
 } */
 
 
+.cart{
+    margin-top: 9rem;
+}
+.cart i{
+    color: var(--hover);
+}
+.cart p {
+    position: relative;
+    padding-bottom: 0.5rem; /* отступ для полоски */
+  }
+  .cart p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: .1rem;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(134,79,53,1) 6%, rgba(239,158,120,1) 32%, rgba(244,247,218,1) 100%);
+  }
+
 
 footer{
     padding:.5rem 0;

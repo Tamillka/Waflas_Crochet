@@ -12,9 +12,9 @@ if (isset($_POST["registreties"])) {
     $parole = ($_POST["parole"]);
     $parole1 = ($_POST["paroleAtk"]);
 
-    if ($lietotajvards != "" && $vards != "" && $uzvards != "" && $epasts != "" && $talrunis!="" && $parole != "" && $parole1 != "") {
+    if ($lietotajvards != "" && $vards != "" && $uzvards != "" && $epasts != "" && $talrunis != "" && $parole != "" && $parole1 != "") {
         if ($parole == $parole1) {
-            $existingUserQuery = "SELECT * FROM Waflas_lietotaji WHERE Lietotajvards = '$lietotajvards'";
+            $existingUserQuery = "SELECT * FROM Waflas_lietotaji WHERE Epasts = '$epasts'";
             $existingUserResult = mysqli_query($savienojums, $existingUserQuery);
 
             if (mysqli_num_rows($existingUserResult) == 0) {
@@ -27,7 +27,7 @@ if (isset($_POST["registreties"])) {
                     $_SESSION["lietotajvardsTam"] = $lietotajvards;
                     $_SESSION['pazinojumss'] = "Lietotājs veiksmīgi reģistrēts!";
                     header("location:../login.php");
-                } 
+                }
             } else {
                 $_SESSION['pazinojums'] = "Tāds lietotājs jau eksistē!";
                 header("location:../register.php");
@@ -36,7 +36,7 @@ if (isset($_POST["registreties"])) {
             $_SESSION['pazinojums'] = "Kļūda lietotāja reģistrācijā!";
             header("location:../register.php");
         }
-    } 
+    }
 
     $savienojums->close();
     exit();

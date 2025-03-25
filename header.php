@@ -6,6 +6,7 @@ $lietotajaLoma = $_SESSION['lietotajaLoma'] ?? '';
 
 <!DOCTYPE html>
 <html lang="lv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,44 +18,43 @@ $lietotajaLoma = $_SESSION['lietotajaLoma'] ?? '';
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Wafla's crochet</title>
 </head>
-<body>
-<header>
-    <a href="./" class="logo"><img src="images/logo.png" alt=""></a>
-    <nav class="navbar">
-        <div class="navigacija">
-            <a href="index.php" class="<?php echo ($page == 'galvena' ? 'current' : ''); ?>">Sākumlapa</a>
-            <a href="produkcija.php" class="<?php echo ($page == 'produkcija' ? 'current' : ''); ?>">Produkcija</a>
-            <a href="parmums.php" class="<?php echo ($page == 'parmums' ? 'current' : ''); ?>">Par mums</a>
-            <a href="atsauksmes.php" class="<?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>
-            <a href="kontakti.php" class="<?php echo ($page == 'kontakti' ? 'current' : ''); ?>">Kontakti</a>
-        </div>
 
-        <?php if ($irIelogojies): ?>
-            <?php if ($lietotajaLoma === 'Klients'): ?>
-                <a href="grozs.php"><i class="fas fa-shopping-cart"></i></a>
-                <a id="settingButton"><i class="fas fa-user"></i></a>
-            <?php elseif (in_array($lietotajaLoma, ['Administrators', 'Moderators'])): ?>
-                <a href="admin/index.php"><i class="fas fa-tools"></i></a>
-                <a href="admin/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+<body>
+    <header>
+        <a href="./" class="logo"><img src="images/logo.png" alt=""></a>
+        <nav class="navbar">
+            <div class="navigacija">
+                <a href="index.php" class="<?php echo ($page == 'galvena' ? 'current' : ''); ?>">Sākumlapa</a>
+                <a href="produkcija.php" class="<?php echo ($page == 'produkcija' ? 'current' : ''); ?>">Produkcija</a>
+                <a href="parmums.php" class="<?php echo ($page == 'parmums' ? 'current' : ''); ?>">Par mums</a>
+                <a href="atsauksmes.php" class="<?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>
+                <a href="kontakti.php" class="<?php echo ($page == 'kontakti' ? 'current' : ''); ?>">Kontakti</a>
+            </div>
+
+            <?php if ($irIelogojies): ?>
+                <?php if ($lietotajaLoma === 'Klients'): ?>
+                    <a href="/cart/grozs.php"><i class="fas fa-shopping-cart"></i></a>
+                    <a id="settingButton"><i class="fas fa-user"></i></a>
+                <?php elseif (in_array($lietotajaLoma, ['Administrators', 'Moderators'])): ?>
+                    <a href="admin/index.php"><i class="fas fa-tools"></i></a>
+                    <a href="admin/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+                <?php endif; ?>
+            <?php else: ?>
+                <a href="admin/login.php"><i class="fas fa-shopping-cart"></i></a>
+                <a href="admin/login.php"><i class="fas fa-user"></i></a>
             <?php endif; ?>
-        <?php else: ?>
-            <a href="admin/login.php"><i class="fas fa-shopping-cart"></i></a>
-            <a href="admin/login.php"><i class="fas fa-user"></i></a>
-        <?php endif; ?>
 
 
         </nav>
     </header>
-       <div class="profileBox">
+    <div class="profileBox">
         <div class="content">
             <p><?php echo $_SESSION['lietotajvardsTam']; ?></p>
             <a href="iestatijumi.php">Iestatījumi</a>
             <a href="vesture.php">Pāsūtījumu vēsture</a>
             <a href="admin/logout.php"><i class="fas fa-sign-out-alt"></i> Izlogoties</a>
-            </div>
-        </div> 
+        </div>
+    </div>
 
 
-            <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
-
-
+    <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
