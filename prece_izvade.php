@@ -2,11 +2,7 @@
 require "assets/con_db.php";
 
 // Izvēlamies, cik produktus parādīt atkarībā no lapas
-if ($page === 'galvena') {
-    $izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC LIMIT 4";
-} else if ($page === 'produkcija') {
-    $izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC";
-}
+$izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC LIMIT 4";
 
 $atlasaPrecesSQL = mysqli_query($savienojums, $izvadeSQL);
 
@@ -24,8 +20,31 @@ if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
 
         // Dinamiski ģenerē modālā loga ID
         $modalID = "modalTicket" . $prece['Preces_ID'];
+        echo "
 
-       
+        <!-- Popup for product -->
+             <div id='{$modalID}' class='popup'>
+                 <div class='popup-content'>
+                     <span class='closeBtn' data-target='#{$modalID}'>&times;</span>
+                     <div class='image-gallery'>
+                         <img id='mainImage{$prece['Preces_ID']}' src='{$imageSrc1}' class='large-image'>
+                         <div class='thumbnails'>
+                             <img src='{$imageSrc1}' class='thumbnail active' data-large='{$imageSrc1}' data-main='mainImage{$prece['Preces_ID']}'>
+                             <img src='{$imageSrc2}' class='thumbnail' data-large='{$imageSrc2}' data-main='mainImage{$prece['Preces_ID']}'>
+                             <img src='{$imageSrc3}' class='thumbnail' data-large='{$imageSrc3}' data-main='mainImage{$prece['Preces_ID']}'>
+                         </div>
+                     </div>
+                     <h3>{$prece['Nosaukums']}</h3>
+                     <p>{$prece['Apraksts']}</p>
+                     <h3>{$prece['Cena']}€</h3>
+                    <button class='btn pievienotGrozam'>Pievienot grozam</button>
+                 </div>
+           </div>
+     
+            
+             ";
+
+
     }
 } else {
     echo "Nav nevienu piedāvājumu";

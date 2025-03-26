@@ -1,8 +1,8 @@
 <?php
 $serveris = "localhost";
-$lietotajs = "grobina1_matjasa";
-$parole = "tYwWu!zHo";
-$db_nosaukums = "grobina1_matjasa";
+$lietotajs = "root";
+$parole = "";
+$db_nosaukums = "Waflas_crochetDB";
 
 $savienojums = mysqli_connect($serveris, $lietotajs, $parole, $db_nosaukums);
 

@@ -181,41 +181,41 @@ function getParameterByName(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-let minValue = document.getElementById("min-value");
-let maxValue = document.getElementById("max-value");
-const rangeFill = document.querySelector(".range-fill");
+// let minValue = document.getElementById("min-value");
+// let maxValue = document.getElementById("max-value");
+// const rangeFill = document.querySelector(".range-fill");
 
-// validate range and update the fill color on slider
-function validateRange() {
-  let minPrice = parseInt(inputElements[0].value);
-  let maxPrice = parseInt(inputElements[1].value);
+// // validate range and update the fill color on slider
+// function validateRange() {
+//   let minPrice = parseInt(inputElements[0].value);
+//   let maxPrice = parseInt(inputElements[1].value);
 
-  //swap the price if minPrice is greater than maxPrice
-  if (minPrice > maxPrice) {
-    let tempValue = maxPrice;
-    maxPrice = minPrice;
-    minPrice = tempValue;
-  }
-  //Calculate percentage position for min and max
-  const minPercentage = ((minPrice - 2) / 95) * 100;
-  const maxPercentage = ((maxPrice - 2) / 95) * 100;
+//   //swap the price if minPrice is greater than maxPrice
+//   if (minPrice > maxPrice) {
+//     let tempValue = maxPrice;
+//     maxPrice = minPrice;
+//     minPrice = tempValue;
+//   }
+//   //Calculate percentage position for min and max
+//   const minPercentage = ((minPrice - 2) / 95) * 100;
+//   const maxPercentage = ((maxPrice - 2) / 95) * 100;
 
-  //set fill color
-  rangeFill.style.left = minPercentage + "%";
-  rangeFill.style.width = maxPercentage - minPercentage + "%";
+//   //set fill color
+//   rangeFill.style.left = minPercentage + "%";
+//   rangeFill.style.width = maxPercentage - minPercentage + "%";
 
-  minValue.innerHTML = "$" + minPrice;
-  maxValue.innerHTML = "$" + maxPrice;
-}
+//   minValue.innerHTML = "$" + minPrice;
+//   maxValue.innerHTML = "$" + maxPrice;
+// }
 
-const inputElements = document.querySelectorAll(
-  ".range-slider input[type='range']"
-);
+// const inputElements = document.querySelectorAll(
+//   ".range-slider input[type='range']"
+// );
 
-inputElements.forEach((element) => {
-  element.addEventListener("input", validateRange);
-});
-validateRange();
+// inputElements.forEach((element) => {
+//   element.addEventListener("input", validateRange);
+// });
+// validateRange();
 
 $(document).ready(function () {
   console.log("jQuery darbojas!");
@@ -251,7 +251,9 @@ $(document).ready(function () {
       this.classList.toggle("fa-eye-slash");
     });
   });
-  fetchPreces();
+  if ($("#preces-container").length > 0) {
+    fetchPreces();
+  }
 
   $("#searchInput").on("keyup", function () {
     let searchText = $(this).val().toLowerCase();
@@ -267,7 +269,7 @@ $(document).ready(function () {
   });
 
   //filtru pievienošana
-  $(".btn").on("click", function (e) {
+  $(".apply-filters").on("click", function (e) {
     e.preventDefault();
 
     let kartosana = $("#kartosana").val();
@@ -276,10 +278,8 @@ $(document).ready(function () {
     $("input[name='materiali[]']:checked").each(function () {
       materiali.push($(this).val());
     });
-    let minPrice = $(".min-price").val();
-    let maxPrice = $(".max-price").val();
 
-    fetchPreces(kartosana, kategorija, materiali, minPrice, maxPrice); // Передаем диапазон цен
+    fetchPreces(kartosana, kategorija, materiali);
   });
 
   // filtru atiestatīšana
@@ -291,25 +291,25 @@ $(document).ready(function () {
 
     $("input[name='materiali[]']").prop("checked", false);
 
-    $(".min-price").val(0);
-    $(".max-price").val(100);
-    $("#min-value").text("0$");
-    $("#max-value").text("100$");
+    // $(".min-price").val(0);
+    // $(".max-price").val(100);
+    // $("#min-value").text("0$");
+    // $("#max-value").text("100$");
 
-    fetchPreces("", "", [], 0, 100);
+    fetchPreces("", "", []);
   });
 
-  $(".min-price, .max-price").on("input", function () {
-    $("#min-value").text($(".min-price").val() + "$");
-    $("#max-value").text($(".max-price").val() + "$");
-  });
+  // $(".min-price, .max-price").on("input", function () {
+  //   $("#min-value").text($(".min-price").val() + "$");
+  //   $("#max-value").text($(".max-price").val() + "$");
+  // });
 
   function fetchPreces(
     kartosana = "",
     kategorija = "",
-    materiali = [],
-    minPrice = 0,
-    maxPrice = 100
+    materiali = []
+    // minPrice = 0,
+    // maxPrice = 100
   ) {
     const urlParams = new URLSearchParams(window.location.search);
     let kategorijaFromURL = urlParams.get("kategorija_id");
@@ -318,7 +318,7 @@ $(document).ready(function () {
       kategorija = kategorijaFromURL;
     }
 
-    let url = "produkti.php";
+    let url = "../produkti.php";
     let params = [];
 
     if (kategorija) {
@@ -330,12 +330,12 @@ $(document).ready(function () {
     if (materiali.length > 0) {
       params.push(`materiali=${encodeURIComponent(materiali.join(","))}`);
     }
-    if (minPrice) {
-      params.push(`minPrice=${minPrice}`);
-    }
-    if (maxPrice) {
-      params.push(`maxPrice=${maxPrice}`);
-    }
+    // if (minPrice) {
+    //   params.push(`minPrice=${minPrice}`);
+    // }
+    // if (maxPrice) {
+    //   params.push(`maxPrice=${maxPrice}`);
+    // }
 
     if (params.length > 0) {
       url += "?" + params.join("&");
@@ -421,7 +421,7 @@ $(document).ready(function () {
       .replace("#modal-", "");
 
     $.ajax({
-      url: "../cart/addToCart.php",
+      url: "../addToCart.php",
       type: "POST",
       data: { id_prece: id },
       success: function (response) {

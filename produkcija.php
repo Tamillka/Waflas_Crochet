@@ -80,7 +80,7 @@ require "header.php";
                 </select>
             </div>
 
-            <div class="box">
+            <!-- <div class="box">
                 <label>Cenas diapazons:</label>
                 <div class="price-content">
                     <div>
@@ -99,10 +99,10 @@ require "header.php";
                         <input type="range" class="max-price" value="80" min="0" max="100" step="2">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </form>
-        <button class="btn">Piemērot</button>
+        <button class="btn apply-filters">Pielietot</button>
         <a>Atiestatīt filtrus</a>
     </div>
 </div>

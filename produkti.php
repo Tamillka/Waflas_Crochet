@@ -1,14 +1,10 @@
 <?php
 require "assets/con_db.php";
 
-
 $kategorija = isset($_GET['kategorija']) ? mysqli_real_escape_string($savienojums, $_GET['kategorija']) : "";
 $kategorija_id = isset($_GET['kategorija_id']) ? intval($_GET['kategorija_id']) : 0;
 $kartosana = isset($_GET['kartosana']) ? $_GET['kartosana'] : '';
 $materiali = isset($_GET['materiali']) ? explode(",", $_GET['materiali']) : [];
-$minPrice = isset($_GET['minPrice']) ? floatval($_GET['minPrice']) : 0;
-$maxPrice = isset($_GET['maxPrice']) ? floatval($_GET['maxPrice']) : 100;
-
 
 if (empty($kategorija) && $kategorija_id > 0) {
     $kategorija = $kategorija_id;
@@ -44,11 +40,11 @@ if (!empty($kategorija)) {
 }
 
 if (!empty($materiali)) {
-    $escapedMateriali = array_map(fn($mat) => "Materials LIKE '%" . mysqli_real_escape_string($savienojums, $mat) . "%'", $materiali);
+    $escapedMateriali = array_map(function ($mat) use ($savienojums) {
+        return "Materials LIKE '%" . mysqli_real_escape_string($savienojums, $mat) . "%'";
+    }, $materiali);
     $whereClauses[] = "(" . implode(" OR ", $escapedMateriali) . ")";
 }
-
-$whereClauses[] = "Cena BETWEEN $minPrice AND $maxPrice";
 
 $whereSql = !empty($whereClauses) ? " WHERE " . implode(" AND ", $whereClauses) : "";
 

@@ -2,9 +2,9 @@
 require "assets/con_db.php";
 
 // Izvēlamies, cik produktus parādīt atkarībā no lapas
-if ($page === 'galvena') {
-    $izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC LIMIT 4";
-    $atlasaPrecesSQL = mysqli_query($savienojums, $izvadeSQL);
+// if ($page === 'galvena') {
+$izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC LIMIT 4";
+$atlasaPrecesSQL = mysqli_query($savienojums, $izvadeSQL);
 
 if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
     while ($prece = mysqli_fetch_assoc($atlasaPrecesSQL)) {
@@ -39,7 +39,7 @@ if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
 // } else if ($page === 'produkcija') {
 //     $vaicajums = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC";
 //     $rezultats = mysqli_query($savienojums, $vaicajums);
-    
+
 //     while($ieraksts = $rezultats->fetch_assoc()){
 //         $json[] = array(
 //             'id' => htmlspecialchars($ieraksts['Preces_ID']),
@@ -57,5 +57,5 @@ if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
 //     echo $jsonstring;
 // }
 
-}
+
 ?>
