@@ -47,7 +47,9 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Klienti, kuriem pāsūtījumu vēsture ir tukša, var tikai lasīt citas atsauksmes
 - [ ] - Admins un moderators var izmainīt pāsūtījuma statusu
 - [ ] - Kad pasūtījuma statuss tiek mainīts - klients saņem uz e-pastu attiecīgo paziņojumu
-- [ ] - Visiem lietotājiem iespēja samainīt savu paroli
+- [ ] - Visiem lietotājiem iespēja samainīt personīgo informāciju
 - [ ] - Admins var dzēst adminus un moderatorus
 - [ ] - Var pievienot bildes uz datubāzi kā failu no datora
+- [ ] - Administrācijas paneļa gavenā lapa - statistika un kopējā info
+- [ ] - Admins vai moders var apskatīt esošās preces un kategorijas, dzēst tās vai rediģēt
 - [ ] – Programmatūras testēšana
