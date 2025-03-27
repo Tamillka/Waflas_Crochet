@@ -45,6 +45,9 @@ $lietotajaLoma = $_SESSION['lietotajaLoma'] ?? '';
                         class="fas fa-shopping-cart"></i></a>
                 <a href="admin/login.php"><i class="fas fa-user"></i></a>
             <?php endif; ?>
+            <script>
+                const isLoggedIn = <?= $irIelogojies ? 'true' : 'false' ?>;
+            </script>
 
 
         </nav>

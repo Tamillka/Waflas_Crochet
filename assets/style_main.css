@@ -1291,7 +1291,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 
 .cart{
-    margin-top: 8rem;
+    margin: 7.5rem 0 1rem 0;
     text-align: center;
 }
 .cart i{
@@ -1304,7 +1304,102 @@ input[type="range"]::-webkit-slider-runnable-track {
 .cart p{
     padding-top: 0rem;
 }
-
+.colorful-divider{
+    background: radial-gradient(circle, rgba(226,118,68,0.6166987913329394) 0%, rgba(255,216,216,0.818379463601847) 12%, rgba(244,247,218,1) 75%);
+    height: 3px;
+}
+.grozs-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.grozs-container .cart-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    box-shadow: var(--shadow1);
+}
+.grozs-container .cart-box img{
+    height: 8rem;
+    width: 13rem;
+    object-fit: cover;
+    padding: 0;
+}
+.cart-box h3{
+    padding: 0;
+}
+.cart-box p b{
+    font-weight: bolder;
+}
+.cart-box p{
+    padding: .5rem 0;
+}
+.cart-box button{
+    font-size: 1.8rem;
+    padding: 0 .6rem;
+    background: var(--hover);
+    font-weight: bolder;
+    border-radius: var(--radius);
+}
+.cart-box input{
+    width: 3rem;
+    text-align: center;
+    background-color: rgb(232, 232, 232);
+    font-size: 1.8rem;
+    border-radius: var(--radius);
+}
+.cart-box button:hover{
+    color: var(--bg);
+}
+.cart-box i{
+    font-size: 2rem;
+    padding: 3rem 1.5rem;
+    color: var(--maincolor);
+}
+.cart-box i:hover{
+    background: var(--maincolor);
+    color: var(--bg);
+}
+.total-box{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 2rem 0;
+}
+.total-box .colorful-divider{
+    height: 7px;
+    width: 7rem;
+    background: radial-gradient(rgba(226,118,68,0.6166987913329394) 15%, rgba(255,216,216,0.818379463601847) 30%, rgba(244,247,218,1) 50%);
+}
+.total-box h3{
+    padding: .5rem;
+}
+.total-box p{
+    padding: .5rem;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 1.6rem;
+}
+.total-box .btn{
+    font-size: 1.4rem;
+    background: var(--hover);
+    position: relative;
+    margin-top: 1rem;
+}
+.total-box .btn:hover{
+    background: var(--bg);
+}
+.total-box .btn::after{
+    background-color: var(--maincolor);
+}
+.notif{
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: bolder;
+  }
 
 footer{
     padding:.5rem 0;

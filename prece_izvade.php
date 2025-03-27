@@ -37,7 +37,7 @@ if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
                      <h3>{$prece['Nosaukums']}</h3>
                      <p>{$prece['Apraksts']}</p>
                      <h3>{$prece['Cena']}€</h3>
-                    <button class='btn pievienotGrozam'>Pievienot grozam</button>
+                    <button class='btn pievienotGrozam' data-id='{$prece['Preces_ID']}'>Pievienot grozam</button>
                  </div>
            </div>
      
