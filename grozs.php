@@ -20,7 +20,12 @@ require "header.php";
     </div>
 </div>
 
-
+<div id="notifikacija" class="notifikacija hidden">
+    <div class="closeNotif">
+        <i class="fas fa-times"></i>
+    </div>
+    <span id="notifikacijas-teksts"></span>
+</div>
 
 <?php
 require "footer.php";

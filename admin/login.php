@@ -42,6 +42,25 @@ session_start();
             <p>Doties uz <a href="../index.php"><span id="now">sākumlapu</span></a></p>
         </div>
     </div>
+    <?php
+    if (isset($_SESSION['pazinojumss'])):
+        ?>
+        <div class="popup popup-active" id="popup-message">
+            <div class="popup-content">
+                <div class="closeBtn" data-target="#popup-message">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="notif">
+                    <?php
+                    echo $_SESSION['pazinojumss'];
+                    unset($_SESSION['pazinojumss']);
+                    ?>
+                </div>
+            </div>
+        </div>
+        <?php
+    endif;
+    ?>
 
 </body>
 

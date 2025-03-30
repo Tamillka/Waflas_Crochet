@@ -107,25 +107,12 @@ require "header.php";
     </div>
 </div>
 
-<?php
-if (isset($_SESSION['pazinojums'])):
-    ?>
-    <div class="popup popup-active" id="popup-message">
-        <div class="popup-content">
-            <div class="closeBtn" data-target="#popup-message">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="notif">
-                <?php
-                echo $_SESSION['pazinojums'];
-                unset($_SESSION['pazinojums']);
-                ?>
-            </div>
-        </div>
+<div id="notifikacija" class="notifikacija hidden">
+    <div class="closeNotif">
+        <i class="fas fa-times"></i>
     </div>
-    <?php
-endif;
-?>
+    <span id="notifikacijas-teksts"></span>
+</div>
 
 <?php
 require "footer.php";

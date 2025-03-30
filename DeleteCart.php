@@ -9,7 +9,7 @@ if (isset($_POST['id'])) {
     $vaicajums->bind_param("i", $id);
 
     if ($vaicajums->execute()) {
-        echo json_encode(['success' => true, 'message' => 'Prece veiksmīgi dzēsta no groza.']);
+        echo json_encode(["success" => true, "message" => "Prece veiksmīgi dzēsta no groza"]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Kļūda dzēšanā: ' . $savienojums->error]);
     }

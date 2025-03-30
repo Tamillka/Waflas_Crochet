@@ -75,6 +75,7 @@ header {
 
 .btn {
     text-decoration: none;
+    text-align: center;
     padding: 1rem 2rem;
     background: var(--bg);
     color: var(--text);
@@ -169,17 +170,17 @@ img{
     top: 0;
     right: 35%;
     margin: 6.2rem 3rem;
-    background: var(--section-bg);
+    background: #4caf50;
     padding: .5rem 2.5rem;
     z-index: 3;
     border-radius: var(--radius);
     border: var(--border);
     box-shadow: var(--shadow1);
     text-align: center;
-    transition: opacity 2s ease; /* Definējam lēnu pāreju (2 sekundes) */
+    transition: opacity 2s ease;
 }
 #pazinojums.hidden {
-    opacity: 0; /* Neredzams */
+    opacity: 0; 
 }
 #pazinojums p{
     animation: blinker 2s linear infinite;
@@ -1400,6 +1401,45 @@ input[type="range"]::-webkit-slider-runnable-track {
     margin: 1rem 0;
     font-weight: bolder;
   }
+
+  .notifikacija {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: var(--lightText);
+    padding: 1.2rem 1.7rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 5;
+    opacity: 0;
+    font-size: 1.3rem;
+    transition: opacity 0.5s ease;
+}
+
+.notifikacija.show {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.closeNotif {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--lightText)
+    padding: 0 .4rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+.closeNotif:hover {
+    color: var(--text);
+}
 
 footer{
     padding:.5rem 0;

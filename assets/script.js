@@ -181,42 +181,6 @@ function getParameterByName(name) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-// let minValue = document.getElementById("min-value");
-// let maxValue = document.getElementById("max-value");
-// const rangeFill = document.querySelector(".range-fill");
-
-// // validate range and update the fill color on slider
-// function validateRange() {
-//   let minPrice = parseInt(inputElements[0].value);
-//   let maxPrice = parseInt(inputElements[1].value);
-
-//   //swap the price if minPrice is greater than maxPrice
-//   if (minPrice > maxPrice) {
-//     let tempValue = maxPrice;
-//     maxPrice = minPrice;
-//     minPrice = tempValue;
-//   }
-//   //Calculate percentage position for min and max
-//   const minPercentage = ((minPrice - 2) / 95) * 100;
-//   const maxPercentage = ((maxPrice - 2) / 95) * 100;
-
-//   //set fill color
-//   rangeFill.style.left = minPercentage + "%";
-//   rangeFill.style.width = maxPercentage - minPercentage + "%";
-
-//   minValue.innerHTML = "$" + minPrice;
-//   maxValue.innerHTML = "$" + maxPrice;
-// }
-
-// const inputElements = document.querySelectorAll(
-//   ".range-slider input[type='range']"
-// );
-
-// inputElements.forEach((element) => {
-//   element.addEventListener("input", validateRange);
-// });
-// validateRange();
-
 $(document).ready(function () {
   console.log("jQuery darbojas!");
 
@@ -413,6 +377,26 @@ $(document).ready(function () {
     });
   }
 
+  function showNotif(teksts, tips = "success") {
+    const notif = $("#notifikacija");
+    const tekstsElem = $("#notifikacijas-teksts");
+
+    tekstsElem.text(teksts);
+
+    notif.removeClass("hidden").addClass("show");
+
+    notif
+      .find(".closeNotif")
+      .off("click")
+      .on("click", function () {
+        notif.removeClass("show").addClass("hidden");
+      });
+
+    setTimeout(function () {
+      notif.removeClass("show").addClass("hidden");
+    }, 3000);
+  }
+
   $(document).on("click", ".pievienotGrozam", function () {
     let id = $(this).data("id");
     if (!id) {
@@ -425,13 +409,14 @@ $(document).ready(function () {
         id = modalId.replace("#modal-", "");
       }
     }
+    const popup = $(this).closest(".popup");
     $.ajax({
       url: "../addToCart.php",
       type: "POST",
       data: { id_prece: id },
       success: function (response) {
-        const result = JSON.parse(response);
-        alert(result.message);
+        popup.removeClass("popup-active").hide();
+        showNotif(response.message);
       },
       error: function () {
         alert("Neizdevās pievienot preci grozam.");
@@ -566,6 +551,7 @@ $(document).ready(function () {
         (response) => {
           if (response.success) {
             fetchPrecesGroza(); // перезагружаем список
+            showNotif(response.message);
           } else {
             alert("Kļūda dzēšot preci: " + response.message);
           }
