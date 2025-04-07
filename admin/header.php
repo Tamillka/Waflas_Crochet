@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "../assets/con_db.php";
 session_start();
 
@@ -11,6 +11,7 @@ if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'
 
 <!DOCTYPE html>
 <html lang="lv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,7 @@ if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Wafla's crochet</title>
 </head>
+
 <body>
     <div class="aside">
         <h1>Administrēšana</h1>
@@ -41,14 +43,19 @@ if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'
                         <input type="password" name="jauna" placeholder="Jauna parole" required>
                         <input type="password" name="jaunaatkartoti" placeholder="Atkārtoti" required><br>
                         <button type="submit" name="change_password" class="btn">Saglabāt</button>
-                    </form> --> 
+                    </form> -->
                 </div>
                 <a href="./" class="btn <?php echo ($page == 'sakums' ? 'current' : ''); ?>">Sākumlapa</a>
-                <a href="pasutijumi.php" class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pāsūtījumi</a>
+                <a href="pasutijumi.php"
+                    class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pāsūtījumi</a>
                 <a href="produkti.php" class="btn <?php echo ($page == 'produkti' ? 'current' : ''); ?>">Produkti</a>
-                <a href="atsauksmes.php" class="btn <?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>
-                <a href="lietotaji.php" class="btn <?php echo ($page == 'lietotaji' ? 'current' : ''); ?>">Lietotāji</a>
-                <a href="iestatijumi.php" class="btn <?php echo ($page == 'iestatijumi' ? 'current' : ''); ?>"><i class="fa-solid fa-gear"></i> Iestatījumi</a>
+                <a href="atsauksmes.php"
+                    class="btn <?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>
+                <?php if ($_SESSION['lietotajaLoma'] === 'Administrators'): ?>
+                    <a href="lietotaji.php" class="btn <?php echo ($page == 'lietotaji' ? 'current' : ''); ?>">Lietotāji</a>
+                <?php endif; ?>
+                <a href="iestatijumi.php" class="btn <?php echo ($page == 'iestatijumi' ? 'current' : ''); ?>"><i
+                        class="fa-solid fa-gear"></i> Iestatījumi</a>
                 <a href="../index.php" class="btn log"><i class="fas fa-sign-out-alt"></i> Uz galveno lapu</a>
             </nav>
         </aside>

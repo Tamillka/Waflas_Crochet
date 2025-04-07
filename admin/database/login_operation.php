@@ -7,7 +7,7 @@ if (isset($_POST['ielogoties'])) {
     $lietotajs = htmlspecialchars($_POST['lietotajvards']);
     $parole = $_POST['parole'];
 
-    $vaicajums = $savienojums->prepare("SELECT * FROM Waflas_lietotaji WHERE Lietotajvards = ?");
+    $vaicajums = $savienojums->prepare("SELECT * FROM Waflas_lietotaji WHERE Lietotajvards = ? AND Radits=1");
     $vaicajums->bind_param("s", $lietotajs);
     $vaicajums->execute();
     $rezultats = $vaicajums->get_result();
