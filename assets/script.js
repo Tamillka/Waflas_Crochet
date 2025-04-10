@@ -126,20 +126,18 @@ if (slider) {
     }
   });
 
-  updateArrows(); // Sākotnējā bultiņu pārbaude
+  updateArrows();
 }
 
-// Atrodam visas pogas, kuras atver popupus
 const openBtns = document.querySelectorAll("[data-target]");
 const closeBtns = document.querySelectorAll(".closeBtn");
-// Pievienojam klikšķa notikumu katrai pogai
+
 openBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     const popup = document.querySelector(btn.dataset.target);
     if (popup) {
       popup.classList.add("popup-active");
 
-      // Apstrādājam attēlu galeriju, ja tā eksistē popup
       const thumbnails = popup.querySelectorAll(".thumbnail");
       const mainImage = popup.querySelector(".large-image");
 
@@ -149,10 +147,8 @@ openBtns.forEach(function (btn) {
             const largeImageSrc = thumbnail.getAttribute("data-large");
             mainImage.src = largeImageSrc;
 
-            // Noņemam 'active' klasi visiem sīktēliem
             thumbnails.forEach((thumb) => thumb.classList.remove("active"));
 
-            // Pievienojam 'active' klasi noklikšķinātajam sīktēlam
             thumbnail.classList.add("active");
           });
         });
@@ -160,7 +156,6 @@ openBtns.forEach(function (btn) {
     }
   });
 
-  // Aizveram popup, kad klikšķinām uz aizvēršanas pogas
   closeBtns.forEach(function (btn) {
     btn.addEventListener("click", function () {
       const popup = document.querySelector(btn.dataset.target);
@@ -449,17 +444,24 @@ $(document).ready(function () {
         id = modalId.replace("#modal-", "");
       }
     }
+
     const popup = $(this).closest(".popup");
+
     $.ajax({
       url: "../addToCart.php",
       type: "POST",
+      dataType: "json", // ← обязательно!
       data: { id_prece: id },
       success: function (response) {
-        popup.removeClass("popup-active").hide();
-        showNotif(response.message);
+        if (!response.success) {
+          showNotif(response.message, "error");
+        } else {
+          popup.removeClass("popup-active").hide();
+          showNotif(response.message, "success");
+        }
       },
       error: function () {
-        alert("Neizdevās pievienot preci grozam.");
+        showNotif("Neizdevās pievienot preci grozam.", "error");
       },
     });
   });

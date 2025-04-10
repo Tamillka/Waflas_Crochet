@@ -2,6 +2,8 @@
 session_start();
 require "../../assets/con_db.php";
 
+$page = $_POST['page'] ?? null;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['bilde'])) {
 
     $id = $_SESSION['lietotajs_id'];
@@ -21,8 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['bilde'])) {
     $vaicajums->close();
     $savienojums->close();
 
-    header("Location: ../../iestatijumi.php");
-    exit();
+    if ($page === 'iestatijumiKlients') {
+        header("Location: ../../iestatijumi.php");
+        exit();
+    } elseif ($page === 'iestatijumiAdmin') {
+        header("Location: ../iestatijumi_admin.php");
+        exit();
+    }
 }
 
 
@@ -48,8 +55,13 @@ if (isset($_POST['rediget'])) {
     $vaicajums->close();
     $savienojums->close();
 
-    header("Location: ../../iestatijumi.php"); // <-- Измени на фактический путь
-    exit();
+    if ($page === 'iestatijumiKlients') {
+        header("Location: ../../iestatijumi.php");
+        exit();
+    } elseif ($page === 'iestatijumiAdmin') {
+        header("Location: ../iestatijumi_admin.php");
+        exit();
+    }
 }
 
 // Paroles maiņa:
@@ -94,7 +106,12 @@ if (isset($_POST['change_password'])) {
     $vaicajums->close();
     $savienojums->close();
 
-    header("Location: ../../iestatijumi.php");
-    exit();
+    if ($page === 'iestatijumiKlients') {
+        header("Location: ../../iestatijumi.php");
+        exit();
+    } elseif ($page === 'iestatijumiAdmin') {
+        header("Location: ../iestatijumi_admin.php");
+        exit();
+    }
 }
 ?>

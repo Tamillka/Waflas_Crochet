@@ -1,12 +1,8 @@
 <?php
-$page = "iestatijumiKlients";
+$page = "iestatijumiAdmin";
 require "header.php";
-require "assets/con_db.php";
+require "../assets/con_db.php";
 
-if (!isset($_SESSION['lietotajvardsTam']) || $_SESSION['lietotajaLoma'] !== 'Klients') {
-    header("Location: admin/login.php");
-    exit();
-}
 
 $lietotajs_id = $_SESSION['lietotajs_id'];
 $vaicajums = $savienojums->prepare("SELECT * FROM Waflas_lietotaji WHERE Lietotajs_ID = ?");
@@ -16,6 +12,9 @@ $rezultats = $vaicajums->get_result();
 $lietotajs = $rezultats->fetch_assoc();
 
 ?>
+<p class="svariga-info">Administrācijas sadaļa satur īpaši svarīgus datus, kas būtiski ietekmē sistēmas darbību un
+    drošību. <br>
+    Saglabājiet datus rūpīgi un izvairieties no nevajadzīgām izmaiņām vai dzēšanas. </p>
 
 <div class="main-container margin-top">
     <div class="edit-container">
@@ -116,7 +115,7 @@ $lietotajs = $rezultats->fetch_assoc();
                             showNotif("Profils tika veiksmīgi dzēsts!");
 
                             setTimeout(function () {
-                                window.location.href = "/index.php";
+                                window.location.href = "/admin/login.php";
                             }, 3000);
                         })
                         .catch(error => {
@@ -145,5 +144,5 @@ if (isset($_SESSION['notif'])) {
     unset($_SESSION['notif']);
 }
 
-require "footer.php";
+// require "footer.php";
 ?>

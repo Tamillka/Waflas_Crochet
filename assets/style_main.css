@@ -1421,7 +1421,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 .profile-box .image img{
     max-width: 100%;
-    max-height: 18rem;
+    max-height: 17rem;
     object-fit: cover;
     border-radius: 50%;
     aspect-ratio: 1/1;
@@ -1445,6 +1445,19 @@ input[type="range"]::-webkit-slider-runnable-track {
 .profile-box span{
     font-style: italic;
     color: var(--maincolor);
+}
+.form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.form input {
+    padding: 0.3rem .7rem;
+    border: 1px solid var(--maincolor);
+    border-radius: 1rem;
+    background-color: #fff8f8c7;
+    font-size: 1.1rem;
 }
 .change-info{
     width: 100%;
@@ -1487,7 +1500,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     font-size: 1.3rem;
 }
 
-.form-group input:focus {
+.form-group input:focus, .form input:focus {
     background-color: #fff;
     box-shadow: 0 0 0 2px rgba(170, 104, 82, 0.2);
 }
@@ -1496,7 +1509,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     gap: 1.5rem;
 }
 
-.main-button {
+.main-button,  #passwordForm button{
     background-color: var(--maincolor);
     color: var(--lightText);
     padding: 0.8rem 1.5rem;
@@ -1505,7 +1518,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     font-size: 1.2rem;
     position: relative;
 }
-.main-button:hover{
+.main-button:hover, #passwordForm button:hover{
     background: transparent;
     border: 1px solid var(--maincolor);
     color: var(--maincolor);

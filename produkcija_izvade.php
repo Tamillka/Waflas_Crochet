@@ -1,8 +1,6 @@
 <?php
 require "assets/con_db.php";
 
-// Izvēlamies, cik produktus parādīt atkarībā no lapas
-// if ($page === 'galvena') {
 $izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC LIMIT 4";
 $atlasaPrecesSQL = mysqli_query($savienojums, $izvadeSQL);
 

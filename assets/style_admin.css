@@ -28,7 +28,6 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
-    padding-top: 5rem;
 }
 html{
     scroll-behavior: smooth;
@@ -80,6 +79,39 @@ html::-webkit-scrollbar-thumb{
 .btn:hover{
     background-color: var(--hover);
 }
+h1{
+    font-size: 4.5rem;
+    color: var(--lightText);
+    padding: 1rem 0;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 2.8rem;
+    color: var(--text);
+    padding: 1.5rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h3{
+    font-size: 2rem;
+    color: var(--text);
+    padding: 1rem 0;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.3rem;
+    color: var(--text);
+    padding: 1rem 0;
+    line-height: 1.2;
+}
+img{
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
 
 aside .user{
     padding: 1.5rem 1rem;
@@ -114,17 +146,25 @@ aside .current {
     letter-spacing: .1rem;
     font-weight: bold;
 }
-
-.user .fa-user{
-    font-size: 3rem;
-    padding: 1rem 1.2rem;
-    border-radius: 100%;
+.user{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.user .profile{
+    max-width: 6rem;
+    max-height: 6rem;
+    border-radius: 50%;
     border: 2px solid var(--maincolor);
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    align-self: center;
 }
 .user .btn{
     font-size: 1rem;
     padding: .3rem .5rem;
 }
+
 .user .btn:hover{
     font-weight: bold;
     background-color: var(--bg);
@@ -133,37 +173,10 @@ aside .current {
 .user .btn::after{
     background-color: var(--maincolor); /* Līnijas krāsa */
 }
-.user form{
-    padding: .6rem 0;
-}
-.user input{
-    border: 2px solid var(--bg);
-    background: var(--lightText);
-    padding: .4rem;
-    margin: .2rem 0;
-    font-size: 1rem;
-    color: var(--text);
-    border-radius: var(--radius);
-}
-.user form input:focus{
-    background: var(--bg);
-}
-.user .hidden{
-    display: none;
-}
+
 .logout{
     padding: 0;
 }
-.infoo{
-    color: #ff0000;
-    font-size: 1.3rem;
-    text-align: center;
-    padding-top: .5rem;
-    }
-    .green{
-        color: #087e14;
-    }
-
 .aside{
     display: flex;
     flex-direction: column;
@@ -176,25 +189,368 @@ aside .current {
     box-shadow: var(--box-shadow);
 }
 .aside h1{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: var(--text);
-    padding: 1rem;
+    padding: 1.1rem;
     background: var(--bg);
     text-align: center;
 }
 aside{
     padding: 0 2rem;
 } 
+.aside .user{
+    padding-bottom: .5rem;
+}
 
 nav a{
-display: block;
-border-radius: var(--radius);
-font-size: 1.2rem;
-margin: 1rem 0;
-padding: 1rem;
-text-decoration: none;
+    display: block;
+    border-radius: var(--radius);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    text-decoration: none;
 }
 
 nav a:hover{
     letter-spacing: .05rem;
+}
+
+.main-container{
+    margin-left: 20%;
+    padding: 7rem 3%;
+}
+
+.svariga-info{
+    margin-left: 20%;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    background-color: var(--section-bg);
+    /* background-color: var(--maincolor); */
+    color: var(--lightText);
+    position: absolute;
+    top: 0;
+    max-width: 80%;
+    width: 100%;
+ }
+
+/* 
+//IESTATIJUMI */
+.edit-container{
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+}
+.profile-box{
+    width: 35%;
+    box-shadow: var(--shadow1);
+    /* background: var(--lightText); */
+    background: #fff9f7;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+.profile-box .image{
+   position: relative;
+}
+.profile-box .image img{
+    max-width: 100%;
+    max-height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    border: 2px solid var(--maincolor);
+}
+.profile-box i{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1.7rem 1rem;
+    padding: .4rem .5rem;
+    border-radius: 50%;
+    color: var(--lightText);
+    background: var(--maincolor);
+    font-size: 1.3rem;
+}
+.profile-box i:hover{
+    color: var(--text);
+    background: var(--lightText);
+}
+.profile-box span{
+    font-style: italic;
+    color: var(--maincolor);
+}
+.change-info{
+    width: 100%;
+    box-shadow: var(--shadow1);
+    background: #fff9f7;
+}
+.change-info .head{
+    background: var(--hover);
+    padding-left: 2rem;
+}
+.change-info .head h3{
+    font-style: italic;
+}
+.form{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.form input {
+    padding: 0.3rem .7rem;
+    border: 1px solid var(--maincolor);
+    border-radius: 1rem;
+    background-color: #fff8f8c7;
+    font-size: 1.1rem;
+}
+.user-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.form-group input {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--maincolor);
+    border-radius: 1rem;
+    background-color: #fff8f8c7;
+    font-size: 1.3rem;
+}
+
+.form-group input:focus, .form input:focus  {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(170, 104, 82, 0.2);
+}
+.name-group{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-button, #passwordForm button {
+    background-color: var(--maincolor);
+    color: var(--lightText);
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+}
+.main-button:hover, #passwordForm button:hover{
+    background: transparent;
+    border: 1px solid var(--maincolor);
+    color: var(--maincolor);
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: var(--maincolor);
+    border: 1px solid var(--maincolor);
+    padding: 0.6rem 1.2rem;
+    border-radius: 1.5rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.secondary-button:hover {
+    background-color: var(--maincolor);
+    color: white;
+}
+
+.delete-button {
+    background-color: transparent;
+    color: #a42a1d;
+    border: 1px solid #c0392b;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1.5rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.delete-button:hover {
+    background-color: #a63326;
+    color: var(--lightText);
+}
+
+.buttons-bottom {
+    display: flex;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.notif{
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: bolder;
+  }
+
+  .notifikacija.success {
+    background: #4caf50;
+}
+
+.notifikacija.error {
+    background: #a11d14;
+}
+
+  .notifikacija {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    /* background: #4caf50; */
+    color: var(--lightText);
+    padding: 1.2rem 1.7rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 5;
+    opacity: 0;
+    font-size: 1.3rem;
+    transition: opacity 0.5s ease;
+}
+
+.notifikacija.show {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.closeNotif {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--lightText)
+    padding: 0 .4rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+.closeNotif:hover {
+    color: var(--text);
+}
+
+
+/*
+TABULAS
+*/
+.admin-main{
+    background: #fffdfc;
+    box-shadow: var(--shadow1);
+    border-radius: var(--radius);
+    margin: 6rem 2% 2rem 22%;
+}
+.kategorijas{
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    
+}
+.produkta-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1.5rem;
+    margin-top: .5rem;
+    background: #fffdfc;
+    box-shadow: var(--shadow1);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.produkta-info p{
+    background-color: var(--hover);
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 1.4rem;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+table{
+    width: 100%;
+    font-size: 1rem;
+    border-collapse: none;
+    border-spacing: 0 .5rem;
+}
+
+tr{
+    background: #fff9f7;
+}
+
+th{
+    background: var(--maincolor);
+    color: var(--lightText);
+    padding: 1rem .5rem;
+    text-align: left;
+    font-weight: bolder;
+}
+td{
+    padding: 1rem .5rem;
+}
+
+td:first-child, th:first-child{
+    border-top-left-radius: .4rem;
+    border-bottom-left-radius: .4rem;
+}
+td:last-child, th:last-child{
+    border-top-right-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+}
+
+.admin-main table img{
+    max-width: 7rem;
+    max-height: 5rem;
+    height: 100%;
+    object-fit: cover;
+ }
+
+.produkts-item, .lietotajs-item, .kategorija-item{
+    background: #7fec7f;
+    color: #fff;
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    margin: 0 .3rem;
+    padding: .5rem 1rem;
+}
+
+.produkts-item:hover, .lietotajs-item:hover, .kategorija-item:hover{
+    background: var(--bg);
+    color: #71e771;
+}
+
+.produkts-delete, .lietotajs-delete, .kategorija-delete{
+    background: #d33f3f;
+    color: #fff;
+    cursor: pointer;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    margin: 0 .3rem;
+    padding: .5rem 1rem;
+}
+.produkts-delete:hover, .lietotajs-delete:hover, .kategorija-delete:hover{
+    background: var(--bg);
+    color: #8a2121;
 }
