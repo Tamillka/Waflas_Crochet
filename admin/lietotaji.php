@@ -8,6 +8,8 @@ if (!isset($_SESSION['lietotajvardsTam']) || $_SESSION['lietotajaLoma'] !== 'Adm
 }
 ?>
 
+<script src="../assets/lietotaji_admin.js" defer></script>
+
 <p class="svariga-info">Administrācijas sadaļa satur īpaši svarīgus datus, kas būtiski ietekmē sistēmas darbību un
     drošību. <br>
     Saglabājiet datus rūpīgi un izvairieties no nevajadzīgām izmaiņām vai dzēšanas. </p>
@@ -27,4 +29,11 @@ if (!isset($_SESSION['lietotajvardsTam']) || $_SESSION['lietotajaLoma'] !== 'Adm
         </tr>
         <tbody id="lietotaji"></tbody>
     </table>
+</div>
+
+<div id="notifikacija" class="notifikacija hidden">
+    <div class="closeNotif">
+        <i class="fas fa-times"></i>
+    </div>
+    <span id="notifikacijas-teksts"></span>
 </div>

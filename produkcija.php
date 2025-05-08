@@ -67,7 +67,7 @@ require "header.php";
                 <label>Izvēlies kategoriju:</label>
                 <?php
                 require("assets/con_db.php");
-                $kategorijas_SQL = "SELECT * FROM Waflas_kategorija";
+                $kategorijas_SQL = "SELECT * FROM Waflas_kategorija WHERE Radits = 1";
                 $kategorijas_rezultats = mysqli_query($savienojums, $kategorijas_SQL);
                 ?>
                 <select name="kategorija">

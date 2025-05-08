@@ -128,7 +128,7 @@ require "header.php";
             <?php
             require "assets/con_db.php";
 
-            $kategorijasSQL = "SELECT * FROM Waflas_kategorija ORDER BY Piev_datums DESC";
+            $kategorijasSQL = "SELECT * FROM Waflas_kategorija WHERE Radits = 1  ORDER BY Piev_datums DESC";
             $atlasaKategorijas = mysqli_query($savienojums, $kategorijasSQL);
 
             if (mysqli_num_rows($atlasaKategorijas) > 0) {

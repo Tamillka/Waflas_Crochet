@@ -46,7 +46,8 @@ if (!empty($materiali)) {
     $whereClauses[] = "(" . implode(" OR ", $escapedMateriali) . ")";
 }
 
-$whereSql = !empty($whereClauses) ? " WHERE " . implode(" AND ", $whereClauses) : "";
+$whereClauses[] = "Radits = 1";
+$whereSql = " WHERE " . implode(" AND ", $whereClauses);
 
 $vaicajums = "SELECT * FROM Waflas_preces $whereSql $sortSql";
 

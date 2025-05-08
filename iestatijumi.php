@@ -22,11 +22,12 @@ $lietotajs = $rezultats->fetch_assoc();
         <div class="profile-box">
             <div class="image">
                 <img src="/admin/database/get_profile_image.php" alt="Profila bilde">
-                <form id="photoForm" method="POST" action="/admin/database/edit_profile.php"
+                <form id="photoForm" method="POST" action="admin/database/edit_profile.php"
                     enctype="multipart/form-data">
-                    <input type="file" name="bilde" id="bildeInput" accept="image/*" style="display: none;">
-                    <i class="fa-solid fa-plus" id="uploadTrigger"></i>
-                    <input type="hidden" name="page" value="<?php echo $page; ?>">
+                    <input type="file" name="bilde" id="bildeInput" accept="image/*" style="display: none;"
+                        onchange="this.form.submit()">
+                    <label for="bildeInput"><i class="fa-solid fa-plus" style="cursor: pointer;"></i></label>
+                    <input type="hidden" name="page" value="iestatijumiKlients">
                 </form>
             </div>
             <h3>Sveiki, <span><?php echo $_SESSION['lietotajvardsTam'] ?></span></h3>
@@ -112,7 +113,6 @@ $lietotajs = $rezultats->fetch_assoc();
                     })
                         .then(response => response.text())
                         .then(data => {
-                            // console.log("Atbilde no servera:", data);
                             showNotif("Profils tika veiksmīgi dzēsts!");
 
                             setTimeout(function () {

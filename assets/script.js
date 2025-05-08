@@ -199,23 +199,6 @@ function showNotif(teksts, tips = "success") {
   }, 3000);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const uploadBtn = document.getElementById("uploadTrigger");
-  const fileInput = document.getElementById("bildeInput");
-
-  if (uploadBtn && fileInput) {
-    uploadBtn.addEventListener("click", function () {
-      fileInput.click();
-    });
-
-    fileInput.addEventListener("change", function () {
-      if (fileInput.files.length > 0) {
-        document.getElementById("photoForm").submit();
-      }
-    });
-  }
-});
-
 $(document).ready(function () {
   console.log("jQuery darbojas!");
 
@@ -290,26 +273,10 @@ $(document).ready(function () {
 
     $("input[name='materiali[]']").prop("checked", false);
 
-    // $(".min-price").val(0);
-    // $(".max-price").val(100);
-    // $("#min-value").text("0$");
-    // $("#max-value").text("100$");
-
     fetchPreces("", "", []);
   });
 
-  // $(".min-price, .max-price").on("input", function () {
-  //   $("#min-value").text($(".min-price").val() + "$");
-  //   $("#max-value").text($(".max-price").val() + "$");
-  // });
-
-  function fetchPreces(
-    kartosana = "",
-    kategorija = "",
-    materiali = []
-    // minPrice = 0,
-    // maxPrice = 100
-  ) {
+  function fetchPreces(kartosana = "", kategorija = "", materiali = []) {
     const urlParams = new URLSearchParams(window.location.search);
     let kategorijaFromURL = urlParams.get("kategorija_id");
 
@@ -329,12 +296,6 @@ $(document).ready(function () {
     if (materiali.length > 0) {
       params.push(`materiali=${encodeURIComponent(materiali.join(","))}`);
     }
-    // if (minPrice) {
-    //   params.push(`minPrice=${minPrice}`);
-    // }
-    // if (maxPrice) {
-    //   params.push(`maxPrice=${maxPrice}`);
-    // }
 
     if (params.length > 0) {
       url += "?" + params.join("&");
@@ -412,26 +373,6 @@ $(document).ready(function () {
     });
   }
 
-  // function showNotif(teksts, tips = "success") {
-  //   const notif = $("#notifikacija");
-  //   const tekstsElem = $("#notifikacijas-teksts");
-
-  //   tekstsElem.text(teksts);
-
-  //   notif.removeClass("hidden").addClass("show");
-
-  //   notif
-  //     .find(".closeNotif")
-  //     .off("click")
-  //     .on("click", function () {
-  //       notif.removeClass("show").addClass("hidden");
-  //     });
-
-  //   setTimeout(function () {
-  //     notif.removeClass("show").addClass("hidden");
-  //   }, 3000);
-  // }
-
   $(document).on("click", ".pievienotGrozam", function () {
     let id = $(this).data("id");
     if (!id) {
@@ -450,7 +391,7 @@ $(document).ready(function () {
     $.ajax({
       url: "../addToCart.php",
       type: "POST",
-      dataType: "json", // ← обязательно!
+      dataType: "json",
       data: { id_prece: id },
       success: function (response) {
         if (!response.success) {
@@ -592,7 +533,7 @@ $(document).ready(function () {
         { id },
         (response) => {
           if (response.success) {
-            fetchPrecesGroza(); // перезагружаем список
+            fetchPrecesGroza();
             showNotif(response.message);
           } else {
             alert("Kļūda dzēšot preci: " + response.message);

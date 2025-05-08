@@ -554,3 +554,52 @@ td:last-child, th:last-child{
     background: var(--bg);
     color: #8a2121;
 }
+
+
+
+/*MODĀLIE LOGI*/
+.modal{
+    position: fixed;
+    background: rgba(0,0,0,70%);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .modal.modal-active{
+     display: flex;
+ }
+ 
+ .modal-box{
+    background: var(--bg);
+    max-width: 50rem;
+    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    position: relative;
+ }
+ 
+ .modal .close-modal{
+     position: absolute;
+     top: .5rem;
+     right: .5rem;
+     background: var(--maincolor);
+     padding: .3rem .5rem;
+     color: var(--lightText);
+     font-size: .7rem;
+     border-radius: .5rem;
+     cursor: pointer;
+ }
+ 
+ .modal .close-modal:hover{
+     background-color: var(--section-bg);
+ }
+ .modal h2{
+     text-align: center;
+     font-size: 2.5rem;
+ }

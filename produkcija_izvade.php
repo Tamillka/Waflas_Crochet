@@ -1,7 +1,7 @@
 <?php
 require "assets/con_db.php";
 
-$izvadeSQL = "SELECT * FROM Waflas_preces ORDER BY Piev_datums DESC LIMIT 4";
+$izvadeSQL = "SELECT * FROM Waflas_preces WHERE Radits = 1 ORDER BY Piev_datums DESC LIMIT 4";
 $atlasaPrecesSQL = mysqli_query($savienojums, $izvadeSQL);
 
 if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
