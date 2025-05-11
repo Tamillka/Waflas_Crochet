@@ -23,7 +23,7 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [x] - Atsauksmju lapas sakārtošana
 - [x] - Reģistrācija un login
 - [ ] - Admin puse
-- [ ] - Moderatoram mazāk iespējas nekā adminam, dažas sadaļas paslēptas
+- [x] - Moderatoram mazāk iespējas nekā adminam, dažas sadaļas paslēptas
 - [x] - Lietotāja profila apskate, grozs
 - [ ] - Pasūtījumu vēsture
 
@@ -33,8 +33,8 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Hero sadaļā atsauksmju skaits izvadās no datubāzes
 - [x] - Iespēja reģistrēties mājaslapā (klients pats sevi)
 - [x] - Ja e-pasts eksistē, vajag autorizēties
-- [ ] - Admins var pievienot citus adminus un moderatorus
-- [ ] - Profila apskate (dati no datubāzes)
+- [x] - Admins var pievienot citus adminus un moderatorus
+- [x] - Profila apskate (dati no datubāzes)
 - [x] - Iespēja klientam sazināties ar pārdevēju (mail.php)
 - [x] - Klients var apskatīt preces, atlasot un sakārtojot tās ar filtru palīdzību
 - [x] - Klients var meklēt preces, ievadot nosaukumu
@@ -47,9 +47,9 @@ Projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma 
 - [ ] - Klienti, kuriem pāsūtījumu vēsture ir tukša, var tikai lasīt citas atsauksmes
 - [ ] - Admins un moderators var izmainīt pāsūtījuma statusu
 - [ ] - Kad pasūtījuma statuss tiek mainīts - klients saņem uz e-pastu attiecīgo paziņojumu
-- [ ] - Visiem lietotājiem iespēja samainīt personīgo informāciju
-- [ ] - Admins var dzēst adminus un moderatorus
-- [ ] - Var pievienot bildes uz datubāzi kā failu no datora
+- [x] - Visiem lietotājiem iespēja samainīt personīgo informāciju
+- [x] - Admins var dzēst adminus un moderatorus
+- [x] - Var pievienot bildes uz datubāzi kā failu no datora
 - [ ] - Administrācijas paneļa gavenā lapa - statistika un kopējā info
-- [ ] - Admins vai moders var apskatīt esošās preces un kategorijas, dzēst tās vai rediģēt
+- [x] - Admins vai moders var apskatīt esošās preces un kategorijas, dzēst tās vai rediģēt
 - [ ] – Programmatūras testēšana
