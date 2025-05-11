@@ -34,7 +34,7 @@ $(document).ready(function () {
   }
 
   $(document).on("click", ".kategorija-item", (e) => {
-    $(".modal").css("display", "flex");
+    $("#modal-kategorijas").css("display", "flex");
 
     const element = $(e.currentTarget).closest("tr");
     const id = $(element).attr("kat_ID");
@@ -44,6 +44,11 @@ $(document).ready(function () {
       $("#nosaukums").val(kategorija.nosaukums);
       $("#kat_ID").val(kategorija.id);
       edit = true;
+      if (kategorija.bilde) {
+        $("#preview-image")
+          .attr("src", `data:image/jpeg;base64,${kategorija.bilde}`)
+          .css("display", "block");
+      }
 
       if (edit) {
         const footer = `
@@ -56,11 +61,13 @@ $(document).ready(function () {
   });
 
   $(document).on("click", "#new-btn", (e) => {
-    $(".modal").css("display", "flex");
+    $("#modal-kategorijas").css("display", "flex");
   });
   $(document).on("click", ".close-modal", (e) => {
     $(".modal").hide();
     $("#kategorijasForma").trigger("reset");
+    $("#preview-image").attr("src", "").css("display", "none");
+    $("#kategorijas-informacija").html("");
     edit = false;
   });
 
@@ -78,8 +85,8 @@ $(document).ready(function () {
       url: url,
       type: "POST",
       data: formData,
-      processData: false, // Nepārveido datus
-      contentType: false, // Neuzstāda satura tipu, ļaujot pārlūkam ģenerēt robežas
+      processData: false,
+      contentType: false,
       success: () => {
         $(".modal").hide();
         $("#kategorijasForma").trigger("reset");
@@ -95,6 +102,21 @@ $(document).ready(function () {
         console.error("Kļūda:", error);
       },
     });
+  });
+
+  $(document).on("change", "#bilde", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        $("#preview-image")
+          .attr("src", e.target.result)
+          .css("display", "block");
+      };
+      reader.readAsDataURL(file);
+    } else {
+      $("#preview-image").attr("src", "").css("display", "none");
+    }
   });
 
   $(document).on("click", ".kategorija-delete", (e) => {

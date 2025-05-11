@@ -37,14 +37,108 @@ $(document).ready(function () {
     });
   }
 
-  $(document).on("click", ".lietotajs-delete", (e) => {
+  function togglePasswordFields() {
+    if (edit) {
+      $("#parole").hide();
+      $(".paroleBox").show();
+      $("#paroleNew").hide();
+    } else {
+      $("#parole").show();
+      $(".paroleBox").hide();
+    }
+  }
+
+  $(document).on("click", ".lietotajs-item", function () {
+    const id = $(this).closest("tr").attr("liet_ID");
+    $(".modal").css("display", "flex");
+
+    $.post("database/lietotajs_single.php", { id }, (response) => {
+      const lietotajs = JSON.parse(response);
+      $("#lietotajvards").val(lietotajs.lietotajvards);
+      $("#vards").val(lietotajs.vards);
+      $("#uzvards").val(lietotajs.uzvards);
+      $("#epasts").val(lietotajs.epasts);
+      $("#talrunis").val(lietotajs.talrunis);
+      $("#loma").val(lietotajs.loma);
+      $("#liet_ID").val(lietotajs.id);
+      edit = true;
+      togglePasswordFields();
+    });
+  });
+
+  $(document).on("click", "#new-btn", () => {
+    $(".modal").css("display", "flex");
+    edit = false;
+    togglePasswordFields();
+  });
+
+  $(document).on("click", "#changePassword", function (e) {
+    e.preventDefault();
+    $("#paroleNew").show().focus();
+  });
+
+  $(document).on("click", ".close-modal", function () {
+    $(".modal").hide();
+    $("#lietotajaForma").trigger("reset");
+    $("#paroleNew").hide();
+    edit = false;
+    togglePasswordFields();
+  });
+
+  $("#lietotajaForma").submit((e) => {
+    e.preventDefault();
+    const postData = {
+      lietotajvards: $("#lietotajvards").val(),
+      vards: $("#vards").val(),
+      uzvards: $("#uzvards").val(),
+      epasts: $("#epasts").val(),
+      talrunis: $("#talrunis").val(),
+      loma: $("#loma").val(),
+      parole: $("#parole").val(),
+      paroleNew: $("#paroleNew").val(),
+      id: $("#liet_ID").val(),
+    };
+
+    url = !edit ? "database/lietotajs_add.php" : "database/lietotajs_edit.php";
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: postData,
+      dataType: "json",
+      success: function (response) {
+        if (response.success) {
+          $(".modal").hide();
+          $("#lietotajaForma").trigger("reset");
+          fetchLietotaji();
+          showNotif(response.message, "success");
+          edit = false;
+        } else {
+          showNotif(response.message, "error");
+        }
+      },
+      error: function () {
+        showNotif("Kļūda saglabājot datus!", "error");
+      },
+    });
+  });
+
+  $(document).on("click", ".lietotajs-delete", function () {
     if (confirm("Vai tiešām vēlies dzēst?")) {
-      const element = $(e.currentTarget).closest("tr");
-      const id = $(element).attr("liet_ID");
-      $.post("database/lietotajs_delete.php", { id }, (response) => {
-        fetchLietotaji();
-        showNotif("Lietotājs veiksmīgi dzēsts!", "success");
-      });
+      const id = $(this).closest("tr").attr("liet_ID");
+
+      $.post(
+        "database/lietotajs_delete.php",
+        { id },
+        function (response) {
+          if (response.success) {
+            fetchLietotaji();
+            showNotif(response.message, "success");
+          } else {
+            showNotif(response.message || "Kļūda dzēšot lietotāju.", "error");
+          }
+        },
+        "json"
+      );
     }
   });
 });

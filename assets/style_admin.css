@@ -48,7 +48,7 @@ html::-webkit-scrollbar-thumb{
 }
 .btn {
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: .8rem 1.8rem;
     background: var(--bg);
     color: var(--text);
     font-weight: bolder;
@@ -359,7 +359,7 @@ nav a:hover{
     color: var(--maincolor);
 }
 
-.secondary-button {
+.secondary-button, .submit{
     background-color: transparent;
     color: var(--maincolor);
     border: 1px solid var(--maincolor);
@@ -369,7 +369,7 @@ nav a:hover{
     position: relative;
 }
 
-.secondary-button:hover {
+.secondary-button:hover, .submit:hover {
     background-color: var(--maincolor);
     color: white;
 }
@@ -450,6 +450,15 @@ nav a:hover{
 .closeNotif:hover {
     color: var(--text);
 }
+
+    .form-notif{
+      background: #990000;
+      color: var(--lightText);
+      border-radius: .5rem;
+      text-align: center;
+      margin: 1rem 0;
+  }
+
 
 
 /*
@@ -555,7 +564,11 @@ td:last-child, th:last-child{
     color: #8a2121;
 }
 
-
+.top{
+    display: flex;
+    justify-content: right;
+    padding: 1rem 1rem .5rem;
+}
 
 /*MODĀLIE LOGI*/
 .modal{
@@ -576,12 +589,15 @@ td:last-child, th:last-child{
  }
  
  .modal-box{
-    background: var(--bg);
+    background: #fefefe;
     max-width: 50rem;
     box-shadow: var(--box-shadow);
-    padding: 1rem 2rem;
     border-radius: .5rem;
     position: relative;
+    overflow: hidden;
+ }
+ .box{
+    padding: 1rem 1.5rem;
  }
  
  .modal .close-modal{
@@ -599,7 +615,78 @@ td:last-child, th:last-child{
  .modal .close-modal:hover{
      background-color: var(--section-bg);
  }
- .modal h2{
+ .modal h3{
      text-align: center;
-     font-size: 2.5rem;
+     font-size: 1.8rem;
+     background-color: var(--section-bg);
+     color: var(--lightText);
+     padding: .5rem 0;
  }
+ .formElements{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    max-width: 50rem;
+    gap: .5rem;
+    width: 100%;
+}
+label{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.modal input, .modal textarea, .modal select{
+    width: 100%;
+    border-radius: var(--radius);
+    padding: .5rem .8rem;
+    background: #fff8f8c7;
+    box-shadow: var(--shadow1);
+    color: var(--text);
+    margin: .4rem 0;
+    font-size: 1.1rem;
+    resize: none;
+}
+.modal textarea{
+    height: 7rem;
+}
+.modal input:focus, .modal textarea:focus, .modal select:focus{
+    background: var(--bg);
+}
+
+.modal .bottom-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal .bottom-info p{
+    font-size: .9rem;
+    font-weight: bolder;
+    padding: 0;
+    margin-top: 2rem;
+}
+.modal .btn{
+    border-radius: 2rem;
+    padding: .6rem 1.5rem;
+    box-shadow: var(--shadow1);
+}
+.modal form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+#modal-produkti .modal-box, #modal-lietotaji .modal-box{
+    min-width: 40rem;
+}
+#preview-container img{
+    width: 100px;
+    height: 100px;
+    display: none;
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+.modal .passwordNew{
+    font-size: 1rem;
+    padding: .4rem .8rem;
+}

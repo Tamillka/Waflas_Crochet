@@ -1,7 +1,7 @@
 <?php
 require '../../assets/con_db.php';
 
-$vaicajums = "SELECT * FROM Waflas_lietotaji WHERE Radits = 1 ORDER BY lietotajs_id DESC";
+$vaicajums = "SELECT * FROM Waflas_lietotaji WHERE Radits = 1 AND Loma = 'Administrators' OR Loma = 'Moderators' ORDER BY lietotajs_id DESC";
 $rezultats = mysqli_query($savienojums, $vaicajums);
 
 while ($ieraksts = $rezultats->fetch_assoc()) {
