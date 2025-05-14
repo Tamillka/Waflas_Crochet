@@ -3,7 +3,7 @@ $page = "galvena";
 require "header.php";
 ?>
 
-
+<script src="../assets/preces_izvade.js" defer></script>
 <section id="hero">
     <div class="main-container">
         <h2>Wafla's crochet</h2>

@@ -3,6 +3,8 @@ $page = "produkcija";
 require "header.php";
 ?>
 
+<script src="../assets/preces_izvade.js" defer></script>
+
 <section id="produkti-nosaukums">
     <div class="filtrudala">
         <a class="btn-sm" id="filterBtn"><i class="fa-solid fa-filter"></i> Filtri</a>

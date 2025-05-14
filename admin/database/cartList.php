@@ -1,5 +1,5 @@
 <?php
-require 'assets/con_db.php';
+require '../../assets/con_db.php';
 session_start();
 
 header('Content-Type: application/json');
