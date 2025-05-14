@@ -198,3 +198,27 @@ function showNotif(teksts, tips = "success") {
     notif.removeClass("show").addClass("hidden");
   }, 3000);
 }
+
+$(document).ready(function () {
+  $("#settingButton").on("click", function () {
+    $(".profileBox").toggle();
+  });
+
+  $(document).on("click", function (event) {
+    if (!$(event.target).closest("#settingButton, .profileBox").length) {
+      $(".profileBox").hide();
+    }
+  });
+
+  document.querySelectorAll(".togglePassword").forEach((toggle) => {
+    toggle.addEventListener("click", function () {
+      const passwordField = this.previousElementSibling;
+      const type =
+        passwordField.getAttribute("type") === "password" ? "text" : "password";
+      passwordField.setAttribute("type", type);
+
+      this.classList.toggle("fa-eye");
+      this.classList.toggle("fa-eye-slash");
+    });
+  });
+});

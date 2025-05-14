@@ -282,6 +282,26 @@ require "header.php";
 </section>
 
 
+<?php
+if (isset($_SESSION['pazinojums'])):
+    ?>
+    <div class="modal modal-active" id="modal-message">
+        <div class="modal-box">
+            <div class="close-modal" data-target="#modal-message">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="notif">
+                <?php
+                echo $_SESSION['pazinojums'];
+                unset($_SESSION['pazinojums']);
+                ?>
+            </div>
+        </div>
+    </div>
+    <?php
+endif;
+?>
+
 
 <?php
 require "footer.php";

@@ -1,16 +1,6 @@
 $(document).ready(function () {
   console.log("jQuery darbojas!");
 
-  $("#settingButton").on("click", function () {
-    $(".profileBox").toggle();
-  });
-
-  $(document).on("click", function (event) {
-    if (!$(event.target).closest("#settingButton, .profileBox").length) {
-      $(".profileBox").hide();
-    }
-  });
-
   $("#filterBtn").on("click", function () {
     $(".filterBox").toggle();
   });
@@ -21,17 +11,6 @@ $(document).ready(function () {
     }
   });
 
-  document.querySelectorAll(".togglePassword").forEach((toggle) => {
-    toggle.addEventListener("click", function () {
-      const passwordField = this.previousElementSibling;
-      const type =
-        passwordField.getAttribute("type") === "password" ? "text" : "password";
-      passwordField.setAttribute("type", type);
-
-      this.classList.toggle("fa-eye");
-      this.classList.toggle("fa-eye-slash");
-    });
-  });
   if ($("#preces-container").length > 0) {
     fetchPreces();
   }

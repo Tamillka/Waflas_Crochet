@@ -1398,7 +1398,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 
 .margin-top{
-    margin-top: 9rem;
+    margin-top: 8rem;
 }
 .edit-container{
     display: flex;
@@ -1561,7 +1561,17 @@ input[type="range"]::-webkit-slider-runnable-track {
     justify-content: space-between;
 }
 
+.pasutijums-content{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    gap: 1.5rem;
+}
 
+.pasutijums{
+    max-width: 25rem;
+    width: 100%;
+}
 .notif{
     font-size: 1.4rem;
     text-align: center;
