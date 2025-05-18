@@ -1122,6 +1122,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     display: flex;
     gap: 1rem;
 }
+
 #popupKontakti .container{
     margin-top: 1rem;
     display: flex;
@@ -1151,6 +1152,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 }
 #popupKontakti input:hover, #popupKontakti textarea:hover{
     scale: 1.02;
+}
+#popupKontakti form{
+    padding: 0 1rem;
 }
 
 #atsauksmes-nosaukums, #produkti-nosaukums{

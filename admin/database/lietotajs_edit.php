@@ -9,6 +9,23 @@ if (isset($_POST['id'])) {
     $l_loma = htmlspecialchars($_POST['loma']);
     $id = intval($_POST['id']);
     $paroleNew = $_POST['paroleNew'];
+
+    $check_query = $savienojums->prepare("SELECT Lietotajs_ID FROM Waflas_lietotaji WHERE Epasts = ? AND Lietotajs_ID != ? AND Radits = 1");
+    $check_query->bind_param("si", $l_epasts, $id);
+    $check_query->execute();
+    $check_query->store_result();
+
+    if ($check_query->num_rows > 0) {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Lietotājs ar šo e-pastu jau eksistē!',
+        ]);
+        $check_query->close();
+        $savienojums->close();
+        exit;
+    }
+    $check_query->close();
+
     if (!empty($paroleNew)) {
         $parole = password_hash($paroleNew, PASSWORD_DEFAULT);
         $sql = "UPDATE Waflas_lietotaji SET Lietotajvards = ?, Vards = ?, Uzvards = ?, Epasts = ?, Talrunis = ?, Loma = ?, Parole = ? WHERE Lietotajs_ID = ?";

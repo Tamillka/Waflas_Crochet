@@ -1,11 +1,15 @@
 $(document).ready(function () {
+  // Funkcija, lai noteiktu pareizo vārda formu atkarībā no daudzuma
   function getWordForm(n, singular, plural) {
     return n === 1 ? singular : plural;
   }
 
+  // Ja lietotājs ir autorizēts (mainīgais isLoggedIn ir definēts un patiess), ielādē groza preces
   if (typeof isLoggedIn !== "undefined" && isLoggedIn) {
     fetchPrecesGroza();
   }
+
+  // Funkcija, kas iegūst groza preces no servera un attēlo tās
   function fetchPrecesGroza() {
     $.ajax({
       url: "../admin/database/cartList.php",
@@ -16,6 +20,7 @@ $(document).ready(function () {
         let totalCount = 0;
         let totalSum = 0;
 
+        // Ja grozs ir tukšs
         if (preces.length === 0) {
           $("#precesGroza-container").html(
             "<p>Jūsu grozs ir tukšs.</p> <a href='../produkcija.php' class='btn'>Iepirkties</a>"
@@ -24,6 +29,8 @@ $(document).ready(function () {
           $(".total").text("0.00€");
           return;
         }
+
+        // Veido HTML katrai precei un aprēķina kopējo daudzumu un summu
         preces.forEach((prece) => {
           totalCount += parseInt(prece.daudzums);
           totalSum += prece.kopCena;
@@ -48,6 +55,8 @@ $(document).ready(function () {
           </div>
         `;
         });
+
+        // Atjauno kopējo informāciju par grozu: preču skaitu un cenu
         $(".cart em").text(
           `(${totalCount} ${getWordForm(totalCount, "prece", "preces")})`
         );
@@ -60,6 +69,7 @@ $(document).ready(function () {
     });
   }
 
+  // Saglabā konkrētas preces daudzumu grozā uz servera
   function saveQuantity($box) {
     const id = $box.data("id");
     const quantity = parseInt($box.find(".quantity-input").val());
@@ -76,6 +86,7 @@ $(document).ready(function () {
     );
   }
 
+  // Aprēķina kopējo groza summu, pārejot cauri katram groza objektam
   function updateCartTotal() {
     let total = 0;
     $(".cart-box").each(function () {
@@ -86,6 +97,7 @@ $(document).ready(function () {
     $(".total").text(`${total.toFixed(2)}€`);
   }
 
+  // Atjauno vienas preces kopējo cenu rindā
   function updateTotal($box) {
     const quantity = parseInt($box.find(".quantity-input").val());
     const unitPrice = parseFloat($box.data("price"));
@@ -93,6 +105,7 @@ $(document).ready(function () {
     $box.find(".item-total").text(`${total}€`);
   }
 
+  // Notikums, kad nospiež "+" pogu – palielina daudzumu, pārrēķina un saglabā
   $(document).on("click", ".plus", function () {
     const $box = $(this).closest(".cart-box");
     const $input = $box.find(".quantity-input");
@@ -102,6 +115,7 @@ $(document).ready(function () {
     saveQuantity($box);
   });
 
+  // Notikums, kad nospiež "−" pogu – samazina daudzumu (ja >1), pārrēķina un saglabā
   $(document).on("click", ".minus", function () {
     const $box = $(this).closest(".cart-box");
     const $input = $box.find(".quantity-input");
@@ -114,6 +128,7 @@ $(document).ready(function () {
     }
   });
 
+  // Notikums, kad nospiež atkritnes ikonu – apstiprina un dzēš preci no groza
   $(document).on("click", ".grozs-delete", function () {
     if (confirm("Vai tiešām vēlies dzēst?")) {
       const $box = $(this).closest(".cart-box");
@@ -124,7 +139,7 @@ $(document).ready(function () {
         { id },
         (response) => {
           if (response.success) {
-            fetchPrecesGroza();
+            fetchPrecesGroza(); // Pārlādē grozu pēc dzēšanas
             showNotif(response.message);
           } else {
             alert("Kļūda dzēšot preci: " + response.message);

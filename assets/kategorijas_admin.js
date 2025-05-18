@@ -41,7 +41,7 @@ $(document).ready(function () {
 
     $.post("database/kategorija_single.php", { id }, (response) => {
       const kategorija = JSON.parse(response);
-      $("#nosaukums").val(kategorija.nosaukums);
+      $("#modal-kategorijas #nosaukums").val(kategorija.nosaukums);
       $("#kat_ID").val(kategorija.id);
       edit = true;
       if (kategorija.bilde) {
