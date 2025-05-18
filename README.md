@@ -1,17 +1,51 @@
-![image](https://github.com/user-attachments/assets/a4fe478c-4436-48c0-9b5e-59238841fe96)# Wafla's crochet – tamborēšanas internetveikals
+# 🧶 Wafla's crochet – tamborēšanas internetveikals
 
 ![image](https://github.com/user-attachments/assets/f6c36a77-bee3-4d7c-89bd-9fc702c5c2da)
 
-Dotais projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā tēma ir tamburēšanas mājaslapa-veikals. Darba galvenais mērķis ir saplānot un izstrādāt mājaslapu, pilnveidoto ar dažādām funkcionālitātēm, kā arī veikt programmatūras testēšanu un dokumentāciju.
+📌 **Projekta apraksts:**  
+Šis projekts ir kvalifikācijas eksāmena praktiskā daļa. Izvēlētā tēma ir tamborēšanas mājaslapa-veikals.
+Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļaujot nepieciešamās funkcijas, veikt testēšanu un izveidot dokumentāciju.
 
-# Klientam pieejamas sadaļas:
-"Par mums"
+---
 
-# veicamie uzdevumi:
+## 🌐 Klientam ir pieejamās vairākas sadaļas:
+### 🧵 Par mums
+![image](https://github.com/user-attachments/assets/a4fe478c-4436-48c0-9b5e-59238841fe96)
+
+Īss apraksts par zīmolu, tā vērtībām un stāstu aiz tamborēšanas aizraušanās.
+
+---
+
+### 🧺 Produkcija
+![image](https://github.com/user-attachments/assets/2cc5772c-3ad0-47ca-8953-6305298157e6)
+
+Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot grozam.
+
+---
+
+### 💬 Atsauksmes
+![image](https://github.com/user-attachments/assets/e516b268-cbed-4a58-a338-ccf21cd3fa2f)
+
+Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam
+
+---
+
+### 📞 Kontakti
+![image](https://github.com/user-attachments/assets/9458a2e3-9d76-4944-abdd-c1ae53616733)
+
+Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikala administrāciju
+
+---
+
+
+# ✅ Darba autoram ir dažādi veicamie uzdevumi:
 
 - [x] – Izvēlēties tēmu
 - [x] – Sagatavot funkcionālās un nefunkcionālās prasības
 - [x] – Izveidot projektu uz localhost un sakārtot nepieciešamās mapes (assets, images) darba uzsākšanai
+- [x] - Uzrakstīt projekta programmatūras projekta dokumentāciju
+- [x] - Reālizēt vairākas funkcijas
+- [x] – Programmatūras testēšana
 
 # Mājaslapas vizuālā izskata veidošana
 
@@ -56,4 +90,3 @@ Dotais projekts ir kvalifikācijas eksāmena praktiskā daļa. Darba izvēlētā
 - [x] - Var pievienot bildes uz datubāzi kā failu no datora
 - [ ] - Administrācijas paneļa gavenā lapa - statistika un kopējā info
 - [x] - Admins vai moders var apskatīt esošās preces un kategorijas, dzēst tās vai rediģēt
-- [x] – Programmatūras testēšana
