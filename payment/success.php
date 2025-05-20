@@ -17,9 +17,9 @@ if (!empty($_GET['session_id'])) {
             $transactionID = $paymentIntent->id;
 
             require '../assets/con_db.php';
-            $stmt = $savienojums->prepare("UPDATE waflas_pasutijumi SET Statuss = 'Apmaksāts' WHERE Pasutijums_ID = ?");
-            $stmt->bind_param("i", $_SESSION['pasutijums_id']);
-            $stmt->execute();
+            // $stmt = $savienojums->prepare("UPDATE waflas_pasutijumi SET Statuss = 'Apmaksāts' WHERE Pasutijums_ID = ?");
+            // $stmt->bind_param("i", $_SESSION['pasutijums_id']);
+            // $stmt->execute();
 
             $statusMsg = "<h2>Maksājums veiksmīgi apstrādāts!</h2>
             <p>Lai turpmāk iegūt PRO privilēģijas, veicot jaunu pieteikumu, izmantojiet šo e-pastu: <b>$customer_email</b></p>

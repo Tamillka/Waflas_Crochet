@@ -30,7 +30,7 @@ $(document).ready(function () {
           return;
         }
 
-        // Veido HTML katrai precei un aprēķina kopējo daudzumu un summu
+        // Veido HTML struktūru katrai precei un aprēķina kopējo daudzumu un summu
         preces.forEach((prece) => {
           totalCount += parseInt(prece.daudzums);
           totalSum += prece.kopCena;
@@ -105,7 +105,7 @@ $(document).ready(function () {
     $box.find(".item-total").text(`${total}€`);
   }
 
-  // Notikums, kad nospiež "+" pogu – palielina daudzumu, pārrēķina un saglabā
+  // Funkcija, kad nospiež "+" pogu – palielina daudzumu, pārrēķina un saglabā
   $(document).on("click", ".plus", function () {
     const $box = $(this).closest(".cart-box");
     const $input = $box.find(".quantity-input");
@@ -115,7 +115,7 @@ $(document).ready(function () {
     saveQuantity($box);
   });
 
-  // Notikums, kad nospiež "−" pogu – samazina daudzumu (ja >1), pārrēķina un saglabā
+  // Funkcija, kad nospiež "−" pogu – samazina daudzumu (ja >1), pārrēķina un saglabā
   $(document).on("click", ".minus", function () {
     const $box = $(this).closest(".cart-box");
     const $input = $box.find(".quantity-input");
@@ -128,7 +128,7 @@ $(document).ready(function () {
     }
   });
 
-  // Notikums, kad nospiež atkritnes ikonu – apstiprina un dzēš preci no groza
+  // Funkcija, kad nospiež dzēšanas pogu – apstiprina un dzēš preci no groza
   $(document).on("click", ".grozs-delete", function () {
     if (confirm("Vai tiešām vēlies dzēst?")) {
       const $box = $(this).closest(".cart-box");

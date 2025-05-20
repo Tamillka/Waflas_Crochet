@@ -535,7 +535,7 @@ td:last-child, th:last-child{
     object-fit: cover;
  }
 
-.produkts-item, .lietotajs-item, .kategorija-item{
+.produkts-item, .lietotajs-item, .kategorija-item, .pasutijums-item{
     background: #7fec7f;
     color: #fff;
     cursor: pointer;
@@ -545,7 +545,7 @@ td:last-child, th:last-child{
     padding: .5rem 1rem;
 }
 
-.produkts-item:hover, .lietotajs-item:hover, .kategorija-item:hover{
+.produkts-item:hover, .lietotajs-item:hover, .kategorija-item:hover, .pasutijums-item:hover{
     background: var(--bg);
     color: #71e771;
 }
@@ -675,7 +675,7 @@ label{
     justify-content: center;
     align-items: center;
 }
-#modal-produkti .modal-box, #modal-lietotaji .modal-box{
+#modal-produkti .modal-box, #modal-lietotaji .modal-box, #modal-pasutijumi .modal-box{
     min-width: 40rem;
 }
 #preview-container img{
@@ -689,4 +689,21 @@ label{
 .modal .passwordNew{
     font-size: 1rem;
     padding: .4rem .8rem;
+}
+
+.modal #pasutijuma-produkti{
+    padding-left: 1rem;
+}
+
+.modal ul li p{
+    font-size: 1.2rem;
+    padding: 0;
+    font-style: italic;
+    font-weight: bolder;
+}
+.modal ul li{
+    list-style-type: "* ";
+}
+.modal ul li p span{
+    font-weight: bold;
 }
