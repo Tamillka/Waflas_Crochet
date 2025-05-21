@@ -15,7 +15,11 @@ if (!isset($_SESSION['lietotajvardsTam']) || $_SESSION['lietotajaLoma'] !== 'Adm
     Saglabājiet datus rūpīgi un izvairieties no nevajadzīgām izmaiņām vai dzēšanas. </p>
 
 <div class="admin-main">
-    <div class="top">
+    <div class="top-panel">
+        <div id="searchField">
+            <input type="text" id="searchInput" placeholder="Meklē lietotāju">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
         <button class="btn pievienot" id="new-btn"><i class="fas fa-plus"></i> Pievienot jaunu</button>
     </div>
     <table>
@@ -84,3 +88,7 @@ if (!isset($_SESSION['lietotajvardsTam']) || $_SESSION['lietotajaLoma'] !== 'Adm
     </div>
     <span id="notifikacijas-teksts"></span>
 </div>
+
+<?php
+require "footer.php";
+?>

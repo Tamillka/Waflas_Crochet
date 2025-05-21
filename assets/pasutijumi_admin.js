@@ -2,6 +2,7 @@ $(document).ready(function () {
   let edit = false;
 
   fetchPasutijumi();
+  jauniePasutijumi();
 
   function fetchPasutijumi() {
     $.ajax({
@@ -19,7 +20,9 @@ $(document).ready(function () {
               <td>${pasutijums.epasts}</td>
               <td>${pasutijums.preces_skaits}</td>
               <td>${pasutijums.summa} EUR</td>
-              <td>${pasutijums.statuss}</td>
+             <td class="${pasutijums.ir_apmaksa ? "status-paid" : ""}">
+  ${pasutijums.statuss}
+</td>
               <td>${pasutijums.datums}</td>
               <td>
                 <a class="pasutijums-item btn">
@@ -54,17 +57,46 @@ $(document).ready(function () {
 
       edit = true;
 
-      let produktiTemplate = "<ul>";
+      let produktiTemplate = `
+  <table class="produktu-tabula">
+    <thead>
+      <tr>
+        <th>Nosaukums</th>
+        <th>Skaits</th>
+        <th>Kopējā cena (EUR)</th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
       pasutijums.produkti.forEach((prece) => {
         produktiTemplate += `
-    <li>
-      <p><span>${prece.nosaukums}</span> — 
-      ${prece.vienibas_sk} gab. × ${prece.kopeja_cena} EUR <p/>
-    </li>
+    <tr>
+      <td>${prece.nosaukums}</td>
+      <td>${prece.vienibas_sk}</td>
+      <td>${prece.kopeja_cena}</td>
+    </tr>
   `;
       });
-      produktiTemplate += "</ul>";
+
+      produktiTemplate += `
+    </tbody>
+  </table>
+`;
+
       $("#pasutijuma-produkti").html(produktiTemplate);
+
+      if (pasutijums.ir_apmaksa) {
+        $("#apmaksats")
+          .text("✔ Pasūtījums ir apmaksāts!")
+          .removeClass("not-paid")
+          .addClass("paid");
+      } else {
+        $("#apmaksats")
+          .text("✖ Pasūtījums nav apmaksāts!")
+          .removeClass("paid")
+          .addClass("not-paid");
+      }
 
       const footer = `
         <p>Pasūtījums izveidots: ${pasutijums.datums}</p>
@@ -99,6 +131,7 @@ $(document).ready(function () {
           $(".modal").hide();
           $("#pasutijumaForma").trigger("reset");
           fetchPasutijumi();
+          jauniePasutijumi();
           showNotif(response.message, "success");
           edit = false;
         } else {
@@ -110,4 +143,21 @@ $(document).ready(function () {
       },
     });
   });
+  function jauniePasutijumi() {
+    $.ajax({
+      url: "database/pasutijumu_skaits.php",
+      type: "GET",
+      dataType: "json",
+      success: function (response) {
+        if (response.jaunie > 0) {
+          $(".redInfo").text(response.jaunie).show();
+        } else {
+          $(".redInfo").hide();
+        }
+      },
+      error: function () {
+        console.error("Neizdevās ielādēt jauno pasūtījumu skaitu.");
+      },
+    });
+  }
 });

@@ -10,7 +10,10 @@ require "header.php";
     Saglabājiet datus rūpīgi un izvairieties no nevajadzīgām izmaiņām vai dzēšanas. </p>
 >
 <div class="admin-main">
-    <div class="top">
+    <div class="top-panel">
+        <div class="topInfo">
+            <h3>Pārvaldi <span>Wafla's crochet</span> produkciju</h3>
+        </div>
         <button class="btn pievienot" id="new-btn-prod"><i class="fas fa-plus"></i> Pievienot jaunu</button>
     </div>
     <table>
@@ -120,3 +123,7 @@ require "header.php";
     </div>
     <span id="notifikacijas-teksts"></span>
 </div>
+
+<?php
+require "footer.php";
+?>

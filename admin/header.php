@@ -19,6 +19,7 @@ if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <script src="../assets/script_admin.js" defer></script>
+    <script src="../assets/pasutijumi_admin.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Wafla's crochet</title>
 </head>
@@ -36,8 +37,10 @@ if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'
                     </p>
                 </div>
                 <a href="./" class="btn <?php echo ($page == 'sakums' ? 'current' : ''); ?>">Sākumlapa</a>
-                <a href="pasutijumi.php"
-                    class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pāsūtījumi</a>
+                <a href="pasutijumi.php" id="orders"
+                    class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pāsūtījumi
+                    <p class="redInfo" style="display: none;"></p>
+                </a>
                 <a href="produkti.php" class="btn <?php echo ($page == 'produkti' ? 'current' : ''); ?>">Produkti</a>
                 <a href="atsauksmes.php"
                     class="btn <?php echo ($page == 'atsauksmes' ? 'current' : ''); ?>">Atsauksmes</a>

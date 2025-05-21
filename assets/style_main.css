@@ -1270,6 +1270,8 @@ input[type="range"]::-webkit-slider-runnable-track {
     border-radius: var(--radius);
     background-color: rgba(255, 238, 227, 0.683); 
     width: 20rem;
+     border: 1px solid var(--hover);
+     box-shadow: var(--shadow);
 }
 #produkti-nosaukums #searchField input:focus{
     background: rgba(255, 255, 255, 0.6);

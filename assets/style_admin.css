@@ -516,16 +516,9 @@ th{
     font-weight: bolder;
 }
 td{
+     border-top: 1px solid rgba(201, 99, 51, 0.148);;
     padding: 1rem .5rem;
-}
-
-td:first-child, th:first-child{
-    border-top-left-radius: .4rem;
-    border-bottom-left-radius: .4rem;
-}
-td:last-child, th:last-child{
-    border-top-right-radius: .4rem;
-    border-bottom-right-radius: .4rem;
+    font-weight: 600;
 }
 
 .admin-main table img{
@@ -570,6 +563,82 @@ td:last-child, th:last-child{
     padding: 1rem 1rem .5rem;
 }
 
+.top-panel{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem .5rem;
+    align-items: center;
+}
+.top-panel h3{
+    padding: 0;
+}
+.top-panel span{
+    text-shadow: 
+        1px 2px 7px rgb(201, 99, 51), 
+        0 0 20px rgba(202, 71, 11, 0.879);
+    text-transform: none;
+    font-weight: 700;
+}
+
+ #searchField input{
+    font-size: 1.3rem;
+    color: var(--text);
+    padding: .6rem 1.2rem;
+    text-align: left;
+    border-radius: var(--radius);
+    background-color: rgba(249, 242, 237, 0.683); 
+    border: 2px solid var(--hover);
+    width: 20rem;
+}
+ #searchField input:focus{
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--text);
+}
+#searchField {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+ #searchField i {
+    position: absolute;
+    right: 1.5rem;
+    color: var(--maincolor);
+    font-size: 1.2rem;
+}
+
+.status-paid {
+  color: rgb(14, 114, 14);
+  font-weight: bolder;
+}
+#orders{
+    position: relative;
+}
+.redInfo {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  padding: .3rem .6rem;
+  background-color: #750808;
+  margin: 0 .7rem;
+  color: var(--lightText);
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  animation: pulse-bg 2s infinite ease-in-out;
+}
+
+@keyframes pulse-bg {
+  0% {
+    background-color: #750808;
+  }
+  50% {
+    background-color: #cc1d1d;
+  }
+  100% {
+    background-color: #750808;
+  }
+}
+
 /*MODĀLIE LOGI*/
 .modal{
     position: fixed;
@@ -588,13 +657,25 @@ td:last-child, th:last-child{
      display: flex;
  }
  
+.modal-box::-webkit-scrollbar{
+    width: .5rem;
+}
+.modal-box::-webkit-scrollbar-track{
+    background: black;
+}
+.modal-box::-webkit-scrollbar-thumb{
+    background: var(--maincolor);
+    border-radius: .7rem;
+}
+
  .modal-box{
     background: #fefefe;
-    max-width: 50rem;
+    max-width: 40rem;
+    max-height: 40rem; 
+    overflow-y: auto;  
     box-shadow: var(--box-shadow);
     border-radius: .5rem;
     position: relative;
-    overflow: hidden;
  }
  .box{
     padding: 1rem 1.5rem;
@@ -691,19 +772,88 @@ label{
     padding: .4rem .8rem;
 }
 
-.modal #pasutijuma-produkti{
-    padding-left: 1rem;
+
+.produktu-tabula {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: var(--shadow1);
+  border: var(--border);
+  background-color: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
-.modal ul li p{
-    font-size: 1.2rem;
-    padding: 0;
-    font-style: italic;
+.produktu-tabula th,
+.produktu-tabula td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: var(--border);
+  color: var(--text);
+}
+
+.produktu-tabula th {
+  background-color: var(--section-bg);
+  color: var(--lightText);
+}
+
+.produktu-tabula tr:hover {
+  background-color: var(--hover);
+}
+
+.modal .paid{
     font-weight: bolder;
+    font-style: italic;
+    color: rgb(14, 114, 14);
+    font-size: 1.2rem;
+    width: 100%;
 }
-.modal ul li{
-    list-style-type: "* ";
+.not-paid{
+    color: rgb(147, 20, 20);
+    font-weight: bolder;
+    font-size: 1.2rem;
+    width: 100%;
 }
-.modal ul li p span{
-    font-weight: bold;
-}
+
+ .admin-footer img{
+    max-width: 5rem;
+ }
+ .admin-footer .container{
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+ }
+ .admin-footer{
+    padding: .6rem 2%;
+    margin-left: 20%;
+    background: var(--section-bg);
+ }
+ .admin-footer p{
+    font-weight: bolder;
+    color: var(--bg);
+    font-size: 1.2rem;
+ }
+ .admin-footer a{
+    color: var(--bg);
+    position: relative;
+    padding-bottom: .4rem;
+    font-weight: bolder;
+    font-size: 1.1rem;
+    margin-top: .4rem;
+ }
+ .admin-footer a::after{
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    width: 0;
+    height: 2px; 
+    background-color: var(--bg); 
+    transition: all 0.3s ease; 
+    transform: translateX(-50%);
+ }
+ .admin-footer a:hover::after{
+     width: 100%; 
+ }
+

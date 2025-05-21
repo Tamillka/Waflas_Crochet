@@ -1,6 +1,22 @@
 $(document).ready(function () {
   let edit = false;
 
+  $("#searchInput").on("keyup", function () {
+    let searchText = $(this).val().toLowerCase();
+    $(".lietotajs-row").each(function () {
+      const lietvards = $(this).find("td:nth-child(2)").text().toLowerCase();
+      const vards = $(this).find("td:nth-child(3)").text().toLowerCase();
+
+      if (vards.includes(searchText)) {
+        $(this).show();
+      } else if (lietvards.includes(searchText)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
   //Lietotaji
   fetchLietotaji();
 
@@ -13,7 +29,7 @@ $(document).ready(function () {
         let template = "";
         lietotaji.forEach((lietotajs) => {
           template += `
-                          <tr liet_ID="${lietotajs.id}">
+                        <tr liet_ID="${lietotajs.id}" class="lietotajs-row">
                           <td>${lietotajs.id}</td>
                           <td>${lietotajs.lietotajvards}</td>
                           <td>${lietotajs.vards}</td>

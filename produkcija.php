@@ -9,8 +9,7 @@ require "header.php";
     <div class="filtrudala">
         <a class="btn-sm" id="filterBtn"><i class="fa-solid fa-filter"></i> Filtri</a>
         <div id="searchField">
-            <input type="text" id="searchInput" placeholder="Meklēšana">
-            <!-- <a class="btn-sm" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></a> -->
+            <input type="text" id="searchInput" placeholder="Meklē preci">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
 

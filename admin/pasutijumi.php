@@ -2,7 +2,6 @@
 $page = "pasutijumi";
 require "header.php";
 ?>
-<script src="../assets/pasutijumi_admin.js" defer></script>
 
 <p class="svariga-info">Administrācijas sadaļa satur īpaši svarīgus datus, kas būtiski ietekmē sistēmas darbību un
     drošību. <br>
@@ -55,6 +54,7 @@ require "header.php";
 
                     <input type="hidden" id="pasut_ID" name="id">
                 </div>
+                <p id="apmaksats" class="paid"></p>
                 <button type="submit" name="nosutit" id="nosutit" class="btn submit active">Saglabāt</button>
             </form>
             <div class="bottom-info" id="pasutijuma-informacija"></div>
@@ -68,3 +68,7 @@ require "header.php";
     </div>
     <span id="notifikacijas-teksts"></span>
 </div>
+
+<?php
+require "footer.php";
+?>

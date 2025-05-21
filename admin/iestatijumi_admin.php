@@ -146,3 +146,7 @@ if (isset($_SESSION['notif'])) {
 
 // require "footer.php";
 ?>
+
+<?php
+require "footer.php";
+?>
