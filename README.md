@@ -84,7 +84,8 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 - [x] - Stripe apmaksas veids
 - [ ] - Pēc kāda pasūtījuma noformēšanas klientam ir iespēja atstāt atsauksmi veikalam
 - [ ] - Klienti, kuriem pāsūtījumu vēsture ir tukša, var tikai lasīt citas atsauksmes
-- [ ] - Admins un moderators var izmainīt pāsūtījuma statusu
+- [x] - Admins un moderators var izmainīt pāsūtījuma statusu
+- [x] - Administrācijas navigācijā izvadās paziņojums par jauno pasūtījumu skaitu
 - [x] - Visiem lietotājiem iespēja samainīt personīgo informāciju
 - [x] - Admins var dzēst adminus un moderatorus
 - [x] - Var pievienot bildes uz datubāzi kā failu no datora
