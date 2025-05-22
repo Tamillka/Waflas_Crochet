@@ -82,8 +82,8 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 - [x] - Klients var apskatīt savu iepirkšanas grozu, mainīt produktu skaitu vai dzēst produktus
 - [x] - Klients var izveidot pasūtījumu no vairākām precēm, pāsūtījums saglabāsies datubāzē un būs pieejams apskatei
 - [x] - Stripe apmaksas veids
-- [ ] - Pēc kāda pasūtījuma noformēšanas klientam ir iespēja atstāt atsauksmi veikalam
-- [ ] - Klienti, kuriem pāsūtījumu vēsture ir tukša, var tikai lasīt citas atsauksmes
+- [x] - Pēc kāda pasūtījuma noformēšanas klientam ir iespēja atstāt atsauksmi veikalam
+- [x] - Klienti, kuriem pāsūtījumu vēsture ir tukša, var tikai lasīt citas atsauksmes
 - [x] - Admins un moderators var izmainīt pāsūtījuma statusu
 - [x] - Administrācijas navigācijā izvadās paziņojums par jauno pasūtījumu skaitu
 - [x] - Visiem lietotājiem iespēja samainīt personīgo informāciju
