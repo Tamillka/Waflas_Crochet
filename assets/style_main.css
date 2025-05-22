@@ -943,16 +943,16 @@ input[type="range"]::-webkit-slider-runnable-track {
     background-image: radial-gradient(var(--bg), #ffffff00);
 }
 #atsauksmes i{
-    color: rgb(253, 253, 118);
+    color: #fdfd77;
 }
 #atsauksmes .atsauksme img {
-    width: 6rem; /* Noteikts attēla platums */
-    height: 6rem; /* Noteikts attēla augstums */
+    width: 6rem;
+    height: 6rem; 
     border-radius: 50%;
     position: absolute;
     left: 50%;
     top: -12%;
-    transform: translateX(-50%); /* Centrē attēlu horizontāli */
+    transform: translateX(-50%);
 }
 
 #atsauksmes .arrow {
@@ -1121,41 +1121,73 @@ input[type="range"]::-webkit-slider-runnable-track {
 #popupKontakti .box-container{
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
-#popupKontakti .container{
+#popupKontakti .container, #popupAtsauksmes .container{
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-#popupKontakti input, #popupKontakti textarea{
+#popupKontakti input, #popupKontakti textarea, #popupAtsauksmes textarea{
     font-size: 1.3rem;
     color: var(--text);
     padding: .6rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow1);
     resize: none;
+    width: 100%;
 }
 #popupKontakti h2{
     padding-bottom: 0;
+}
+#popupAtsauksmes h2{
+    padding: .5rem 0;
 }
 #popupKontakti p{
     padding-bottom: 2.6rem;
     font-size: 1.5rem;
 }
-#popupKontakti .btn{
+#popupKontakti .btn, #popupAtsauksmes .btn{
     box-shadow: var(--shadow1);
 }
-#popupKontakti input:focus, #popupKontakti textarea:focus{
+#popupKontakti input:focus, #popupKontakti textarea:focus, #popupAtsauksmes textarea:focus{
     background: var(--bg);
 }
-#popupKontakti input:hover, #popupKontakti textarea:hover{
+#popupKontakti input:hover, #popupKontakti textarea:hover, #popupAtsauksmes textarea:hover{
     scale: 1.02;
 }
-#popupKontakti form{
+#popupKontakti form, #popupAtsauksmes form{
     padding: 0 1rem;
+    width: 100%;
 }
+#popupAtsauksmes textarea{
+    height: 7rem;
+}
+
+#popupAtsauksmes label{
+    font-size: 1.3rem;
+    font-weight: bolder;
+}
+#popupAtsauksmes i{
+    color: var(--maincolor);
+    opacity: 0.4;
+}
+#popupAtsauksmes .vertejums{
+    display: flex;
+    justify-content: space-between;
+    align-item: center;
+}
+#popupAtsauksmes i:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
+#popupAtsauksmes .stars i.selected {
+    opacity: 1;
+    color: var(--maincolor);
+}
+
 
 #atsauksmes-nosaukums, #produkti-nosaukums{
     margin-top: 6rem;
@@ -1190,6 +1222,20 @@ input[type="range"]::-webkit-slider-runnable-track {
 #atsauksmes-nosaukums span, #produkti-nosaukums span{
     font-weight: bold;
     color: #666;
+}
+#atsauksmes-nosaukums .btn{
+    padding: .7rem 1.5rem;
+    border: 1px solid var(--hover);
+    position: relative;
+    box-shadow: var(--shadow);
+}
+.atsauksmesTop{
+    display: flex;
+    justify-content: right;
+    padding: 0 3rem;
+}
+#atsauksmes-nosaukums{
+    padding-top: 24px;
 }
 #nosaukums-ats{
     font-size: 1.7rem;

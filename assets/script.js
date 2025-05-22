@@ -222,3 +222,25 @@ $(document).ready(function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const stars = document.querySelectorAll("#popupAtsauksmes .stars i");
+  const ratingInput = document.getElementById("rating-value");
+
+  stars.forEach((star) => {
+    star.addEventListener("click", () => {
+      const value = parseInt(star.getAttribute("data-value"));
+
+      ratingInput.value = value;
+
+      stars.forEach((s) => {
+        const starValue = parseInt(s.getAttribute("data-value"));
+        if (starValue <= value) {
+          s.classList.add("selected");
+        } else {
+          s.classList.remove("selected");
+        }
+      });
+    });
+  });
+});
