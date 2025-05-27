@@ -9,7 +9,9 @@ Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļau
 ---
 
 ## 🌐 Klientam ir pieejamās vairākas sadaļas:
+
 ### 🧵 Par mums
+
 ![image](https://github.com/user-attachments/assets/a4fe478c-4436-48c0-9b5e-59238841fe96)
 
 Īss apraksts par zīmolu, tā vērtībām un stāstu aiz tamborēšanas aizraušanās.
@@ -17,6 +19,7 @@ Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļau
 ---
 
 ### 🧺 Produkcija
+
 ![image](https://github.com/user-attachments/assets/2cc5772c-3ad0-47ca-8953-6305298157e6)
 
 Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot grozam.
@@ -24,6 +27,7 @@ Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot g
 ---
 
 ### 💬 Atsauksmes
+
 ![image](https://github.com/user-attachments/assets/e516b268-cbed-4a58-a338-ccf21cd3fa2f)
 
 Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam
@@ -31,12 +35,12 @@ Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam
 ---
 
 ### 📞 Kontakti
+
 ![image](https://github.com/user-attachments/assets/9458a2e3-9d76-4944-abdd-c1ae53616733)
 
 Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikala administrāciju
 
 ---
-
 
 # ✅ Darba autoram ir dažādi veicamie uzdevumi:
 
@@ -69,7 +73,7 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 # Funkcionālitātes pievienošana
 
 - [x] - Klients var sazināties ar veikalu, sūtot e-pastu
-- [ ] - Hero sadaļā atsauksmju skaits izvadās no datubāzes
+- [x] - Hero sadaļā atsauksmju skaits izvadās no datubāzes
 - [x] - Iespēja klientam reģistrēties mājaslapā
 - [x] - Autorizācija
 - [x] - Admins var pievienot citus mājaslapas darbiniekus (Administratorus vai moderatorus)
@@ -88,6 +92,7 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 - [x] - Administrācijas navigācijā izvadās paziņojums par jauno pasūtījumu skaitu
 - [x] - Visiem lietotājiem iespēja samainīt personīgo informāciju
 - [x] - Admins var dzēst adminus un moderatorus
+- [ ] - Administrācijas panelī izvadās visas atsauksmes atsevišķajā lapā
 - [x] - Var pievienot bildes uz datubāzi kā failu no datora
 - [ ] - Administrācijas paneļa gavenā lapa - statistika un kopējā info
 - [x] - Admins vai moders var apskatīt esošās preces un kategorijas, dzēst tās vai rediģēt

@@ -2,6 +2,7 @@
 session_start();
 $irIelogojies = isset($_SESSION['lietotajvardsTam']);
 $lietotajaLoma = $_SESSION['lietotajaLoma'] ?? '';
+require "admin/database/get_profile_info.php";
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +55,7 @@ $lietotajaLoma = $_SESSION['lietotajaLoma'] ?? '';
     </header>
     <div class="profileBox">
         <div class="content">
-            <p><?php echo $_SESSION['lietotajvardsTam']; ?></p>
+            <p><?php echo $lietotajvards ?></p>
             <a href="iestatijumi.php">Iestatījumi</a>
             <a href="vesture.php">Pāsūtījumu vēsture</a>
             <a href="admin/logout.php"><i class="fas fa-sign-out-alt"></i> Izlogoties</a>

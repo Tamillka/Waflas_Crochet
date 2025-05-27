@@ -2,16 +2,37 @@
 $page = "galvena";
 require "header.php";
 ?>
-
 <script src="../assets/preces_izvade.js" defer></script>
+
 <section id="hero">
     <div class="main-container">
         <h2>Wafla's crochet</h2>
-        <p><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i> 5.0 (1,999)
+        <?php
+        require "assets/con_db.php";
+
+        $sql = "SELECT ROUND(AVG(Zvaigznes_sk), 1) AS videja_ocena, COUNT(*) AS atsauksmju_skaits FROM waflas_atsauksmes";
+        $rezultats = mysqli_query($savienojums, $sql);
+        $videja_cena = 0;
+        $atsauksmju_skaits = 0;
+
+        if ($rezultats && mysqli_num_rows($rezultats) > 0) {
+            $row = mysqli_fetch_assoc($rezultats);
+            $videja_cena = $row['videja_ocena'];
+            $atsauksmju_skaits = $row['atsauksmju_skaits'];
+        }
+        ?>
+        <p>
+            <?php
+            $zvaigznes = floor($videja_cena);
+            for ($i = 1; $i <= 5; $i++) {
+                if ($i <= $zvaigznes) {
+                    echo '<i class="fa-solid fa-star"></i>';
+                } else {
+                    echo '<i class="fa-regular fa-star"></i>';
+                }
+            }
+            echo " {$videja_cena} ({$atsauksmju_skaits})";
+            ?>
         </p>
         <h1>Radīt, dalīties, iedvesmot: Tamborēšanas ceļojums sākas šeit!</h1>
         <p>Atklāj radošumu – iepērcies tamborēšanas paradīzē!</p>

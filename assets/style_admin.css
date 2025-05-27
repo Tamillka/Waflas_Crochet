@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root{
-    --maincolor: rgb(201, 99, 51);
+    --maincolor: #c96333;
     --border: .1rem solid rgba(56, 55, 54, 0.1);
     --box-shadow: 0 .5rem 1rem #c96333;
     --shadow: .3rem .3rem .6rem #c2ac9e;
@@ -528,7 +528,7 @@ td{
     object-fit: cover;
  }
 
-.produkts-item, .lietotajs-item, .kategorija-item, .pasutijums-item{
+.produkts-item, .lietotajs-item, .kategorija-item, .pasutijums-item, .atsauksme-item{
     background: #7fec7f;
     color: #fff;
     cursor: pointer;
@@ -538,7 +538,7 @@ td{
     padding: .5rem 1rem;
 }
 
-.produkts-item:hover, .lietotajs-item:hover, .kategorija-item:hover, .pasutijums-item:hover{
+.produkts-item:hover, .lietotajs-item:hover, .kategorija-item:hover, .pasutijums-item:hover, .atsauksme-item:hover{
     background: var(--bg);
     color: #71e771;
 }
@@ -568,6 +568,7 @@ td{
     justify-content: space-between;
     padding: 1rem 1rem .5rem;
     align-items: center;
+    gap: 1rem;
 }
 .top-panel h3{
     padding: 0;
@@ -756,7 +757,7 @@ label{
     justify-content: center;
     align-items: center;
 }
-#modal-produkti .modal-box, #modal-lietotaji .modal-box, #modal-pasutijumi .modal-box{
+#modal-produkti .modal-box, #modal-lietotaji .modal-box, #modal-pasutijumi .modal-box, #modal-atsauksmes .modal-box{
     min-width: 40rem;
 }
 #preview-container img{
@@ -772,6 +773,9 @@ label{
     padding: .4rem .8rem;
 }
 
+#modal-atsauksmes .modal-box textarea{
+    height: 9rem;
+}
 
 .produktu-tabula {
   width: 100%;
@@ -857,3 +861,222 @@ label{
      width: 100%; 
  }
 
+ .infoBoxReviews{
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--hover);
+    border-radius: var(--radius);
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+ }
+ .infoBoxReviews h2, .infoBoxCount h2{
+    padding: 0;
+     text-shadow: 
+        1px 2px 7px rgb(201, 99, 51), 
+        0 0 20px rgba(202, 71, 11, 0.879);
+ }
+
+ .infoBoxReviews i{
+    font-size: 2.1rem;
+    color: var(--maincolor);
+    padding: .7rem .6rem;
+    border-radius: 50%;
+    border: 1px solid var(--bg);
+    background-color: var(--hover);
+ }
+ .infoBoxCount{
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--hover);
+    border-radius: var(--radius);
+ }
+ .infoBoxCount .block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+.infoBoxCount p{
+    font-size: 1.7;
+    color: var(--maincolor);
+}
+.infoBlockReview{
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--hover);
+    border-radius: var(--radius);
+    max-width: 40rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.infoBlockReview p{
+     font-size: 1.4rem;
+    font-weight: bolder;
+}
+.infoBlockReview i{
+    font-size: 2rem;
+     text-shadow: 
+        1px 2px 7px rgb(201, 99, 51), 
+        0 0 20px rgba(202, 71, 11, 0.879);
+}
+.infoBlockReview q{
+    font-weight: bold;
+}
+.longer{
+    max-width: 15rem;
+}
+.admin-main table img.cropped, .columns img {
+    width: 5rem !important;
+    height: 5rem !important;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--maincolor);
+}
+
+.wrapper{
+    margin: 4rem 2rem 2rem 20%;
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+.info-box{
+    width: 100%;
+    box-shadow: var(--shadow1);
+    border-radius: var(--radius);
+    border: 1px solid var(--hover);
+}
+
+
+.box1 {
+    color: var(--text); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+    justify-content: space-around;
+    height: 8rem; 
+    position: relative;
+    border-radius: .4rem .4rem 0 0 ;
+}
+.info .modified {
+    font-size: 2.5rem;
+    text-shadow: 
+        1px 2px 7px rgb(201, 99, 51), 
+        0 0 20px rgba(202, 71, 11, 0.879);
+    padding: 0;
+}
+.info h3 {
+    font-size: 1.2rem;
+    padding-top: .3rem;
+    padding-bottom: 0;;
+}
+.icona {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    font-size: 3rem;
+}
+.box2{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background: var(--maincolor); 
+    padding: .7rem 0;
+    border-radius: 0 0 .4rem .4rem;
+    position: relative;
+}
+
+.box2 a {
+    text-decoration: none; 
+    font-size: 1.2rem;
+    font-weight: 700; 
+    color: var(--bg);
+}
+.box2::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    width: 0;
+    height: 2px; 
+    background-color: var(--bg); 
+    transition: all 0.3s ease; 
+    transform: translateX(-50%);
+}
+
+.box2:hover::after {
+    width: 100%; 
+}
+.columns{
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    margin: 0 2rem 3rem 2rem;
+}
+.block{
+    width: 100%;
+}
+.columns .block table{
+    border-radius: var(--radius);
+}
+.divider{
+    height: 2px;
+    background-image: radial-gradient(rgba(14, 23, 51, 0.418), #ffffff00);
+    margin: 2.5rem 0 1rem 0;
+}
+.modif{
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+.modif .info-box, .row .info-box{
+    text-align: center;
+}
+.modif .info-box h3, .row h3{
+    padding: .5rem 0;
+    text-shadow: 
+        1px 2px 7px rgb(201, 99, 51), 
+        0 0 20px rgba(202, 71, 11, 0.879);
+}
+.modif .info-box h4, .row h4{
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}
+.modif .info-box span{
+    background: var(--hover);
+    border-radius: 1rem;
+    padding: 0 .7rem;
+    font-weight: 600;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap; /* разрешаем перенос */
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.row .info-box {
+    flex: 0 1 330px; /* базовое поведение */
+}
+
+/* только последний блок переносится на новую строку */
+.row .info-box:last-child {
+    flex-basis: 330px; /* занимает всю ширину и уходит на новую строку */
+    text-align: center; /* выравнивание по центру */
+}
+
+.row h3{
+    font-size: 2.3rem;
+    padding: 0 0 .5rem 0;
+}
+.columns table td{
+    padding: .5rem;
+}

@@ -28,7 +28,7 @@ $lietotajs = $rezultats->fetch_assoc();
                     <input type="hidden" name="page" value="<?php echo $page; ?>">
                 </form>
             </div>
-            <h3>Sveiki, <span><?php echo $_SESSION['lietotajvardsTam'] ?></span></h3>
+            <h3>Sveiki, <span><?php echo $lietotajvards; ?></span></h3>
             <button type="button" name="change" class="btn secondary-button" onclick="toggleForm()">Mainīt
                 paroli</button>
             <form method="POST" class="hidden" id="passwordForm" action="/admin/database/edit_profile.php">

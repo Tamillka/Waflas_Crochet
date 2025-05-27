@@ -1,6 +1,7 @@
 <?php
-require "../assets/con_db.php";
 session_start();
+require "../assets/con_db.php";
+require "database/get_profile_info.php";
 
 // Pārbauda vai lietotājs ir Administrators vai Moderators
 if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'], ['Administrators', 'Moderators'])) {
@@ -32,13 +33,13 @@ if (!isset($_SESSION['lietotajvardsTam']) || !in_array($_SESSION['lietotajaLoma'
                 <div class="user">
                     <img src="/admin/database/get_profile_image.php" class="profile">
                     <p class="logout">
-                        <?php echo $_SESSION['lietotajvardsTam']; ?>
+                        <?php echo $lietotajvards; ?>
                         <a href="logout.php"><i class="fas fa-power-off"></i></a>
                     </p>
                 </div>
                 <a href="./" class="btn <?php echo ($page == 'sakums' ? 'current' : ''); ?>">Sākumlapa</a>
                 <a href="pasutijumi.php" id="orders"
-                    class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pāsūtījumi
+                    class="btn <?php echo ($page == 'pasutijumi' ? 'current' : ''); ?>">Pasūtījumi
                     <p class="redInfo" style="display: none;"></p>
                 </a>
                 <a href="produkti.php" class="btn <?php echo ($page == 'produkti' ? 'current' : ''); ?>">Produkti</a>
