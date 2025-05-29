@@ -1,4 +1,4 @@
-<?php 
+<?php
 $page = "kontakti";
 require "header.php";
 
@@ -8,7 +8,9 @@ require "header.php";
 <section id="hero-kontakti">
     <div class="left-info animate">
         <h1 class="animate">Sazinies ar mums</h1>
-        <p class="animate">Mēs vienmēr esam gatavi Jums sniegt nepieciešamo atbalstu jebkurā situācijā. Neatkarīgi no tā, vai Jums ir jautājumi, mūsu komanda ir pieejama visu diennakti, lai nodrošinātu ātras un izsmeļošas atbildes.</p>
+        <p class="animate">Mēs vienmēr esam gatavi Jums sniegt nepieciešamo atbalstu jebkurā situācijā. Neatkarīgi no
+            tā, vai Jums ir jautājumi, mūsu komanda ir pieejama visu diennakti, lai nodrošinātu ātras un izsmeļošas
+            atbildes.</p>
         <button class="btn active" data-target="#popupKontakti">Sūtīt ziņu</button> <!-- data-target aizstāts -->
     </div>
     <div class="right-kontakti animate">
@@ -35,10 +37,18 @@ require "header.php";
             </div>
         </div>
         <div class="info-block medias">
-            <a href="#"><i class="fa-brands fa-instagram media"><div class="divider"></div></i></a>
-            <a href="#"><i class="fa-brands fa-telegram media"><div class="divider"></div></i></a>
-            <a href="#"><i class="fa-brands fa-facebook media"><div class="divider"></div></i></a>
-            <a href="#"><i class="fa-brands fa-twitter media"><div class="divider"></div></i></a> 
+            <a href="#"><i class="fa-brands fa-instagram media">
+                    <div class="divider"></div>
+                </i></a>
+            <a href="#"><i class="fa-brands fa-telegram media">
+                    <div class="divider"></div>
+                </i></a>
+            <a href="#"><i class="fa-brands fa-facebook media">
+                    <div class="divider"></div>
+                </i></a>
+            <a href="#"><i class="fa-brands fa-twitter media">
+                    <div class="divider"></div>
+                </i></a>
         </div>
     </div>
 </section>
@@ -60,7 +70,7 @@ require "header.php";
                 <button type="submit" class="btn active" name="nosutit">Nosūtīt ziņu</button>
             </div>
         </form>
-    </div>  
+    </div>
 </div>
 
 
@@ -68,11 +78,11 @@ require "header.php";
 
 
 <?php
-        require 'assets/mail.php';
-        ?>
+require 'assets/mail.php';
+?>
 
 
 
-<?php 
+<?php
 require "footer.php";
 ?>

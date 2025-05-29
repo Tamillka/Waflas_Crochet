@@ -6,16 +6,17 @@ require "header.php";
 <script src="../assets/preces_izvade.js" defer></script>
 
 <section id="produkti-nosaukums">
-    <div class="filtrudala">
-        <a class="btn-sm" id="filterBtn"><i class="fa-solid fa-filter"></i> Filtri</a>
-        <div id="searchField">
-            <input type="text" id="searchInput" placeholder="Meklē preci">
-            <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="main-container">
+        <div class="filtrudala">
+            <a class="btn-sm" id="filterBtn"><i class="fa-solid fa-filter"></i> Filtri</a>
+            <div id="searchField">
+                <input type="text" id="searchInput" placeholder="Meklē preci">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
         </div>
-
+        <h2>Mūsu produkcija</h2>
+        <p><a href="index.php">Sākumlapa</a> <span>/</span> <a href="produkcija.php" id="now">Produkcija</a></p>
     </div>
-    <h2>Mūsu produkcija</h2>
-    <p><a href="index.php">Sākumlapa</a> <span>/</span> <a href="produkcija.php" id="now">Produkcija</a></p>
 </section>
 <section id="visaProdukcija">
     <div class="main-container">
@@ -80,27 +81,6 @@ require "header.php";
                     ?>
                 </select>
             </div>
-
-            <!-- <div class="box">
-                <label>Cenas diapazons:</label>
-                <div class="price-content">
-                    <div>
-                        <label>Min</label>
-                        <p id="min-value">0$</p>
-                    </div>
-                    <div>
-                        <label>Max</label>
-                        <p id="max-value">100$</p>
-                    </div>
-                </div>
-
-                <div class="range-slider">
-                    <div class="range-fill">
-                        <input type="range" class="min-price" value="20" min="0" max="100" step="2">
-                        <input type="range" class="max-price" value="80" min="0" max="100" step="2">
-                    </div>
-                </div>
-            </div> -->
 
         </form>
         <button class="btn apply-filters">Pielietot</button>

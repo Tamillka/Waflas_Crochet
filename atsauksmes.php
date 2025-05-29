@@ -4,11 +4,13 @@ require "header.php";
 ?>
 
 <section id="atsauksmes-nosaukums">
-    <div class="atsauksmesTop">
-        <button class="btn active" data-target="#popupAtsauksmes" id="atsauksme">Pievienot atsauksmi</button>
+    <div class="main-container">
+        <div class="atsauksmesTop">
+            <button class="btn active" data-target="#popupAtsauksmes" id="atsauksme">Pievienot atsauksmi</button>
+        </div>
+        <h2>Klientu atsauksmes</h2>
+        <p><a href="index.php">Sākumlapa</a> <span>/</span> <a href="atsauksmes.php" id="now">Atsauksmes</a></p>
     </div>
-    <h2>Klientu atsauksmes</h2>
-    <p><a href="index.php">Sākumlapa</a> <span>/</span> <a href="atsauksmes.php" id="now">Atsauksmes</a></p>
 </section>
 <p id="nosaukums-ats" class="animate"><em>Katrs mūsu klienta viedoklis ir atšķirīgs, to var apskatīt zemāk.</em></p>
 

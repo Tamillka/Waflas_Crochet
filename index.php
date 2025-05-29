@@ -141,8 +141,10 @@ require "header.php";
 <section id="produkcija" class="animate">
 
     <div class="headings">
-        <h2>Produkcija</h2>
-        <h3>Skatīt vairāk <a href="produkcija.php"><i class='fas fa-arrow-right'></i></a></h3>
+        <div class="main-container">
+            <h2>Produkcija</h2>
+            <h3>Skatīt vairāk <a href="produkcija.php"><i class='fas fa-arrow-right'></i></a></h3>
+        </div>
     </div>
     <div class="main-container">
         <div class="box-container3">

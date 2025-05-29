@@ -32,21 +32,23 @@ require "header.php";
                     </div>
                 </div>
                 <div class="name-group">
-                    <div class="form-group">
-                        <label for="valsts">Valsts</label>
-                        <input type="valsts" name="valsts" required>
-                    </div>
 
                     <div class="form-group">
                         <label for="pilseta">Pilsēta</label>
-                        <input type="text" name="pilseta" required>
+                        <input type="text" name="pilseta" id="pilseta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adrese">Adrese</label>
+                        <input type="text" name="adrese" required>
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label for="adrese">Adrese</label>
-                    <input type="text" name="adrese" required>
+                    <label for="omniva_terminal">Omniva pakomāts</label>
+                    <select name="omniva_terminal" id="omniva_terminal" required>
+                        <option value="">Nav pilsētas</option>
+                    </select>
                 </div>
+
             </div>
         </div>
         <div class="total-box pasutijums">
@@ -60,3 +62,25 @@ require "header.php";
 <?php
 require "footer.php";
 ?>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const pilsetaInput = document.getElementById('pilseta');
+        const terminalSelect = document.getElementById('omniva_terminal');
+
+        pilsetaInput.addEventListener('blur', () => {
+            const city = pilsetaInput.value.trim();
+
+            if (city.length < 2) return;
+
+            fetch('/assets/checkout/omniva_config.php?city=' + encodeURIComponent(city))
+                .then(res => res.text())
+                .then(html => {
+                    terminalSelect.innerHTML = html;
+                })
+                .catch(err => {
+                    terminalSelect.innerHTML = '<option value="">Neizdevās ielādēt pakomātus</option>';
+                    console.error(err);
+                });
+        });
+    });
+</script>

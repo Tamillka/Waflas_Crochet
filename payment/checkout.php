@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit_order'])) {
     $uzvards = $_POST['uzvards'];
     $epasts = $_POST['epasts'];
     $telefons = $_POST['telefons'];
-    $valsts = $_POST['valsts'];
     $pilseta = $_POST['pilseta'];
     $adrese = $_POST['adrese'];
+    $pakomats = $_POST['omniva_terminal'];
 
     $lietotajs_id = $_SESSION['lietotajs_id'] ?? null;
     if (!$lietotajs_id) {
@@ -40,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit_order'])) {
         die("Grozs ir tukšs.");
     }
 
-    $stmt = $savienojums->prepare("INSERT INTO waflas_pasutijumi (id_lietotajs, Summa, Vards, Uzvards, Epasts, Talrunis, Valsts, Pilseta, Adrese) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("idsssssss", $lietotajs_id, $summa, $vards, $uzvards, $epasts, $telefons, $valsts, $pilseta, $adrese);
+    $stmt = $savienojums->prepare("INSERT INTO waflas_pasutijumi (id_lietotajs, Summa, Vards, Uzvards, Epasts, Talrunis, Pilseta, Adrese, Pakomats) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("idsssssss", $lietotajs_id, $summa, $vards, $uzvards, $epasts, $telefons, $pilseta, $adrese, $pakomats);
     $stmt->execute();
     $pasutijums_id = $stmt->insert_id;
 
