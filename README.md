@@ -63,7 +63,7 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 - [x] - Nedaudz aprakstīt tamborētās produkcijas pārdevēju un pašu veikalu (Par mums) atsevišķajā lapā
 - [x] - Atsauksmju lapas sakārtošana
 - [x] - Reģistrācija un ielogošana
-- [ ] - Admin puse sākumlapa ar statistiku
+- [x] - Admin puse sākumlapa ar statistiku
 - [x] - Administrācijas panelī atsevišķas sadaļas ar produkcijas, kategoriju un pasūtījumu pārvaldi
 - [x] - Moderatoram mazāk iespējas nekā adminam, dažas sadaļas paslēptas
 - [x] - Lietotāja profila apskate
@@ -92,7 +92,7 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 - [x] - Administrācijas navigācijā izvadās paziņojums par jauno pasūtījumu skaitu
 - [x] - Visiem lietotājiem iespēja samainīt personīgo informāciju
 - [x] - Admins var dzēst adminus un moderatorus
-- [ ] - Administrācijas panelī izvadās visas atsauksmes atsevišķajā lapā
+- [x] - Administrācijas panelī izvadās visas atsauksmes atsevišķajā lapā
 - [x] - Var pievienot bildes uz datubāzi kā failu no datora
-- [ ] - Administrācijas paneļa gavenā lapa - statistika un kopējā info
+- [x] - Administrācijas paneļa gavenā lapa - statistika un kopējā info
 - [x] - Admins vai moders var apskatīt esošās preces un kategorijas, dzēst tās vai rediģēt
