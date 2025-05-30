@@ -244,3 +244,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+let menu = document.querySelector("#menu-btn");
+let navbar = document.querySelector(".navbar"); // явное указание
+
+if (menu && navbar) {
+  menu.onclick = () => {
+    navbar.classList.toggle("active");
+    menu.classList.toggle("fa-times");
+  };
+
+  window.onscroll = () => {
+    navbar.classList.remove("active");
+    menu.classList.remove("fa-times");
+  };
+}

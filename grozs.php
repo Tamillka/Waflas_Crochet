@@ -15,7 +15,7 @@ require "header.php";
     <div class="total-box">
         <h3>Kopā:</h3>
         <div class="colorful-divider"></div>
-        <p class="total">23.25€</p>
+        <p class="total"></p>
         <a class="btn" href="./pasutijums.php">Noformēt pasūtījumu</a>
     </div>
 </div>

@@ -12,8 +12,9 @@ require "header.php";
         <p><a href="index.php">Sākumlapa</a> <span>/</span> <a href="atsauksmes.php" id="now">Atsauksmes</a></p>
     </div>
 </section>
-<p id="nosaukums-ats" class="animate"><em>Katrs mūsu klienta viedoklis ir atšķirīgs, to var apskatīt zemāk.</em></p>
-
+<div class="main-container">
+    <p id="nosaukums-ats" class="animate"><em>Katrs mūsu klienta viedoklis ir atšķirīgs, to var apskatīt zemāk.</em></p>
+</div>
 <section id="visas-atsauksmes">
     <div class="main-container">
         <div class="box-container1">

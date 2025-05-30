@@ -14,13 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("ss", $nosaukums, $bilde);
 
         if ($stmt->execute()) {
-            echo json_encode(["success" => true, "message" => "Jauna kategrija veiksmīgi pievienota!"]);
+            echo json_encode([
+                'success' => true,
+                'message' => 'Jauna kategorija veiksmīgi pievienota!',
+            ]);
         } else {
-            // $_SESSION['pazinojums1'] = "Kļūda: " . $stmt->error;
+            echo json_encode([
+                'success' => false,
+                'message' => 'Kļūda sistēmā!',
+            ]);
         }
         $stmt->close();
     } else {
-        // $_SESSION['pazinojums1'] = "Visi ievades lauki nav aizpildīti!";
+        echo json_encode([
+            'success' => false,
+            'message' => 'Visi ievades lauki nav aizpildīti!',
+        ]);
     }
 
 }

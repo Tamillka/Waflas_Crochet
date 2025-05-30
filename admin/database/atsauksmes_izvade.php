@@ -5,19 +5,7 @@ if (!isset($page)) {
     $page = '';
 }
 
-$izvadeSQL = "
-SELECT 
-    a.*, 
-    l.Vards, 
-    l.Uzvards, 
-    l.Bilde 
-FROM 
-    waflas_atsauksmes AS a
-JOIN 
-    waflas_lietotaji AS l ON a.id_lietotajs = l.Lietotajs_ID
-ORDER BY 
-    a.Piev_datums DESC
-";
+$izvadeSQL = " SELECT a.*, l.Vards, l.Uzvards, l.Bilde FROM waflas_atsauksmes AS a JOIN waflas_lietotaji AS l ON a.id_lietotajs = l.Lietotajs_ID ORDER BY a.Piev_datums DESC ";
 $atlasaAtsauksmesSQL = mysqli_query($savienojums, $izvadeSQL);
 
 if (mysqli_num_rows($atlasaAtsauksmesSQL) > 0) {

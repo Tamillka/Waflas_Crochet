@@ -22,7 +22,7 @@ require "admin/database/get_profile_info.php";
 
 <body>
     <header>
-        <a href="./" class="logo"><img src="images/logo.png" alt=""></a>
+        <a href="./" class="logo"><img src="images/new_logo.jpg" alt=""></a>
         <nav class="navbar">
             <div class="navigacija">
                 <a href="index.php" class="<?php echo ($page == 'galvena' ? 'current' : ''); ?>">Sākumlapa</a>
@@ -49,9 +49,8 @@ require "admin/database/get_profile_info.php";
             <script>
                 const isLoggedIn = <?= $irIelogojies ? 'true' : 'false' ?>;
             </script>
-
-
         </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
     </header>
     <div class="profileBox">
         <div class="content">
@@ -61,6 +60,3 @@ require "admin/database/get_profile_info.php";
             <a href="admin/logout.php"><i class="fas fa-sign-out-alt"></i> Izlogoties</a>
         </div>
     </div>
-
-
-    <!-- <div id="menu-btn" class="fas fa-bars"></div> -->

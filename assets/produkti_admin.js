@@ -142,10 +142,8 @@ $(document).ready(function () {
 
   $("#produktaForma").submit(function (e) {
     e.preventDefault();
-
     const form = document.getElementById("produktaForma");
     const formData = new FormData(form);
-
     const url = !edit
       ? "database/produkts_add.php"
       : "database/produkts_edit.php";
@@ -156,33 +154,41 @@ $(document).ready(function () {
       data: formData,
       contentType: false,
       processData: false,
-      success: function () {
-        $(".modal").hide();
-        $("#produktaForma").trigger("reset");
-        $("#preview-container").empty();
-        fetchProdukti();
-        showNotif(
-          edit
-            ? "Produkts veiksmīgi rediģēts!"
-            : "Produkts veiksmīgi pievienots!",
-          "success"
-        );
-        edit = false;
+      dataType: "json",
+      success: function (response) {
+        if (response.success) {
+          $(".modal").hide();
+          $("#produktaForma").trigger("reset");
+          $("#preview-container").empty();
+          fetchProdukti();
+          showNotif(response.message, "success");
+          edit = false;
+        } else {
+          showNotif(response.message, "error");
+        }
       },
       error: function () {
-        showNotif("Kļūda saglabājot datus!", "error");
+        showNotif("Kļūda savienojumā ar serveri!", "error");
       },
     });
   });
 
   $(document).on("click", ".produkts-delete", (e) => {
     if (confirm("Vai tiešām vēlies dzēst?")) {
-      const element = $(e.currentTarget).closest("tr");
-      const id = $(element).attr("prod_ID");
-      $.post("database/produkts_delete.php", { id }, (response) => {
-        fetchProdukti();
-        showNotif("Produkts veiksmīgi dzēsts!", "success");
-      });
+      const id = $(e.currentTarget).closest("tr").attr("prod_ID");
+      $.post(
+        "database/produkts_delete.php",
+        { id },
+        function (response) {
+          if (response.success) {
+            fetchProdukti();
+            showNotif(response.message, "success");
+          } else {
+            showNotif(response.message, "error");
+          }
+        },
+        "json"
+      );
     }
   });
 });

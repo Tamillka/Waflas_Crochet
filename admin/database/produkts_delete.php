@@ -10,9 +10,15 @@ if (isset($_POST['id'])) {
     $vaicajums->bind_param("ii", $del, $id);
 
     if ($vaicajums->execute()) {
-        // echo "Veiksmgi dzēsts!";
+        echo json_encode([
+            'success' => true,
+            'message' => 'Prece veiksmīgi dzēsta!',
+        ]);
     } else {
-        // echo "Kļūda! ".$savienojums->error;
+        echo json_encode([
+            'success' => false,
+            'message' => 'Kļūda sistēmā!',
+        ]);
     }
 
     $vaicajums->close();

@@ -46,9 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $vaicajums->send_long_data(7, $bildePaths[2]);
 
         if ($vaicajums->execute()) {
-            echo "Produkts veiksmīgi izveidots!";
+            echo json_encode([
+                'success' => true,
+                'message' => 'Prece veiksmīgi pievienota!',
+            ]);
         } else {
-            echo "Kļūda sistēmā: " . $vaicajums->error;
+            echo json_encode([
+                'success' => false,
+                'message' => 'Kļūda sistēmā!',
+            ]);
         }
 
         $vaicajums->close();

@@ -1,14 +1,13 @@
 <?php
 require "assets/con_db.php";
 
-// Izvēlamies, cik produktus parādīt atkarībā no lapas
 $izvadeSQL = "SELECT * FROM Waflas_preces WHERE Radits = 1 ORDER BY Piev_datums DESC LIMIT 4";
 
 $atlasaPrecesSQL = mysqli_query($savienojums, $izvadeSQL);
 
 if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
     while ($prece = mysqli_fetch_assoc($atlasaPrecesSQL)) {
-        // Base64 kodēšana no BLOB datiem
+
         $imageData1 = base64_encode($prece['Bilde1']);
         $imageSrc1 = "data:image/jpeg;base64,{$imageData1}";
 
@@ -18,7 +17,6 @@ if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
         $imageData3 = base64_encode($prece['Bilde3']);
         $imageSrc3 = "data:image/jpeg;base64,{$imageData3}";
 
-        // Dinamiski ģenerē modālā loga ID
         $modalID = "modalTicket" . $prece['Preces_ID'];
         echo "
 
@@ -39,9 +37,7 @@ if (mysqli_num_rows($atlasaPrecesSQL) > 0) {
                      <h3>{$prece['Cena']}€</h3>
                     <button class='btn pievienotGrozam' data-id='{$prece['Preces_ID']}'>Pievienot grozam</button>
                  </div>
-           </div>
-     
-            
+           </div> 
              ";
 
 

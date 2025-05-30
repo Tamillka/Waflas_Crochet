@@ -52,8 +52,17 @@ if (isset($_POST['id'])) {
         }
         $index++;
     }
-
-    $stmt->execute();
+    if ($stmt->execute()) {
+        echo json_encode([
+            'success' => true,
+            'message' => 'Preces ieraksts veiksmīgi rediģēts!',
+        ]);
+    } else {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Kļūda sistēmā!',
+        ]);
+    }
     $stmt->close();
     $savienojums->close();
 }

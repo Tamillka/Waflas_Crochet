@@ -188,6 +188,15 @@ img{
     font-weight: bold;
     font-size: 1.4rem;
 }
+#menu-btn{
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.3rem;
+    border-radius: var(--radius);
+    color: var(--main-color);
+    background: var(--bg);
+    display: none;
+}
 .navbar{
     display: flex;
     justify-content: center;
@@ -216,8 +225,8 @@ nav a:hover {
 }
 
 header img {
-    width: 8rem;
-    height: 8rem;
+    width: 5rem;
+    height: 5rem;
     object-fit: cover;
 }
 
@@ -852,6 +861,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
+    gap: 1.5rem;
 }
 #jautajumi .jautajums{
     border-bottom: 2px solid #777;
@@ -1070,7 +1080,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 #hero-kontakti{
     padding: 0 0 0 9%;
     display: flex;
-    justify-content: space-between;
+    gap: 2rem;
+
 }
 #hero-kontakti h1{
     margin-top: 17%;
@@ -1083,11 +1094,14 @@ input[type="range"]::-webkit-slider-runnable-track {
     width: 80%;
     line-height: 1.5;
 }
-
+#hero-kontakti .left-info{
+    width: 100%;
+}
 
 .right-kontakti h2{
     color: var(--lightText);
     padding: 0;
+     max-width: 100%;
 }
 .right-kontakti{
     background: var(--maincolor);
@@ -1095,7 +1109,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    height: 100%;
+    align-self: stretch;
 }
 .info-block{
     display: flex;
@@ -1124,6 +1138,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     margin-top: .75rem;
     background-image: radial-gradient(var(--bg), #ffffff00);
 }
+
 
 #popupKontakti .box-container{
     display: flex;
@@ -1314,6 +1329,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     padding: 0;
     display: flex;
     justify-content: space-between;
+    gap: 1.5rem;
 }
 #produkti-nosaukums #searchField input{
     font-size: 1.3rem;
@@ -1865,9 +1881,208 @@ footer .sadalas a:hover::after {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px){
+    .right-kontakti h2{
+        font-size: 2.3rem;
+    }
+   .right-kontakti .info-block i{
+    font-size: 4rem;
+}
+    .left-info h1{
+        font-size: 3.3rem;
+    }
+    #hero-kontakti .left-info,
+.right-kontakti {
+    flex: 1;
+    min-width: 0; 
+}
+.user-info-form .name-group{
+    flex-direction: column;
+}
+}
+
+@media (max-width: 1100px) {
    #visas-atsauksmes .box {
         flex: 1 1 100%; /* Uz mazākiem ekrāniem bloki aizņem pilnu platumu */
         max-width: 100%;
     }
+    .atsauksmesTop{
+        justify-content: center;
+    }
+    #komanda .main-container{
+        flex-direction: column;
+    }
+    #materiali .container{
+        flex-direction: column;
+    }
+    #par-mums .image-container{
+        margin-top: 7rem;
+    }
+    #hero h1{
+    font-size: 2.5rem;
+    padding-left: 1.5rem;
 }
+#jautajumi{
+    margin-top: 3rem;
+}
+#jaunakie-pied{
+    padding-bottom: 0;
+}
+#atsauksmes .atsauksme {
+        min-width: 45%;
+        max-width: 45%;
+}
+#atsauksmes p{
+    width: 100%;
+}
+#atsauksmes h2{
+    font-size: 2.2rem;
+}
+#atsauksmes{
+    padding: 3rem 0;
+}
+footer .blocks{
+    flex-direction: column;
+    gap: 1.5rem;
+}
+footer .blocks p{
+    text-align: center;
+}
+}
+@media (max-width: 1000px){
+    .main-container{
+        padding: 0 5%;
+    }
+        #hero-kontakti{
+        flex-direction: column;
+        padding-left: 0;
+    }
+    .right-kontakti{
+        width: 100%;
+        padding: 3rem 5%;
+    }
+    .left-info{
+        margin-left: 5%;
+    }
+    #hero-kontakti h1{
+        margin-top: 10%;
+    }
+
+}
+@media (max-width: 900px){
+    #par-mums .flex-text{
+        flex-direction: column;
+        gap: 0;
+    }
+    #par-mums h2{
+        font-size: 2.2rem;
+    }
+    #produkti-nosaukums #searchField input{
+    max-width: 20rem;
+    width: 100%;
+}
+.cart-box{
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+.cart-box .grozs-delete{
+    padding: 1rem;
+}
+#par-mums .about-summary{
+    text-align: center;
+}
+#kvalitate .kval-box h2{
+    font-size: 2.5rem;
+}
+ .popup-content{
+        padding: 1rem;
+    }
+    #popupKontakti h2, #popupAtsauksmes h2{
+        font-size: 2rem;
+    }
+    .edit-container{
+        flex-direction: column;
+    }
+    .profile-box{
+        width: 100%;
+    }
+    .edit-container .buttons-bottom{
+        gap: 1rem;
+    }
+    .order-box{
+        flex-direction: column;
+    }
+    .order-info{
+        gap: 2rem;
+    }
+
+        #menu-btn {
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+       header{
+        overflow: visible;
+    }
+  
+    header .active{
+        display: flex;
+        position: absolute;
+        top: 6.15rem;
+        background-color: #ececec;
+        z-index: 2;
+        width: 100%;
+        min-height: 100%;
+        flex-direction: column;
+        .navigacija{
+            flex-direction: column;
+        }
+        .navigacija a{
+            padding: 1rem;
+        }
+       
+    }
+    .navbar a{
+        padding: 1rem;
+    }
+
+}
+@media (max-width: 700px){
+    .headings .main-container{
+        flex-direction: column;
+    }
+     #produkcija h2, #jaunakie-pied h2{
+        font-size: 2.5rem;
+    }
+    #produkcija h2{
+         padding-bottom: 0;
+    }
+    #atsauksmes .atsauksme {
+        min-width: 90%;
+        max-width: 90%;
+}
+#jautajumi h3{
+    font-size: 1.6rem;
+}
+.items{
+    flex-direction: column;
+}
+}
+@media (max-width: 550px){
+    .popup-content .image-gallery{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .popup-content .image-gallery .thumbnails{
+        flex-direction: row;
+    }
+    .order-info{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+

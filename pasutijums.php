@@ -1,6 +1,7 @@
 <?php
 $page = "grozs";
 require "header.php";
+require "admin/database/summa.php";
 ?>
 <div class="main-container margin-top">
     <form class="pasutijums-content" method="POST" action="/payment/checkout.php">
@@ -54,7 +55,7 @@ require "header.php";
         <div class="total-box pasutijums">
             <h3>Kopā apmaksai:</h3>
             <div class="colorful-divider"></div>
-            <p class="total">23.25€</p>
+            <p class="total"><?php echo number_format($total, 2, '.', ''); ?>€</p>
             <button class="btn main-button" type="submit" name="submit_order">Doties uz apmaksu</button>
         </div>
     </form>

@@ -71,12 +71,10 @@ $(document).ready(function () {
     edit = false;
   });
 
-  $("#kategorijasForma").submit((e) => {
+  $("#kategorijasForma").submit(function (e) {
     e.preventDefault();
-
-    // Izveidojam FormData objektu, lai iekļautu failu
-    const formData = new FormData(document.getElementById("kategorijasForma"));
-
+    const form = document.getElementById("kategorijasForma");
+    const formData = new FormData(form);
     const url = !edit
       ? "database/kategorija_add.php"
       : "database/kategorija_edit.php";
@@ -85,21 +83,22 @@ $(document).ready(function () {
       url: url,
       type: "POST",
       data: formData,
-      processData: false,
       contentType: false,
-      success: () => {
-        $(".modal").hide();
-        $("#kategorijasForma").trigger("reset");
-        fetchKategorijas();
-        if (edit) {
-          showNotif("Kategorija veiksmīgi rediģēta!", "success");
+      processData: false,
+      dataType: "json",
+      success: function (response) {
+        if (response.success) {
+          $(".modal").hide();
+          $("#kategorijasForma").trigger("reset");
+          fetchKategorijas();
+          showNotif(response.message, "success");
+          edit = false;
         } else {
-          showNotif("Jauna kategorija veiksmīgi pievienota!", "success");
+          showNotif(response.message, "error");
         }
-        edit = false;
       },
-      error: (xhr, status, error) => {
-        console.error("Kļūda:", error);
+      error: function () {
+        showNotif("Kļūda savienojumā ar serveri!", "error");
       },
     });
   });
@@ -119,14 +118,23 @@ $(document).ready(function () {
     }
   });
 
-  $(document).on("click", ".kategorija-delete", (e) => {
+  $(document).on("click", ".kategorija-delete", function () {
     if (confirm("Vai tiešām vēlies dzēst?")) {
-      const element = $(e.currentTarget).closest("tr");
-      const id = $(element).attr("kat_ID");
-      $.post("database/kategorija_delete.php", { id }, (response) => {
-        fetchKategorijas();
-        showNotif("Kategirja veiksmīgi dzēsta!", "success");
-      });
+      const id = $(this).closest("tr").attr("kat_ID");
+
+      $.post(
+        "database/kategorija_delete.php",
+        { id },
+        function (response) {
+          if (response.success) {
+            fetchKategorijas();
+            showNotif(response.message, "success");
+          } else {
+            showNotif(response.message, "error");
+          }
+        },
+        "json"
+      );
     }
   });
 });

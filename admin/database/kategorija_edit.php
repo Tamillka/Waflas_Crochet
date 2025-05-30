@@ -29,7 +29,7 @@ if (isset($_POST['id'])) {
     if ($vaicajums_update->execute()) {
         echo json_encode(["success" => true, "message" => "Kategorija veiksmīgi rediģēta!"]);
     } else {
-        // echo "Kļūda! ".$savienojums->error;
+        echo json_encode(["success" => false, "message" => "Kļūda sistēmā!"]);
     }
 
     $vaicajums_update->close();
