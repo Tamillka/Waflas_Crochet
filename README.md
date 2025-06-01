@@ -68,7 +68,7 @@ Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikal
 - [x] - Moderatoram mazāk iespējas nekā adminam, dažas sadaļas paslēptas
 - [x] - Lietotāja profila apskate
 - [x] - Iepirkumu grozs
-- [ ] - Pasūtījumu vēsture
+- [x] - Pasūtījumu vēsture
 
 # Funkcionālitātes pievienošana
 
