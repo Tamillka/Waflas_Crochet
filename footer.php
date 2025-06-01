@@ -9,16 +9,28 @@
             <h3><em>Wafla's crochet</em></h3>
         </div>
         <div class="kontaktu-sad">
-            <p><i class="fa-solid fa-phone"></i> waflascrochet@gmail.com</p>
-            <p><i class="fa-solid fa-envelope"></i> +371 67 777 111</p>
-            <p><i class="fa-solid fa-location-dot"></i> Rīga, Brīvības bulvāris 36, LV-3709</p>
+            <p>
+                <a href="mailto:waflascrochet@gmail.com">
+                    <i class="fa-solid fa-envelope"></i> waflascrochet@gmail.com
+                </a>
+            </p>
+            <p>
+                <a href="tel:+37167777111">
+                    <i class="fa-solid fa-phone"></i> +371 67 777 111
+                </a>
+            </p>
+            <p>
+                <a href="https://maps.google.com/?q=Rīga, Brīvības bulvāris 36, LV-3709" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i> Rīga, Brīvības bulvāris 36, LV-3709
+                </a>
+            </p>
         </div>
         <div class="sadalas">
             <p><a href="produkcija.php">Produkcija</a></p>
             <p><a href="parmums.php">Par mums</a></p>
             <p><a href="atsauksmes.php">Atsauksmes</a></p>
             <p><a href="kontakti.php">Kontakti</a></p>
-            <p><a href="login.php">Login</a></p>
+            <p><a href="admin/login.php">Login</a></p>
         </div>
     </div>
     <p>Wafla's crochet &copy; 2024</p>

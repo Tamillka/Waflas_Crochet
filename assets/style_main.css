@@ -1727,12 +1727,12 @@ footer p{
     color: var(--text);
     font-size: 1.3rem;
 }
-footer .sadalas a {
+footer .sadalas a, footer .kontaktu-sad a {
     color: var(--text);
     position: relative; 
 }
 
-footer .sadalas a::after {
+footer .sadalas a::after, footer .kontaktu-sad a::after  {
     content: "";
     position: absolute;
     bottom: 0; 
@@ -1744,8 +1744,9 @@ footer .sadalas a::after {
     transform: translateX(-50%); 
 }
 
-footer .sadalas a:hover::after {
+footer .sadalas a:hover::after, footer .kontaktu-sad a:hover::after {
     width: 100%; 
+    cursor: pointer;
 }
   footer .blocks p{
     line-height: 1;
@@ -1874,6 +1875,63 @@ footer .sadalas a:hover::after {
 
 }
 
+
+/*MODĀLIE LOGI*/
+.modal{
+    position: fixed;
+    background: rgba(0,0,0,70%);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .modal.modal-active{
+     display: flex;
+ }
+
+ .modal-box{
+    background: #fefefe;
+    max-width: 40rem;
+    max-height: 40rem; 
+    overflow-y: auto;  
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    position: relative;
+    padding: 1rem;
+ }
+ 
+ .modal .closeBtn{
+     position: absolute;
+     top: .5rem;
+     right: .5rem;
+     background: var(--maincolor);
+     padding: .3rem .5rem;
+     color: var(--lightText);
+     font-size: .7rem;
+     border-radius: .5rem;
+     cursor: pointer;
+ }
+
+ .modal h3{
+    font-size: 2.3rem;
+    font-weight: 600;
+ }
+.modal .success {
+    font-size: 7rem;
+    color: rgb(73, 213, 73);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.modal h3 span{
+    font-size: 2.3rem;
+    font-weight: 700;
+    font-style: italic;
+}
 
 @keyframes scroll {
     to {

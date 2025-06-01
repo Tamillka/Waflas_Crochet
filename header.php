@@ -60,3 +60,16 @@ require "admin/database/get_profile_info.php";
             <a href="admin/logout.php"><i class="fas fa-sign-out-alt"></i> Izlogoties</a>
         </div>
     </div>
+
+    <?php if (isset($_SESSION['pazinojums']) && !empty($_SESSION['pazinojums'])): ?>
+        <div class="modal modal-active" id="modal-message">
+            <div class="modal-box">
+                <div class="closeBtn" data-target="#modal-message">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="notif">
+                    <?= $_SESSION['pazinojums']; ?>
+                </div>
+            </div>
+        </div>
+        <?php unset($_SESSION['pazinojums']); endif; ?>

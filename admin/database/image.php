@@ -2,7 +2,7 @@
 require '../../assets/con_db.php';
 
 $id = $_GET['id'];
-$index = $_GET['index']; // 1, 2, 3
+$index = $_GET['index'];
 
 $col = "Bilde" . intval($index);
 $sql = $savienojums->prepare("SELECT $col FROM Waflas_preces WHERE Preces_ID = ?");

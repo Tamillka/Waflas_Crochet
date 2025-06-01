@@ -16,16 +16,11 @@ if (!empty($_GET['session_id'])) {
         if ($paymentIntent->status == 'succeeded') {
             $transactionID = $paymentIntent->id;
 
-            require '../assets/con_db.php';
-            // $stmt = $savienojums->prepare("UPDATE waflas_pasutijumi SET Statuss = 'Apmaksāts' WHERE Pasutijums_ID = ?");
-            // $stmt->bind_param("i", $_SESSION['pasutijums_id']);
-            // $stmt->execute();
-
-            $statusMsg = "<h2>Maksājums veiksmīgi apstrādāts!</h2>
-            <p>Lai turpmāk iegūt PRO privilēģijas, veicot jaunu pieteikumu, izmantojiet šo e-pastu: <b>$customer_email</b></p>
-            <p>Maksājuma reference: <b>$transactionID</b></p>";
-
             $id_pasutijums = $_SESSION['pasutijums_id'];
+
+            require '../assets/con_db.php';
+            $statusMsg = "<i class='fa-regular fa-circle-check success'></i>
+            <h3>Jūsu pasūtījums <span>#$id_pasutijums</span> ir veiksmīgi </br> noformēts!</h3>";
 
             $vaicajums = $savienojums->prepare("INSERT INTO waflas_maksajumi (ReferencesNum, Epasts, id_pasutijums) VALUES (?, ?, ?)");
             $vaicajums->bind_param("ssi", $transactionID, $customer_email, $id_pasutijums);

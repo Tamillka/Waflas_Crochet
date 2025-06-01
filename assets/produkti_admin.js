@@ -42,7 +42,7 @@ $(document).ready(function () {
       success: function (response) {
         const kategorijas = JSON.parse(response);
         let options =
-          '<option value="" disabled selected>Izvēlēties kategoriju</option>'; // Pamatopcijas
+          '<option value="" disabled selected>Izvēlēties kategoriju</option>';
         kategorijas.forEach((kategorija) => {
           options += `<option value="${kategorija.id}">${kategorija.nosaukums}</option>`;
         });

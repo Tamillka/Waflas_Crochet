@@ -4,10 +4,8 @@ const header = document.querySelector("header");
 window.addEventListener("scroll", function () {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop > lastScrollTop) {
-    // Scroll down
     header.style.top = "-7rem";
   } else {
-    // Scroll up
     header.style.top = "0";
   }
   lastScrollTop = scrollTop;
@@ -28,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", onScroll);
-  onScroll(); // Initial check on load
+  onScroll();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -162,6 +160,10 @@ openBtns.forEach(function (btn) {
       if (popup) {
         popup.classList.remove("popup-active");
       }
+      const modal = document.querySelector(btn.dataset.target);
+      if (modal) {
+        popup.classList.remove("modal-active");
+      }
     });
   });
 });
@@ -246,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let menu = document.querySelector("#menu-btn");
-let navbar = document.querySelector(".navbar"); // явное указание
+let navbar = document.querySelector(".navbar");
 
 if (menu && navbar) {
   menu.onclick = () => {
