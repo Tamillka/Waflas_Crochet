@@ -17,7 +17,7 @@ $(document).ready(function () {
               <td>${atsauksme.lietotajvards}</td>
               <td><img src="${atsauksme.bilde}" class="cropped"></td>
               <td>${atsauksme.epasts}</td>
-              <td>${atsauksme.vertejums}</td>
+              <td>${atsauksme.vertejums}/5</td>
              <td class="longer">${
                atsauksme.teksts.length > 100
                  ? atsauksme.teksts.substring(0, 100) + "..."

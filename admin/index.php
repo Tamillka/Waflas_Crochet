@@ -77,57 +77,6 @@ require "database/kopsavilkums.php";
     <div class="divider"></div>
     <div class="columns">
         <div class="block">
-            <h3>Pasūtījumi pēdējas nedēļas laikā</h3>
-            <canvas id="pasutijumuDiagramma" max-height="250"></canvas>
-        </div>
-        <div class="block">
-            <h3>Pēdējie pasūtījumi</h3>
-            <table>
-                <tr>
-                    <th>Vārds, uzvārds</th>
-                    <th>Datums</th>
-                    <th>Statuss</th>
-                </tr>
-                <?php
-                $pasut_SQL = "SELECT * FROM Waflas_pasutijumi ORDER BY Pasut_datums DESC LIMIT 6";
-                $atlasa_pasut_SQL = mysqli_query($savienojums, $pasut_SQL);
-
-                while ($pasutijums = mysqli_fetch_array($atlasa_pasut_SQL)) {
-                    echo "
-                    <tr>
-                    <td>{$pasutijums['Vards']} {$pasutijums['Uzvards']}</td>
-                  
-                    <td>" . date("d.m.Y. H:i", strtotime($pasutijums['Pasut_datums'])) . "</td>
-                      <td>{$pasutijums['Statuss']}</td>
-                    </tr>
-                    ";
-                }
-
-                ?>
-            </table>
-        </div>
-    </div>
-    <div class="top modif">
-        <div class="info-box">
-            <h4>Nopēlnīts pēdējā <br /> <span>dienā</span></h4>
-            <h3><?php echo $ienemums_diena; ?> €</h3>
-        </div>
-        <div class="info-box">
-            <h4>Nopēlnīts pēdējā <br /> <span>nedēļā</span></h4>
-            <h3><?php echo $ienemums_nedela; ?> €</h3>
-        </div>
-        <div class="info-box">
-            <h4>Nopēlnīts pēdējā <br /> <span>menesī</span></h4>
-            <h3><?php echo $ienemums_menesis; ?> €</h3>
-        </div>
-        <div class="info-box">
-            <h4>Nopēlnīts pēdējā <br /> <span>gadā</span></h4>
-            <h3><?php echo $ienemums_gads; ?> €</h3>
-        </div>
-    </div>
-    <div class="divider"></div>
-    <div class="columns">
-        <div class="block">
             <h3>Jaunākie klienti</h3>
             <table>
                 <tr>
@@ -175,6 +124,59 @@ require "database/kopsavilkums.php";
             </div>
         </div>
     </div>
+
+    <div class="top modif">
+        <div class="info-box">
+            <h4>Nopēlnīts pēdējā <br /> <span>dienā</span></h4>
+            <h3><?php echo $ienemums_diena; ?> €</h3>
+        </div>
+        <div class="info-box">
+            <h4>Nopēlnīts pēdējā <br /> <span>nedēļā</span></h4>
+            <h3><?php echo $ienemums_nedela; ?> €</h3>
+        </div>
+        <div class="info-box">
+            <h4>Nopēlnīts pēdējā <br /> <span>menesī</span></h4>
+            <h3><?php echo $ienemums_menesis; ?> €</h3>
+        </div>
+        <div class="info-box">
+            <h4>Nopēlnīts pēdējā <br /> <span>gadā</span></h4>
+            <h3><?php echo $ienemums_gads; ?> €</h3>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="columns">
+        <div class="block">
+            <h3>Pasūtījumi pēdējas nedēļas laikā</h3>
+            <canvas id="pasutijumuDiagramma" max-height="250"></canvas>
+        </div>
+        <div class="block">
+            <h3>Pēdējie pasūtījumi</h3>
+            <table>
+                <tr>
+                    <th>Vārds, uzvārds</th>
+                    <th>Datums</th>
+                    <th>Statuss</th>
+                </tr>
+                <?php
+                $pasut_SQL = "SELECT * FROM Waflas_pasutijumi ORDER BY Pasut_datums DESC LIMIT 6";
+                $atlasa_pasut_SQL = mysqli_query($savienojums, $pasut_SQL);
+
+                while ($pasutijums = mysqli_fetch_array($atlasa_pasut_SQL)) {
+                    echo "
+                    <tr>
+                    <td>{$pasutijums['Vards']} {$pasutijums['Uzvards']}</td>
+                  
+                    <td>" . date("d.m.Y. H:i", strtotime($pasutijums['Pasut_datums'])) . "</td>
+                      <td>{$pasutijums['Statuss']}</td>
+                    </tr>
+                    ";
+                }
+
+                ?>
+            </table>
+        </div>
+    </div>
+
 </div>
 
 <?php
