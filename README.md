@@ -21,8 +21,9 @@ Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļau
 ### 🧺 Produkcija
 
 ![image](https://github.com/user-attachments/assets/2cc5772c-3ad0-47ca-8953-6305298157e6)
+<img width="3806" height="1792" alt="image" src="https://github.com/user-attachments/assets/3a318b1f-1695-4834-90ad-73323ad84eef" />
 
-Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot grozam.
+Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot grozam. 
 
 ---
 
@@ -30,7 +31,7 @@ Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot g
 
 ![image](https://github.com/user-attachments/assets/e516b268-cbed-4a58-a338-ccf21cd3fa2f)
 
-Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam
+Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam, ir iespēja pievienot savu atsauksmi.
 
 ---
 
