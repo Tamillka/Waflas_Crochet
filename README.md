@@ -29,7 +29,9 @@ Pārskatāms produktu saraksts, var meklēt produkiju, piemērot filtrus, katru 
 
 ### 💬 Atsauksmes
 
-![image](https://github.com/user-attachments/assets/e516b268-cbed-4a58-a338-ccf21cd3fa2f)
+<img width="3839" height="1753" alt="image" src="https://github.com/user-attachments/assets/f18e6e4b-5fbf-4934-abc6-ad69491d4bc6" />
+<img width="1742" height="1096" alt="image" src="https://github.com/user-attachments/assets/caf2c6b7-157d-4df7-ab79-fd02a705ca4f" />
+
 
 Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam, ir iespēja pievienot savu atsauksmi.
 
