@@ -4,7 +4,7 @@
 
 📌 **Projekta apraksts:**  
 Šis projekts ir kvalifikācijas eksāmena praktiskā daļa. Izvēlētā tēma ir tamborēšanas mājaslapa-veikals.
-Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļaujot nepieciešamās funkcijas, veikt testēšanu un izveidot dokumentāciju.
+Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļaujot nepieciešamās funkcijas, veikt testēšanu un izveidot dokumentāciju (dokumentācija ir pieejama kopā ar projekta failiem).
 
 ---
 
@@ -23,7 +23,7 @@ Darba mērķis: izstrādāt funkcionālu un vizuāli pievilcīgu vietni, iekļau
 ![image](https://github.com/user-attachments/assets/2cc5772c-3ad0-47ca-8953-6305298157e6)
 <img width="3806" height="1792" alt="image" src="https://github.com/user-attachments/assets/3a318b1f-1695-4834-90ad-73323ad84eef" />
 
-Pārskatāma produktu galerija ar cenām, materiāliem un iespējām pievienot grozam. 
+Pārskatāms produktu saraksts, var meklēt produkiju, piemērot filtrus, katru preci apskatīt detalizēti un pievienot iepirkumu grozam.
 
 ---
 
@@ -39,9 +39,87 @@ Pārskatamas klientu atsauksmes un vērtējums, ko atstāja internetveikalam, ir
 
 ![image](https://github.com/user-attachments/assets/9458a2e3-9d76-4944-abdd-c1ae53616733)
 
-Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikala administrāciju
+Var iepazīties ar internetveikala kontaktdatiem, kā arī sazināties ar veikala administrāciju.
 
 ---
+
+### 🛒 Iepirkumu grozs un pasūtījuma noformēšana
+
+<img width="3802" height="1759" alt="image" src="https://github.com/user-attachments/assets/bc36b749-ed48-4d25-8b1f-acec2c674c43" />
+<img width="3344" height="1268" alt="image" src="https://github.com/user-attachments/assets/1127a422-9004-4605-88e4-2aa8dc248f42" />
+<img width="3296" height="1666" alt="image" src="https://github.com/user-attachments/assets/c7a748c2-a6b6-4bd6-ac00-f6b1851c7c82" />
+
+Var apskatīt esošās preces savā iepirkumu grozā, mainīt to daudzumu vai dzēst. turpmāk ir iespēja arī noformēt pasūtījumu, izvēlējoties attiecīgo piegādes adresi un Omnivapakomātu no saraksta, kā arī veicot apmaksu Stripe platformā.
+
+---
+
+### 👤 Profila apskate
+
+<img width="3800" height="1756" alt="image" src="https://github.com/user-attachments/assets/130b31b0-2421-4dbf-b858-eccd7dc72771" />
+
+Apskatāma sava informācija, un ir iespēja nomainīt personālo info, kā arī samainīt paroli, profila bildi un izdzēst savu kontu.
+
+---
+
+### 🔎 Pasūtījumu vēsture
+
+<img width="3788" height="1418" alt="image" src="https://github.com/user-attachments/assets/3a4f1760-d389-45d9-914c-a2d276e47ec2" />
+
+Var apskatīt visus savus pasūtījumus un to detaļas (datums, preču skaits, numurs un kopsumma).
+
+---
+
+### 📝 Ielogošana un reģistrācija
+
+<img width="3839" height="1748" alt="image" src="https://github.com/user-attachments/assets/1750bd1b-80cd-4a9a-87e5-0e083357b675" />
+<img width="3839" height="1763" alt="image" src="https://github.com/user-attachments/assets/cbe2aafe-3bff-4661-8268-ec6be93cebc3" />
+
+Katram klientam ir iespēja autorizēties sistēmā vai izveidot jaunu kontu.
+
+---
+
+## 🛠️ Wafla's crochet administrcijas panelis
+
+<img width="3776" height="1710" alt="image" src="https://github.com/user-attachments/assets/892feaac-1b64-40d4-8d8c-cfd8986a12fd" />
+<img width="3839" height="1756" alt="image" src="https://github.com/user-attachments/assets/cf2f0bed-945f-4398-870d-cb2f27cdea9b" />
+
+Dota sadaļa ir pieejama tikai sistēmas administratoriem un moderatoriem. Ie pieejamas vairākas sadaļas ar sistēmas lietotājiem, atsauksmēm, produktiem, to kategorijām un pasūtījumiem.
+
+### 🏷️ Produkcijas pārvalde
+
+<img width="3800" height="1762" alt="image" src="https://github.com/user-attachments/assets/eb99f16a-0e4a-4df3-ba3c-1006245c43c7" />
+<img width="2248" height="1458" alt="image" src="https://github.com/user-attachments/assets/8e400298-de36-436f-ad2a-9a8d22646e00" />
+<img width="2162" height="1161" alt="image" src="https://github.com/user-attachments/assets/6afedd71-3bac-4fe0-824a-e3c4098fb01c" />
+<img width="3040" height="1596" alt="image" src="https://github.com/user-attachments/assets/9413a0e9-b32c-4fcf-b005-ffac59f6a415" />
+
+Ir iespēja pievienot jaunas produktu kategorijas, rediģēt tās vai dzēst. Tādas pašas darbības ir pieejamas ar pašiem produktiem.
+
+---
+
+### 🔊 Atsauksmju pārvalde
+
+<img width="3803" height="1752" alt="image" src="https://github.com/user-attachments/assets/bc64b97d-0c58-48e4-b553-4bf385a28e82" />
+
+Sistēmas darbiniekiem ir pieejamas apskatei visas klientu atsauksmes.
+
+---
+
+### 📦 Pasūtījumu pārvalde
+
+<img width="3839" height="1286" alt="image" src="https://github.com/user-attachments/assets/70cf1069-00c1-41a3-8a25-4d9afc44f4ee" />
+<img width="1452" height="1320" alt="image" src="https://github.com/user-attachments/assets/168f8d72-c036-4426-aa1f-7dd16567313e" />
+
+Pieejami visi pasūtījumi. Katram pasūtījumam var nomainīt statusu. Pasūtījumi var būt ari neapmaksātie, informācija tiek attēlota modālajā logā, kā arī kopējā tabulā apmaksāto pasūtījumu statuss ir izcelts zaļā krāsā. Jaunu pasūtījumu skaits tiek atzīmēts navigācijas joslā.
+
+---
+
+### 👨🏻‍💻 Lietotāju pārvalde
+
+<img width="3794" height="1263" alt="image" src="https://github.com/user-attachments/assets/1130f40b-a5c7-4265-9218-f9e0b3fecf4a" />
+<img width="2283" height="1329" alt="image" src="https://github.com/user-attachments/assets/9d9809f4-62ce-4418-a81b-8cd49d82cf7d" />
+
+Šāda sadaļa ir pieejama tikai sistēmas administratoriem. Lietotāji var redzēt citu darbinieku informāciju, nomainīt to vai pievienot jaunu lietotāju.
+
 
 # ✅ Darba autoram ir dažādi veicamie uzdevumi:
 
